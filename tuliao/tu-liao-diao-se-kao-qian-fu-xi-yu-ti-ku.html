@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>涂料调色考前复习与题库</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root, :root[data-theme="paper"]{
+  --bg:#ffffff; --surface:#ffffff; --surface2:#f6f6f6; --chip:#efefef;
+  --ink:#141414; --muted:#5c5c5c; --line:#d8d8d8;
+  --hero-bg:#111111; --hero-ink:#ffffff;
+  --solid:#141414; --solid-ink:#ffffff;
+  --key:#c62828; --key-solid:#ff6f60;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#0e0e0e; --surface:#171717; --surface2:#1f1f1f; --chip:#262626;
+  --ink:#f2f2f2; --muted:#a8a8a8; --line:#363636;
+  --hero-bg:#000000; --hero-ink:#ffffff;
+  --solid:#f2f2f2; --solid-ink:#111111;
+  --key:#ff5252; --key-solid:#c62828;
+  color-scheme:dark;
+}
+:root[data-theme="gray"]{
+  --bg:#ececec; --surface:#ffffff; --surface2:#f4f4f4; --chip:#e3e3e3;
+  --ink:#141414; --muted:#5c5c5c; --line:#d0d0d0;
+  --hero-bg:#141414; --hero-ink:#ffffff;
+  --solid:#141414; --solid-ink:#ffffff;
+  --key:#c62828; --key-solid:#ff6f60;
+  color-scheme:light;
+}
+.key{color:var(--key);font-weight:800}
+.hero .key{color:#ff6f60}
+.cheat ol li>strong{color:var(--key)}
+.formula .big{color:var(--key-solid)}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;font-size:16px}
+a{color:var(--ink);text-underline-offset:3px} button{min-height:44px;font-family:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 56px}
+.themebar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:16px 0 14px}
+.themebar .tlabel{font-weight:800;font-size:14px;margin-right:2px}
+.tbtn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer;min-height:44px;font-size:14px}
+.tbtn.active{background:var(--solid);color:var(--solid-ink)}
+.hero{background:var(--hero-bg);color:var(--hero-ink);margin:0 -18px;padding:0;border-bottom:1px solid var(--line)}
+.hero-in{max-width:1080px;margin:0 auto;padding:28px 18px 26px;display:grid;grid-template-columns:1fr;gap:22px}
+.hero h1{font-family:"Noto Serif SC",serif;font-size:32px;line-height:1.25;margin:6px 0 8px;font-weight:900}
+.hero .sub{opacity:.92;font-size:15px}
+.badge{display:inline-block;background:#ffffff;color:#111111;font-weight:800;font-size:12px;padding:4px 10px;border-radius:999px;letter-spacing:.04em}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.meta span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);padding:6px 10px;border-radius:999px;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:22px;line-height:1.2} .stat small{opacity:.85}
+.nav{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);margin:0 -18px;padding:0 18px}
+.nav-in{max-width:1080px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-weight:700;font-size:14px;padding:10px 14px;border-radius:999px;background:var(--chip);min-height:40px;display:flex;align-items:center}
+.nav a:hover{outline:1.5px solid var(--ink)}
+section{margin-top:30px}
+h2{font-family:"Noto Serif SC",serif;font-size:24px;margin:0 0 6px;line-height:1.3;font-weight:900}
+h2 .no{color:var(--muted);font-family:"Noto Sans SC",sans-serif;font-size:13px;display:block;letter-spacing:.12em;font-weight:700}
+.lead{color:var(--muted);margin:0 0 16px;font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.formula{background:var(--solid);color:var(--solid-ink);border-radius:12px;padding:18px;text-align:center}
+.formula .big{font-size:22px;font-weight:900;letter-spacing:.02em;margin:8px 0}
+.formula p{opacity:.85;font-size:14px;margin:4px 0}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.kv div{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.kv b{font-size:18px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--muted);background:var(--surface2)}
+tr:last-child td{border-bottom:none}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid var(--line);background:var(--surface2);color:var(--muted)}
+.pill.g{background:var(--solid);color:var(--solid-ink);border-color:var(--solid)}
+.pill.r{background:transparent;color:var(--muted);border:1px dashed var(--muted)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+details summary{cursor:pointer;padding:16px 18px;font-weight:800;font-size:16px;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details .body{padding:0 18px 18px;border-top:1px solid var(--line)}
+details .body p,details .body li{font-size:15px}
+ul.tight{margin:8px 0;padding-left:20px} ul.tight li{margin:4px 0}
+.axis{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.axis div{border-radius:10px;padding:14px;text-align:center;font-weight:700}
+.axis .l{background:var(--solid);color:var(--solid-ink)}
+.axis .a{background:var(--surface2);border:1px solid var(--line)}
+.axis .b{background:var(--chip)}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc label{font-size:13px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+.calc input,.calc select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);color:var(--ink);font-size:16px;min-height:48px}
+.calc-out{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:14px}
+.btn{border:1.5px solid var(--ink);border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer;font-size:15px;min-height:48px;background:transparent;color:var(--ink)}
+.btn-primary{background:var(--solid);color:var(--solid-ink)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-amber{background:var(--solid);color:var(--solid-ink)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chipbtn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:10px 14px;font-weight:700;cursor:pointer;min-height:44px}
+.chipbtn.active{background:var(--solid);color:var(--solid-ink);border-color:var(--solid)}
+.progress{height:10px;background:var(--chip);border-radius:999px;overflow:hidden;margin:10px 0}
+.progress i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}
+.qcard h3{margin:0 0 4px;font-size:16px;line-height:1.55}
+.qmeta{font-size:12px;color:var(--muted);margin-bottom:10px}
+.opts{display:grid;gap:8px}
+.opt{width:100%;text-align:left;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:15px;line-height:1.5;min-height:48px}
+.opt.correct{border-color:var(--solid);background:var(--solid);color:var(--solid-ink);font-weight:700}
+.opt.wrong{border-style:dashed;border-color:var(--muted);background:var(--surface2);color:var(--muted)}
+.ans{display:none;margin-top:12px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+.ans.show{display:block}
+.note{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:14px}
+.steps{display:grid;gap:10px}
+.step{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.step n{flex:0 0 36px;width:36px;height:36px;border-radius:50%;background:var(--solid);color:var(--solid-ink);display:flex;align-items:center;justify-content:center;font-weight:900}
+.cheat{background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:18px}
+.cheat li{margin:6px 0;font-size:15px}
+footer{margin-top:36px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+footer a{word-break:break-all}
+.source-list{columns:1; font-size:13px}
+@media(max-width:720px){
+ .hero-in{grid-template-columns:1fr}
+ .grid2,.grid3,.calc{grid-template-columns:1fr} .stats{grid-template-columns:1fr 1fr} .kv{grid-template-columns:1fr}
+ .axis{grid-template-columns:1fr} h2{font-size:21px} .hero h1{font-size:27px}
+ table{font-size:13px} th,td{padding:8px 5px;word-break:break-word;overflow-wrap:anywhere}
+ .nav-in{flex-wrap:wrap;overflow-x:visible}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="themebar" role="group" aria-label="界面版本切换">
+<span class="tlabel">界面版本（黑白三版，内容相同）：</span>
+<button class="tbtn" onclick="setTheme('paper',this)">1 · 白底黑字</button>
+<button class="tbtn active" onclick="setTheme('dark',this)">2 · 黑底白字</button>
+<button class="tbtn" onclick="setTheme('gray',this)">3 · 灰白简洁</button>
+</div>
+
+<header class="hero"><div class="hero-in">
+<div>
+<span class="badge">考前复习 · 知识点 + 题库</span>
+<h1>涂料调色<br>考前复习与题库</h1>
+<p class="sub">教材：《涂料调色》第二版 · 周强 编著 · 化学工业出版社<br>ISBN 978-7-122-30464-3 · 定价 39.00 元 · 主线：认识颜色 → 用数据表示颜色 → 测定颜色 → 实际调色操作</p>
+<div class="meta"><span>适用：高职涂料方向</span><span>企业调色人员培训教材</span><span>扩充调研：2026-11-15（第二遍）</span><span>110 题完整题库（含课程新增36题）</span></div>
+<div class="stats">
+<div class="stat"><b>8 章</b><small>+ 附录 · 每章末有习题</small></div>
+<div class="stat"><b>110 题</b><small>单选32 · 多选10 · 填空18 · 判断22 · 简答14 · 计算/综合14</small></div>
+<div class="stat"><b>5 个实验</b><small>第八章调色操作</small></div>
+<div class="stat"><b><span class="key">ΔE*ab ≤ 1.0</span></b><small>教学验收线* D65/10°·d/8°</small></div>
+</div>
+<p style="font-size:12px;opacity:.85;margin-top:10px">* 合格线没有全国统一值，必须同时写明公式、光源/观察者、仪器几何与参考样，详见色差一节。</p>
+</div></div></header>
+
+<nav class="nav"><div class="nav-in">
+<a href="#cheat">⚡ 速记表</a><a href="#calc">🧮 色差计算器</a><a href="#know">📚 知识点（深化）</a><a href="#course-new">🆕 课程新增知识点</a><a href="#toc">🗂️ 目录权重</a><a href="#std">📐 标准与组成</a><a href="#quiz">✍️ 题库自测（110题）</a><a href="#lab">🧪 实训流程</a><a href="#faq">⚠️ 常见问题</a>
+</div></nav>
+
+<!-- CHEAT -->
+<section id="cheat">
+<h2><span class="no">LAST-MINUTE · 考前先看这页</span>速记：9 条主线 + 6 张必背表</h2>
+<p class="lead">主线 9 条是第一版速记；6 张表是第二遍调研新增的最值得背内容——加色/减色、Δ 分量方向、色差公式选用、几何选用、孟塞尔记号、缺陷对策，综合题直接套用。</p>
+<div class="cheat"><ol style="margin:0;padding-left:22px">
+<li><strong>三要素：</strong>色相、明度、饱和度；色光三原色 R/G/B 加色→白，颜料三原色 C/M/Y 减色→黑。可见光 380–780 nm。另有中性混合（旋转/空间并置，如点彩、像素远观），问“三种混合”别漏。</li>
+<li><strong>视觉：</strong>视锥约 600 万个辨色、视杆约 1.2 亿个只辨明暗；三原色学说 + 对立颜色学说（红—绿、黄—蓝、黑—白）+ 阶段学说综合解释。颜色三要素：光源—物体—观察者，缺一不可。</li>
+<li><strong>光源：</strong>D65 相关色温约 <span class="key">6504 K</span> 平均日光（最常用）、A 约 <span class="key">2856 K</span> 钨丝灯、F 系列荧光灯；同色异谱 = 光谱反射曲线不同、换光源变色，必须 D65 + A 至少双光源复核。色温只用于与黑体完全相同者，荧光灯/LED 只能说相关色温 CCT。</li>
+<li><strong>表色：</strong>CIE XYZ（1931 为 2° 小视场 1°–4°、1964 为 10° 大视场 &gt;4°）→ L*a*b*（+a*红/−a*绿、+b*黄/−b*蓝、L* 0黑—100白）→ L*C*h°（C*=√(a*²+b*²)，h°=arctan(b*/a*)）；孟塞尔记法 HV/C，V 0—10，例 5R 4/14。</li>
+<li><strong>色差公式（必默写）：</strong><span class="key">ΔE*ab = √[(ΔL*)²+(Δa*)²+(Δb*)²] = √[ΔL*²+ΔC*²+ΔH*²]</span>；CMC(l:c) 容差为椭球、纺织 CMC(2:1)、涂料常用 CMC(1.4:1)；ΔE00 是 CIE 现行推荐、与目视符合最好。三者是三个不同的数，不能直接比大小，公差必须写明公式+光源/观察者。</li>
+<li><strong>颜料性能：</strong>遮盖力看折射率差（金红石钛白最强，最佳粒径 0.2–0.4 μm）；着色力看吸收（有机 ≫ 无机，粒径越小越高）；吸油量 = 100 g 颜料被油完全润湿成团所需油克数，越小越好；耐光 8 级制（8 最好）、耐候 5 级制（5 最好）；耐候看结构/晶型（钛白、氧化铁、酞菁好；PR112 禁用于浅色 A 白基漆）。</li>
+<li><strong>仪器：</strong>分光光度仪测整条反射率曲线、可建库做电脑配色；普通色差计只给固定条件 ΔE、不能建库。口诀：配色用 d/8° SCI，验收看 SCE / 45/0°，金银珠光用多角度。</li>
+<li><strong>调色口诀：</strong>人工——先主色、由浅入深、深色少量间断加、小样先行、干膜比色；电脑——Kubelka-Munk K/S=(1−R∞)²/(2R∞) + 基础数据库 + 打样修正，通常 1–2 轮（第一版口径 1–3 轮）收敛。三条铁律：一次只调一个方向、能减浆不加补色、每次调后制干膜再测。</li>
+<li><strong>乳胶漆：</strong>A 白漆调浅色、B 半白调中间色、C 清漆调深色；同配方色浆 ≤4 种、不用互补色、PVC ≤45%；浮色（垂直分离）/发花（水平分离）先查相容性（指研实验）与 HLB / 表面张力。</li>
+</ol></div>
+<div class="grid2" style="margin-top:14px">
+<div class="card"><strong>表1 · 加色 RGB vs 减色 CMY</strong><table style="margin-top:8px"><tr><th></th><th>加色（色光）</th><th>减色（色料）</th></tr><tr><td>三原色</td><td>R、G、B</td><td>理想 C、M、Y（传统教学用红黄蓝近似）</td></tr><tr><td>规律</td><td>越加越亮，R+G+B=白</td><td>越加越暗越灰，C+M+Y≈黑</td></tr><tr><td>典型</td><td>R+G=黄，R+B=品红，G+B=青</td><td>M+Y=红，C+Y=绿，C+M=蓝</td></tr><tr><td>应用</td><td>屏幕、投影、舞台灯</td><td><strong>涂料、油墨、印刷</strong></td></tr></table><p style="font-size:13px;color:var(--muted);margin:6px 0 0">涂料是减色混合：浆种越多吸收越多、越暗越灰，所以用最少浆种达标。</p></div>
+<div class="card"><strong>表2 · Δ 分量方向罗盘（Δ=试样−标准）</strong><table style="margin-top:8px"><tr><th>分量</th><th>&gt;0</th><th>&lt;0</th><th>调回思路</th></tr><tr><td>ΔL*</td><td>偏浅/亮</td><td>偏深/暗</td><td>偏深加白漆或减黑/彩浆；偏浅加黑/彩浆</td></tr><tr><td>Δa*</td><td>偏红</td><td>偏绿</td><td>偏红减红浆或加少量绿/青浆；偏绿反之</td></tr><tr><td>Δb*</td><td>偏黄</td><td>偏蓝</td><td>偏黄减黄浆或加少量蓝/紫浆；偏蓝反之</td></tr><tr><td>ΔC*</td><td>更鲜艳</td><td>更灰</td><td>偏灰减白/黑浆提彩浆比；太艳加白/黑/补色压</td></tr></table></div>
+<div class="card"><strong>表3 · 色差公式选用</strong><table style="margin-top:8px"><tr><th>公式</th><th>思想</th><th>常用场景</th></tr><tr><td>ΔE*ab（1976）</td><td>Lab 欧氏距离，最简单</td><td>日常快检、过程控制</td></tr><tr><td>CMC(l:c)（1984）</td><td>ΔL*/ΔC*/ΔH* 加权、椭球容差</td><td>验收：纺织 2:1，涂料常用 1.4:1</td></tr><tr><td>CIE94（1994）</td><td>CMC 思路简化加权</td><td>涂料、塑料评定</td></tr><tr><td>ΔE00（2001）</td><td>SL/SC/SH + 旋转项 RT + a′修正</td><td>汽车、高端喷涂、出口、第三方检测</td></tr></table><p style="font-size:13px;color:var(--muted);margin:6px 0 0">经验目视（通用区间，不代替客户标准）：≤0.5 几乎看不出；0.5–1.0 专业细看才见；1.0–2.0 熟练品控可见；2.0–3.0 肉眼明显；&gt;3.0 多判不合格。汽车/新能源常要求 ΔE00≤0.8。</p></div>
+<div class="card"><strong>表4 · 测量几何选用</strong><table style="margin-top:8px"><tr><th>几何</th><th>特点</th><th>选用</th></tr><tr><td>d/8° SCI</td><td>含镜面，测真实物理色与光谱</td><td><strong>计算机配色必须</strong></td></tr><tr><td>d/8° SCE</td><td>排除镜面，接近人眼外观</td><td>普通 QC、目视对照</td></tr><tr><td>45/0°（0/45°）</td><td>只收漫反射，最近灯箱目视，对光泽/纹理敏感</td><td>验收比对</td></tr><tr><td>多角度</td><td>15°/25°/45°/75°/110° 多接收角</td><td>金属漆、珠光漆随角异色</td></tr></table></div>
+<div class="card"><strong>表5 · 孟塞尔记号速读</strong><p style="font-size:14px;margin:8px 0 0">格式 <strong>色相 明度/彩度</strong>：5R 4/14 = 正红、明度 4（中偏暗）、彩度 14（很鲜艳）；5Y 8/12 = 黄、明度 8（很亮）、彩度 12；5B 5/10 = 正蓝、明度 5、彩度 10；中性色 N+明度，如 N5 中灰、N9 近白。易错：斜线前明度、后彩度；色相前数字是色相级次（1–10），不是明度；0 与 10 只是理论极限，实物色样一般 1–9。</p></div>
+<div class="card"><strong>表6 · 缺陷对策速查</strong><table style="margin-top:8px"><tr><th>缺陷</th><th>一句话原因</th><th>一句话对策</th></tr><tr><td>浮色/发花</td><td>粒径/表面张力/HLB 差异 + 絮凝，干燥中分离</td><td>查相容性（指研）、调分散剂与 HLB、触变网络</td></tr><tr><td>色差超标</td><td>批次/称量/制样/光源条件不一致、同色异谱</td><td>统一制样与测量、多光源复核、按 Δ 方向修正</td></tr><tr><td>沉淀/结块</td><td>颗粒粗重大、黏度低、贮存 &gt;28℃ 或过久</td><td>防沉剂、合理黏度、15–28℃ 贮存；硬块废弃</td></tr><tr><td>失光/倒光</td><td>底材不净、稀释不当、潮湿结露、树脂少颜料多、絮凝</td><td>底材处理、按说明稀释、避潮施工、实干后打磨重涂</td></tr></table></div>
+</div>
+<div class="grid3" style="margin-top:14px">
+<div class="card"><strong>🎯 最易丢分点</strong><p style="margin:6px 0 0;color:var(--muted);font-size:14px">只写“ΔE &lt; 1”不写公式和条件；先加深色再加主色；湿膜就比色；色浆种类过多用了互补色。</p></div>
+<div class="card"><strong>📖 第一复习题源</strong><p style="margin:6px 0 0;color:var(--muted);font-size:14px">本书每章末习题：p.22、32、58、73、91、112、140。网上未找到本书官方历年真题卷，本页题库为公开相近试卷改编 + 代表性自编。</p></div>
+<div class="card"><strong>⚠️ 一个网传错算别抄</strong><p style="margin:6px 0 0;color:var(--muted);font-size:14px">某 QC 考核文算 ΔE=0.17，按其数据重算应为 ≈0.24（结论仍合格，但数值错）。见计算题区注。</p></div>
+</div>
+</section>
+
+<!-- CALC -->
+<section id="calc">
+<h2><span class="no">TOOL · 现算现判</span>色差 ΔE 计算器</h2>
+<p class="lead">输入标准样与试样的 L*a*b*，立刻算 ΔL* / Δa* / Δb* 方向和总色差，并给出修正方向。公式与判读与第四章一致。</p>
+<div class="card">
+<div class="formula"><div><span class="key">ΔE*ab = √[ (ΔL*)² + (Δa*)² + (Δb*)² ]</span></div><div class="big">ΔL* = L*试样 − L*标准 &nbsp;·&nbsp; Δa*、Δb* 同理</div><p>L* 0（黑）—100（白） · +a* 红 / −a* 绿 · +b* 黄 / −b* 蓝</p></div>
+<div class="axis" style="margin-top:14px">
+<div class="l">ΔL* &nbsp; + 偏亮/浅<br><small>− 偏暗/深 → 加白或减黑</small></div>
+<div class="a">Δa* &nbsp; + 偏红<br><small>− 偏绿 → 互补色微调</small></div>
+<div class="b">Δb* &nbsp; + 偏黄<br><small>− 偏蓝 → 互补色微调</small></div>
+</div>
+<div class="calc" style="margin-top:16px">
+<div><h3 style="margin:0 0 10px">标准样</h3>
+<label>L* 明度</label><input id="L1" type="number" step="0.1" value="70.0">
+<label style="margin-top:8px">a* 红绿</label><input id="A1" type="number" step="0.1" value="10.0">
+<label style="margin-top:8px">b* 黄蓝</label><input id="B1" type="number" step="0.1" value="20.0"></div>
+<div><h3 style="margin:0 0 10px">试样</h3>
+<label>L* 明度</label><input id="L2" type="number" step="0.1" value="71.2">
+<label style="margin-top:8px">a* 红绿</label><input id="A2" type="number" step="0.1" value="9.2">
+<label style="margin-top:8px">b* 黄蓝</label><input id="B2" type="number" step="0.1" value="21.0"></div>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:end">
+<div style="flex:1;min-width:180px"><label style="font-size:13px;font-weight:700;color:var(--muted)">判定限值</label><select id="limit" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);color:var(--ink);min-height:48px"><option value="1.0"><span class="key">ΔE*ab ≤ 1.0</span>（教学常用紧公差）</option><option value="0.5">ΔE ≤ 0.5（素色漆更严内控说法）</option><option value="0.8">ΔE ≤ 0.8（某施工方案项目控制值，非国标）</option></select></div>
+<button class="btn btn-primary" onclick="calcDE()">计算 ΔE 并判定</button>
+<button class="btn btn-ghost" onclick="loadEx()">载入课本例：ΔE=3.0</button>
+</div>
+<div class="calc-out" id="calcOut">点“计算”查看结果。预置例子算得 ΔE≈1.75，不合格：偏亮、偏绿、偏黄。</div>
+<p style="font-size:13px;color:var(--muted);margin-top:10px">经验尺度（非标准，仅参考）：ΔE00 &lt;1 不易察觉；1–2 并排近看可见；&gt;2 一眼可见。同一对颜色换公式数值不同（如某例 ΔE*ab=3.08 而 ΔE00=1.18），所以容限必须写全条件。</p>
+</div>
+</section>
+
+<!-- KNOWLEDGE -->
+<section id="know">
+<h2><span class="no">KNOWLEDGE · 按章展开（深化版）</span>核心知识点（8 章 + 附录）</h2>
+<p class="lead">点开每一章看必背定义、对比表和易考判断——第二遍已按章补细：第一章光度学与三要素、第二章眼结构/色盲/适应、第三章色度图/主波长/色温/同色异谱深讲、第四章 ANLAB/Hunter/白度与公式选用、第五章孟塞尔 vs CIE、第六章 SCI/SCE 与制样影响、第七章颜料全性能/8 支核心色浆/三原则、第八章 K/S 建库与附录用途。第三、四、六、七、八章是计算与实操重点；第一、二章多出概念题；第五章考孟塞尔标号。</p>
+
+<details open><summary>第一章 · 色彩的物理基础和属性 <span class="pill a">概念区</span></summary><div class="body">
+<p><strong>颜色三属性（必背）：</strong></p>
+<table><tr><th>属性</th><th>含义</th><th>调色影响</th></tr>
+<tr><td><strong>色相 / 色调</strong></td><td>颜色彼此区别的特征：红、黄、绿、蓝、紫</td><td>换主色色浆 / 加互补色微调</td></tr>
+<tr><td><strong>明度</strong></td><td>物体表面明暗程度</td><td>加白提高、加黑降低（同时拉低饱和度）</td></tr>
+<tr><td><strong>饱和度 / 彩度</strong></td><td>浓淡、鲜艳与阴晦之别，偏离同明度灰色的程度</td><td>加白冲淡、加黑或互补色降低；复色混合一般降低饱和度</td></tr></table>
+<ul class="tight"><li>可见光约 <strong>380–780 nm</strong>（有的教材取 400–700 nm 近似，考试以教材为准）；低于 380 nm 紫外、高于 780 nm 红外，人眼看不见。牛顿三棱镜把白光分解为红橙黄绿青蓝紫，<strong>红光波长最长、紫光最短</strong>；单色光只有一个波长，复色光是多波长混合。</li><li>光度学只记名称与量纲方向：光通量（lm）、发光强度（cd）、照度（lx，单位面积接受的光通量）、亮度（cd/m²）。比色箱照度要求 1000–4000 lx（GB/T 3181 口径；第一版引 GB/T 9761-88 同为 1000–4000 lx）。</li><li><strong>颜色产生三要素：光源—物体—观察者，缺一不可。</strong>光源色由光谱功率分布 S(λ) 决定；物体色（涂料、漆膜）由选择性吸收/反射/透射决定，同一漆膜换光源会变色、没有光就没有物体色；观察者是人眼+大脑，不同人、视场、适应状态感知可不同——这正是 CIE 要规定标准观察者的原因。记忆句：“光是因，物是体，眼是判。”论述“同一涂料室内外看起来不一样”就从三要素展开。</li><li>颜色的粗略表示：命名法（俗名通俗但不精确）、色谱表示法（色卡对照编号，涂料行业最常用）、光谱表示法（反射率曲线，最精确完整但不直观；仪器测色本质是先测光谱再算 Lab）。章末习题 p.22。</li><li>三属性构成一个立体，调一个，另外两个通常跟着变。</li></ul>
+</div></details>
+
+<details><summary>第二章 · 色视觉的生理基础 <span class="pill a">概念区</span></summary><div class="body">
+<ul class="tight">
+<li><strong>眼球结构（由外到内）：</strong>纤维膜（角膜透光屈光、巩膜保护）、血管膜（虹膜控制瞳孔进光量、睫状体、脉络膜）、视网膜（感光层）；内容物晶状体（调焦）、玻璃体、房水。光线经角膜→瞳孔→晶状体→玻璃体，成<strong>倒立缩小的实像</strong>落在视网膜上。瞳孔强光缩小、弱光放大。</li>
+<li><strong>视锥细胞</strong>约 <strong>600 万个</strong>，集中在中央凹：明视觉、辨色与细节，分 L/M/S 三种，峰值敏感约 <strong>564 nm（红）、533 nm（绿）、437 nm（蓝）</strong>；<strong>视杆细胞</strong>约 <strong>1.2 亿个</strong>，分布在中央凹周围：暗视觉、只辨明暗不辨色，感光物质是<strong>视紫红质</strong>（视蛋白+视黄醛，维生素 A 是原料，缺维生素 A 可致夜盲）。<strong>中央凹只有视锥、没有视杆，是视觉最敏锐处；盲点无感光细胞。</strong></li>
+<li><strong>三原色学说（Young-Helmholtz）：</strong>视网膜有红、绿、蓝三种锥体感受器，颜色由三者响应比例决定；能解释颜色混合与色盲（缺某一种锥细胞），解释不了对比、后像、成对色盲。</li>
+<li><strong>对立颜色学说（Hering）：</strong>红—绿、黄—蓝、黑—白三对拮抗机制成对编码，解释“有带黄的红、无带绿的红”；能解释成对色盲、对比、后像，解释不了颜色混合。</li>
+<li><strong>阶段学说（综合，现行教学解释）：</strong>第一阶段（视网膜）按三色说产生三种锥体反应，第二阶段（视神经传导）重组成三对对立反应——两学说不矛盾，分属不同加工阶段。简答模板：先各述两学说，再落到阶段学说。</li>
+<li><strong>色觉缺陷：</strong>二色视者（色盲）完全缺一种锥细胞（红色盲缺 L、绿色盲缺 M、蓝色盲缺 S 极罕见，最常见红绿色盲）；异常三色视者（色弱）三种都在但某一种峰值偏移，最常见绿色弱、约占男性 5%；多为 X 染色体隐性遗传、男性多于女性；全色盲三种全不工作、只能靠视杆看黑白灰、约 1/30000，不要把普通红绿色盲说成“看不见颜色”。检查用<strong>石原色盲检查图</strong>；调色、比色岗位应要求色觉正常并定期复查。</li>
+<li><strong>视觉适应：</strong>明适应暗→亮约 1–2 秒即适应；暗适应亮→暗约 15 分钟基本适应、约 30–40 分钟达最大（视紫红质再合成）；色适应久注视鲜艳色后该色感觉减弱，注视红半分钟再看灰背景见绿色后像。同时对比：同一灰块在黑背景上比在白背景上显得更亮——<strong>比色背景必须统一用中性灰，样板与标准板并排对称放置</strong>。颜色恒常性有限，仪器数据比人眼可靠；连续比色勿过久，疲劳后辨色力下降，换眼休息、看中性灰“清眼”。</li>
+<li><strong>视觉三要素：</strong>光源、物体、观察者，缺一不可，任一改变颜色感知就变。</li>
+</ul>
+<table><tr><th>混合</th><th>三原色</th><th>规律</th><th>适用</th></tr>
+<tr><td>加色混合</td><td>R、G、B</td><td>亮度增加，三原色按比例混合得白光</td><td>屏幕、灯光</td></tr>
+<tr><td>减色混合</td><td>C、M、Y（习惯称蓝、红、黄）</td><td>吸收增多、反射减少、明度降低，混合得黑</td><td><strong>涂料、油墨配色</strong></td></tr></table>
+<p style="font-size:14px;color:var(--muted)">配色三定律（通用表述）：补色律、中间色律、代替律。注意：本书第七章“配色的三原则”原文未在网上核实到逐字表述，不要把通用三定律直接等同于书中三原则，以实体书 p.130 为准。</p>
+</div></details>
+
+<details><summary>第三章 · CIE-XYZ 标准色度系统 <span class="pill r">计算重点</span></summary><div class="body">
+<ul class="tight">
+<li>由颜色匹配实验建立：CIE 1931-RGB（R 700 nm、G 546.1 nm、B 435.8 nm）匹配某些光谱色时出现<strong>负值</strong>（需在被匹配光一侧加原色），使用不便；经线性转换得到假想原色 XYZ，三刺激值恒为正，其中 <strong>Y 代表亮度</strong>，X、Z 主要携带色度信息。三刺激值 X=∫S(λ)·x̄(λ)dλ（Y、Z 同理），附录一至五就是匹配函数数值表与权重系数表，考试一般查表计算、不背数值。</li>
+<li><strong>色度坐标：</strong>x=X/(X+Y+Z)，y=Y/(X+Y+Z)，z=1−x−y。色度图只用 (x,y)、<strong>不含亮度</strong>：淡粉与深红色度相同在图上是同一点，差别只在 Y。图形为马蹄形，边缘是光谱轨迹（380–700 nm 单色光），两端连线是紫线（非光谱色）；任意两光加色混合结果必在连线线段上；互补色是与某色混合得白点的另一色。</li>
+<li><strong>1931 标准观察者 = 2° 视场（适用 1°–4°，小色样、远距离）；1964 补充标准观察者 = 10° 视场（适用 &gt;4°，大面积色板、近距离）。</strong>2° 只刺激中央凹、以视锥为主；10° 中央凹周围视杆也参与、短波（400–500 nm）感受性更高。目前测色趋向 10°，深色低反射样品精度更好。<strong>在 2° 下匹配的两色在 10° 下可能不匹配</strong>，标准板与试样必须用同一观察者测，涂料常写 D65/10° 或 D65/2°，不注明无法复现。两色度图唯一重合点是等能白光 E（x=y=0.3333）。</li>
+<li><strong>主波长 λd：</strong>从白点出发画直线通过样品色度点延长至光谱轨迹，交点波长即主波长，是客观描述色相的方法（如 508 nm 的绿）；紫线区颜色没有主波长，改用补色波长（反方向延长）。<strong>兴奋纯度 pe</strong>=白点到样品点距离 ÷ 白点到主波长点距离，0（白点无彩）—1（纯光谱色），越高越鲜艳。色纯度与兴奋纯度定义不同，不要混用。</li>
+<li><strong>色温度 vs 相关色温度：</strong>黑体加热颜色沿普朗克轨迹红→白→蓝白变；光源颜色与某温度黑体<strong>完全相同</strong>时该温度为色温度（K）；只是<strong>最接近</strong>轨迹某点时为相关色温度 CCT，荧光灯、LED 只能用 CCT。低色温约 2700–3000 K 暖黄红，高色温约 6500 K 冷蓝白。标准照明体是规定的光谱功率分布数据，标准光源是实现它的灯具，不要混为一谈。</li>
+<li>第三章计算考点：三刺激值、色度坐标、主波长与兴奋纯度（p.50–58），以课堂讲义和附录光谱表为准。</li>
+</ul>
+<table><tr><th>光源 / 照明体</th><th>色温 / 性质</th><th>记忆点</th></tr>
+<tr><td><strong>A 光源</strong></td><td>约 <span class="key">2856 K</span>，钨丝灯，偏黄</td><td>查同色异谱的复核光源</td></tr>
+<tr><td>B 光源</td><td>约 4800 K，中午直射日光</td><td>已较少用</td></tr>
+<tr><td>C 光源</td><td>约 6700 K，白天自然光</td><td>早期日光标准</td></tr>
+<tr><td><strong>D65</strong></td><td>6500 K（<span class="key">6504 K</span>），平均日光</td><td>涂料/纺织最常用评色光源</td></tr>
+<tr><td>D50</td><td>约 5000 K</td><td>印刷评色常用</td></tr>
+<tr><td>E 光源</td><td>等能白光 5500 K，假想光源</td><td>仅为简化计算</td></tr>
+<tr><td><strong>F 系列</strong></td><td>各类荧光灯：F2 4230K、F7 6500K（D65模拟）、F11 TL84 等</td><td>商场/家庭照明模拟</td></tr></table>
+<div class="note"><strong>同色异谱（必考，讲深）：</strong>两样品<strong>光谱反射曲线不同</strong>，但在某一照明体+观察者下三刺激值相等、看起来相同，换光源或观察者就不同，这对颜色叫同色异谱对。成因：人眼只有三种视锥，把不同光谱“压缩”成三个数、信息丢失，不同颜料组合可凑出相同 XYZ 但光谱形状不同。危害：实验室 D65 合格、客户 A 光源车间/F 光源商场下明显色差；换颜料供应商后“仪器合格、目视不合格”。检验：标准光源箱至少 D65+A 对照（可加 F11/TL84、UV），仪器算同色异谱指数 MI（GB/T 15610 有目视评价方法），对比光谱曲线（越接近程度越低）。预防：尽量用与标准样<strong>相同的颜料体系/色浆组合</strong>；电脑配色选多光源 ΔE 与 MI 都合格的配方，不只看 D65 下 ΔE 最小；深色、鲜艳色、含荧光增白剂的白色重点查；换批次/供应商必须重做多光源验证。另有<strong>观察者同色异谱</strong>：2° 与 10° 下也可能不匹配，报告必须注明观察者。标准光源箱目视比色照度 1000–4000 lx。显色指数 CRI 最高 100，高精度测色通常要求 CRI ≥ 90；色温只反映冷暖，与显色性无关。</div>
+</div></details>
+
+<details><summary>第四章 · 均匀颜色空间及色差计算 <span class="pill r">核心章 · 必考公式</span></summary><div class="body">
+<p><strong>为什么要均匀空间：</strong>XYZ 不均匀——色度图上相同几何距离在不同颜色区感知色差不同（麦克亚当椭圆大小、方向随颜色而变）。均匀空间的目标是几何距离相等=视觉色差相等，ANLAB、Hunter Lab、CIELAB、CIELUV 都是尝试，没有一个完美均匀。</p>
+<p><strong>L*a*b*：</strong>L* 0黑—100白；a* 轴 +红/−绿；b* 轴 +黄/−蓝。圆柱坐标：彩度 C*ab=√(a*²+b*²)，色调角 h°=arctan(b*/a*)（0°红、90°黄、180°绿、270°蓝），L*C*h° 是 L*a*b* 的极坐标表达。分解关系 <strong>ΔE*ab²=ΔL*²+ΔC*²+ΔH*²</strong>，看 ΔC*、ΔH* 能判断色差主要是深浅、鲜艳还是色相问题，比只看 ΔE 更有指导意义。</p>
+<p><strong>ANLAB 与 Hunter Lab（历史脉络）：</strong>ANLAB（1944，Adams–Nickerson）基于孟塞尔重标定数据、五次多项式后简化为立方根函数，是 1976 CIELAB 的直接前身，记住“ANLAB→CIELAB”这条线即可。Hunter Lab（1948/1966 定型）用平方根由 XYZ 算 L、a、b（<strong>不带星号</strong>以区别 CIELAB），计算简单但黄色区压缩、蓝色区拉伸，均匀性不如 CIELAB，现已少用；不要把 Hunter ΔE 与 ΔE*ab 混为一谈。</p>
+<table><tr><th>公式</th><th>年代</th><th>特点与场景</th></tr>
+<tr><td><strong>CIE 1976 ΔE*ab</strong></td><td>1976</td><td>欧氏距离，最简单通用、所有仪器默认；与视觉符合最差，饱和色/蓝色区常高估。日常快检、过程控制、老标准指定时用</td></tr>
+<tr><td><strong>CMC(l:c)</strong></td><td>1984 SDC，1995 ISO</td><td>对 ΔL*/ΔC*/ΔH* 加权、容差椭球，l=明度权重、c=彩度权重，不同 l:c 不可比。验收判定：纺织 CMC(2:1)（明度容差是彩度 2 倍），涂料/塑料常用 CMC(1.4:1)（如动车组涂料标准）</td></tr>
+<tr><td>CIE94</td><td>1994/1995</td><td>CMC 思路简化加权，分参考与纺织条件；比 ΔE*ab 更贴合视觉，涂料、塑料用得多（教材未单列，知道即可）</td></tr>
+<tr><td><strong>CIEDE2000 ΔE00</strong></td><td>2001 提出，2013 标准化</td><td>CIE 现行推荐，与目视符合最好，尤擅低彩度/深色/高饱和蓝；加权重 SL/SC/SH、旋转项 RT（修正蓝色区色调—彩度交互）、中性色附近 a′ 修正；参量 KL/KC/KH 参考条件均为 1（D65、1000 lx、L*=50 灰背景）。公式最复杂靠仪器算。汽车、高端喷涂、出口、第三方检测用</td></tr></table>
+<p><strong>选用口诀：</strong>日常简单用 ΔE*ab；验收、签样用 CMC 或 ΔE00；客户图纸/协议写什么就用什么。同一对颜色三个公式是三个不同的数，公差必须写全，如“ΔE00≤1.0（D65/10°）”，只写“ΔE≤1.0”是无效公差。</p>
+<ul class="tight"><li>1 个 NBS 单位 ≈ 视觉阈值的 5 倍；孟塞尔相邻两级 ≈ 10 NBS 单位。</li><li><strong>白度（第四章第四节）：</strong>不是物理量，是“白”的感知量化，理想白 100、绝对黑 0。常用：① CIE/甘茨白度 W10=Y10+800(xn−x10)+1700(yn−y10)（D65/10°），配色调值 T10=900(xn−x10)−650(yn−y10)（0 中性白、正偏绿、负偏红）；② Hunter 白度；③ R457 蓝光白度（457 nm，造纸 ISO 白度）。不同公式不可直接比，报告须注明公式与光源/观察者。含荧光增白剂白度可 <strong>&gt;100</strong>；白度高≠不黄，要同时看黄度指数 YI 与色调值；测荧光样须控制 UV（见第六章）。第一版所说“喜爱白/反射率测定两类”以讲义为准，与上列公式并行记忆。</li><li><strong>修正方向（Δ=试样−标准）：</strong>偏亮→加黑/减白；偏暗→加白/减黑；偏红→微加绿或减红浆；偏绿→微加红浆；偏黄→微加蓝或减黄浆；偏蓝→微加黄浆。少量多次。举例：ΔL*=−1.5、Δa*=+1.3、Δb*=+1.7 → 偏深、偏红、偏黄，方向是提亮+减红+减黄，不是盲目加红黄浆（见计算题 Q70）。</li></ul>
+</div></details>
+
+<details><summary>第五章 · 孟塞尔表色系统 <span class="pill b">标号换算</span></summary><div class="body">
+<table><tr><th>维度</th><th>符号</th><th>标度</th></tr>
+<tr><td>色相 Hue</td><td>H</td><td>5 主色 R/Y/G/B/P + 5 间色 YR/GY/BG/PB/RP = 10 色相，每色相再分 10，共 100；5 号为代表色</td></tr>
+<tr><td>明度 Value</td><td>V</td><td>中心轴 0（理想黑）—10（理想白），N 表示无彩色，越大越亮</td></tr>
+<tr><td>彩度 Chroma</td><td>C</td><td>自中心轴 0 向外增大，普通约 0–20，低于 0.5 即无彩色</td></tr></table>
+<p><strong>记法 HV/C：</strong>5R 4/14 = 正红（红第 5 级、不偏黄红也不偏紫红）、明度 4（中偏暗）、彩度 14（非常鲜艳）；10Y 8/12 = 黄 10 号、明度 8、彩度 12；5B 5/10 = 正蓝、明度 5、彩度 10；5Y 8.5/14 = 很亮很鲜艳的黄；中性灰记 N V，如 N5 中灰、N9 近白。易错：不要读成“5 红 4 除以 14”。</p>
+<ul class="tight"><li>创立者美国艺术家 Albert H. Munsell，1898 年创制、20 世纪初完善，是第一个把色相/明度/彩度分为视觉等距、相互独立三维度的系统。色立体是<strong>不规则</strong>的：各色相最大彩度不同（黄在高明度处彩度可很高，蓝紫在低明度处较高），同一彩度数在不同色相/明度上鲜艳感不完全相同；彩度理论无上限，普通颜料实际约到 10，荧光/反光可达 30；明度 0 与 10 是理论极限、无实物色样，实际 1–9。</li><li>定标号注意事项：① 标准光源下比色；② 样品与色卡材质、光泽、面积尽量一致；③ 先定色相、再明度、最后彩度；④ 在两色卡之间取中间值或注约值，不要硬凑。</li><li><strong>孟塞尔新标系统（1943）：</strong>美国光学学会用视觉实验重标定，公布各孟塞尔色的 CIE 三刺激值，使系统有了仪器换算基础，这批数据也是 ANLAB/CIELAB 来源之一。</li></ul>
+<table><tr><th></th><th>孟塞尔（视觉系统）</th><th>CIE（物理—数学系统）</th></tr>
+<tr><td>性质</td><td>按人眼等感觉间距排列的实物色卡</td><td>由光谱与匹配函数算出的连续数值</td></tr>
+<tr><td>优点</td><td>直观易学、便于口头与色卡沟通</td><td>可仪器测、计算、传递，可描述任意颜色（含光源色）</td></tr>
+<tr><td>缺点</td><td>只能表示实物表面色，色样有限离散、材质有差异</td><td>XYZ 不均匀、Lab 仍不完美，数字不直观</td></tr>
+<tr><td>调色应用</td><td>描述目标色、分析三属性偏差、培训“看色”</td><td>仪器测色、色差判定、计算机配色、质量记录</td></tr></table>
+<p style="font-size:14px;color:var(--muted)">中国标准 GB/T 15608—2006《中国颜色体系》即孟塞尔系统的规范形式；建筑另有 GB/T 18922《建筑颜色的表示方法》。本章还讲 XYZ 与孟塞尔的转换及在涂料调色中的应用（p.82–89）。</p>
+</div></details>
+
+<details><summary>第六章 · 颜色测定及测色仪器 <span class="pill r">实操重点</span></summary><div class="body">
+<table><tr><th>仪器</th><th>原理 / 特点</th><th>局限</th></tr>
+<tr><td><strong>分光光度测色仪</strong></td><td>每 10/20 nm 测整条反射率曲线；可模拟 A/C/D50/D65/F；可输出 L*a*b*、ΔE、同色异谱指数</td><td><span class="pill g">可建库 · 可电脑配色</span></td></tr>
+<tr><td>光电积分式 / 色差计</td><td>滤光片模拟人眼，直接输出三刺激值或色差</td><td>精度较低；有的只给 ΔE 不给绝对值，<strong>不能建库、不能电脑配色</strong></td></tr>
+<tr><td>目视比色</td><td>标准光源箱中与色卡并排比较</td><td>受光源、观察者、背景影响大，须按 GB/T 9761</td></tr></table>
+<table><tr><th>几何</th><th>特点与选用</th></tr>
+<tr><td><strong>45/0°（或 0/45°）</strong></td><td>45° 环形照明、0° 接收，镜面反射恰好错开探测器、只收漫反射；最接近灯箱目视（45° 照明、0° 观察），与人眼契合、质检好；对光泽/纹理敏感，光泽不同的同色样测出色差大；只能测平滑表面，<strong>不能用于电脑配色</strong></td></tr>
+<tr><td><strong>d/8° SCI（包含镜面）</strong></td><td>漫射照明、8° 接收，镜面口关闭收全部反射；消除光泽粗糙影响，测材料<strong>真实物理色</strong>；<strong>计算机配色必须用 SCI</strong></td></tr>
+<tr><td><strong>d/8° SCE（排除镜面）</strong></td><td>镜面口打开吸收镜面反射；更接近人眼外观；普通 QC、与目视对照用 SCE</td></tr>
+<tr><td><strong>多角度</strong></td><td>15°/25°/45°/75°/110° 多接收角；金属漆、珠光漆等随角异色样品必须用，单角度无法表征</td></tr></table>
+<p><strong>两种测色方法：</strong>目视法直接反映最终视觉，但受人眼/疲劳/环境影响、不能给数值、不能电脑配色；仪器法客观可重复可传递，但条件必须与目视一致，否则“数据合格、眼睛不合格”。分光仪原理是光栅/干涉滤光片逐波长测光谱反射率（通常 400–700 nm、间隔 10 nm，高端 360–780 nm），光源台式多脉冲氙灯、便携多 LED；色差计是三滤光片模拟匹配函数直接积分 XYZ，固定光源/观察者。</p>
+<p><strong>光源与观察者是计算条件、不是换灯泡：</strong>同一光谱选 D65 与选 A 算出的 Lab 完全不同，必须与客户/标准约定一致，常用 D65/10°（大板近看）或 D65/2°（小样）。报告必须同时写明：仪器、几何、光源、观察者、孔径、SCI/SCE，缺一项都无法复现。日常操作：预热→黑白板校正（白板干净不划伤、定期校准）→选条件→测标准→测样品多点平均→记录；白板脏、校正过期是新手最常见系统误差。</p>
+<table><tr><th>制样因素</th><th>影响与正确做法</th></tr>
+<tr><td>膜厚</td><td>薄膜透底材色、透明颜料最敏感；厚膜偏深 → 同一涂布器、同一湿膜厚度、同一道数；膜厚按 GB/T 13452.2 核查</td></tr>
+<tr><td>底材</td><td>颜色/吸收/粗糙度透过影响 → 同一底材（标准试板按 GB/T 9271），先确认完全遮盖</td></tr>
+<tr><td>光泽</td><td>高光泽与哑光反射不同、哑光偏浅偏灰 → 标准与试样光泽一致并注明（GB/T 9754 的 20°/60°/85°）</td></tr>
+<tr><td>干燥/固化</td><td>湿膜偏浅干后变深、水性差最大，未干透数值漂移 → <strong>一律测干膜</strong>，按规定时间/温度养护后再测</td></tr>
+<tr><td>表面/面积/温湿度</td><td>灰尘指纹划痕橘皮改变反射；孔径大于均匀区会误测 → 样板平整清洁、测区避边缘缺陷；孔径（Φ8/Φ4 mm）小于均匀色区、不均匀多点平均；按 GB/T 9278 状态调节</td></tr></table>
+<p style="font-size:14px;color:var(--muted)">一句话：“测色测的是样板，不是漆液。”荧光样品（增白剂/荧光颜料）结果取决于仪器 UV 成分，必须用 UV 控制（UV 含/不含/校准）并注明条件，否则不同仪器不可比。</p>
+</div></details>
+
+<details><summary>第七章 · 调色基础知识（颜料、色浆、配方） <span class="pill r">应用重点</span></summary><div class="body">
+<p><strong>颜料分类（四种分法都要会）：</strong>按化学组成——无机（钛白、氧化铁、氧化铬绿、炭黑、钒酸铋、铬系、镉系、群青）与有机（偶氮、酞菁、喹吖啶酮、苯并咪唑酮、DPP 等）；按来源——天然（矿物/植物/动物）与合成（现涂料几乎全用合成）；按颜色——白（钛白 PW6、氧化锌、立德粉）、黑（炭黑 PBk7、铁黑 PBk11）、彩色；按功能——着色颜料、体质颜料/填料（碳酸钙、硫酸钡、滑石粉、高岭土、二氧化硅：降成本、调流变、控光泽、增厚）、防锈颜料（磷酸锌、磷酸铝：钝化缓蚀）、功能颜料（铝粉、珠光、夜光）。对比记忆：无机耐光耐热耐候好、易分散、遮盖高，但色谱不全、色较暗、着色力相对低；有机色谱全、鲜艳、着色力高、易研磨不易沉淀，但耐晒耐热耐候较差、价格高（高性能品种例外）。密度大、颗粒粗易沉淀；铬黄、镉系含重金属受法规限制，优先无铅无镉替代。</p>
+<p><strong>色浆：</strong>组成 = 颜料 + 润湿分散剂 + 载体（水/溶剂/树脂分散体）+ 助剂（消泡、防沉、保湿、防腐等）。无树脂色浆浓度高、通用性强，是当前主流；有树脂色浆贮存好但应用受限。分类：水性色浆（只用于水性）、水油通用色浆（可用于水性与弱溶剂醇酸/聚氨酯改性醇酸，但含多元醇与 APE 表面活性剂，用于乳胶漆会降耐水性、降深色漆黏度、升 VOC）、溶剂型色浆（通用载体常醛酮树脂或丙烯酸树脂）。<strong>核心 8 支（常考默写）：钛白 PW6、炭黑 PBk7、铁黄 PY42、铁红 PR101、有机黄 PY74、有机红 PR112、酞菁蓝 PB15:3、酞菁绿 PG7</strong>；小包装浅色精度常加低浓度黑/蓝/绿浆与铁棕浆；10–16 支系统（如 12 支 888 系统、16 支 Monicolor 系统）色域更广。好色浆标准：含量高、细度细、不沉淀不絮凝、与基础漆相容好、对漆膜耐久无不良影响。色浆是乳胶漆调色的实际加料形态，须与基础漆相容。</p>
+<table><tr><th>性能</th><th>定义</th><th>规律</th></tr>
+<tr><td><strong>遮盖力</strong></td><td>遮盖底色的能力，乳胶漆以对比率表示，常用 g/m² 或对比率</td><td>本质是颜料与介质<strong>折射率之差</strong>，差越大越高；金红石钛白最强；最佳粒径 0.2–0.4 μm（约光波长一半）；无机一般 &gt; 有机</td></tr>
+<tr><td><strong>着色力</strong></td><td>与基准白颜料混合后的着色能力，以相对百分率表示</td><td>取决于吸收，吸收越强越高；粒径越小越高；同色相有机远高于无机；过细则耐光/光泽变差</td></tr>
+<tr><td><strong>吸油量</strong></td><td>100 g 颜料被精制亚麻仁油完全润湿成均匀团块所需油的克数</td><td>越小越好；与比表面积、结构有关；大→研磨需树脂/溶剂多、黏度高、光泽低</td></tr>
+<tr><td><strong>粒度与分布</strong></td><td>颗粒大小及分布</td><td>最佳约 0.2–0.4 μm；粒径差太大易浮色；色浆细度一般控制在 20 μm 以下</td></tr>
+<tr><td><strong>耐光 / 耐候</strong></td><td>耐光：日光（尤其紫外）下保色；耐候：天然/人工气候下保性能</td><td><strong>耐光 8 级制（8 最好）、耐候 5 级制（5 最好）</strong>，无机一般优于有机；耐候看结构与晶型，外墙首选金红石钛白、氧化铁、酞菁蓝/绿，红黄色选型最难</td></tr>
+<tr><td><strong>耐热 / 耐化学</strong></td><td>耐热：热固化/接触热源最高耐受温度；耐化学：耐水/酸/碱/溶剂</td><td>耐热无机＞有机，烘烤漆必核对；钛白、炭黑、氧化铬绿耐酸好，氧化锌、钛白、群青耐碱好，按环境选</td></tr>
+<tr><td><strong>润湿与分散</strong></td><td>被树脂/溶剂润湿并均匀分散的难易</td><td>差→絮凝、浮色、着色力下降、失光，靠分散剂与研磨工艺解决</td></tr></table>
+<p><strong>配方设计要点：</strong>成膜物按使用环境（户内/户外、耐候、耐化学、干燥方式）选，决定附着力、耐化学、耐温、柔韧性与性能上限；颜料按颜色、遮盖、耐久、成本综合选，注意<strong>颜基比 P/B</strong>：高则遮盖好、成本低，但防腐与力学下降；低则性能好、成本高。深色多用透明/高着色力颜料，浅色以钛白为基。人工靠经验灵活、设备简单，但受人眼光线影响、批次稳定性差；计算机靠光谱与 K/S 客观可存档，但对荧光、金属、珠光有局限，最终仍需人眼鉴定。</p>
+<p><strong>影响颜色的因素（综合题素材）：</strong>膜厚（增加加深至完全遮盖后趋稳，透明颜料最敏感）、光泽（高光泽对比大、哑光偏浅偏灰，比色必须光泽一致）、底材（多孔吸树脂使颜料富集变深、深色底材上浅色遮盖不足偏暗）、干燥（湿浅干深、水性最明显；干燥慢黑蓝上浮时间长干后更深；烘烤温度、胺类固化剂偏深影响浅色）、浮色/絮凝、观察条件（光源、角度、面积——大面积看起来比小色卡深/饱和、背景、疲劳）。</p>
+<p><strong>外墙选型速查：</strong>红——PR112 着色力高但耐候一般、<strong>禁用于 A 白基漆浅色</strong>，浅色改用 PR122 / PV19 / PR168 / PR254；黄——浅色用 PY138 / PY109，中深色可用 PY74 / PY83；蓝绿——PB15、PG7/PG36 耐候均好；白黑——锐钛型钛白、立德粉、铬酸铅禁用于外墙，炭黑着色力极强、抗紫外好。</p>
+<p><strong>人工调色 7 步（细化）：</strong>① 分析目标色：定色相范围、明度、彩度，判断由哪几种颜料组成、主/副色与比例，选基础漆（白基础漆调浅色、清/深色基础漆调深色与鲜艳色）→ ② 拟初步配方：凭经验或色卡配方算各浆约量，称量要准（记录到 0.01 g）→ ③ 小样调制（约十分之一量）：先主色（量大、着色力小），着色力强的副色间断少量加入、由浅入深、边加边搅拌 → ④ 干膜比色：样板不小于 5cm×5cm、干燥/养护后在标准光源箱 D65 下与标准板并排比色（北向天光为传统最终标准），再换 A 光源查同色异谱，同时仪器测 Δ → ⑤ 按 ΔL*/Δa*/Δb* 少量多次微调、重复“加浆—搅拌—刮板—干燥—比色”，切忌一次过量 → ⑥ 放大生产：等比放大，首批仍取样比色 → ⑦ 记录、留样、测 ΔE 存档。注意：同一树脂体系才能混用；色浆溶剂体系要与基础漆相容，否则分层、沉淀、絮凝甚至胶化；深色助剂（催干剂、固化剂）颜色对浅色漆有影响，要计入配方。</p>
+<p><strong>配色三原则（教材 p130，教学归纳）：</strong>① 由浅入深、少量多次（调过头只能加白回退，代价是彩度下降与成本上升）；② 先主色、后副色，用最少颜料种数（能用两种不用三种，同体系同批次才能混用）；③ 小样先行、干膜比色、留样记录（基础漆型号+各浆克重+ΔE）。<strong>提醒：p130 原文三条未从公开网络检索到原文，以上是按本章教学与行业通用做法的归纳，不要当教材原文引用，考原文默写以教材 p130 为准。</strong>实用原则：同配方色浆一般 ≤4 种（含黑白）、不用互补色；高饱和色不用白颜料改用清漆；乳胶漆 PVC 一般 ≤45%。</p>
+<div class="note" style="margin-top:10px"><strong>计算机配色（Kubelka-Munk）：</strong>对不透明涂层 K/S=(1−R∞)²/(2R∞)，R∞ 为不透明膜反射率，K 吸收系数、S 散射系数；无化学反应时混合色 K/S 具加和性 (K/S)混合=(C₁K₁+C₂K₂+…)/(C₁S₁+C₂S₂+…)，测多波长 K/S 已知各颜料 K、S 即可解浓度——这是数学核心。例：R∞=0.50 → K/S=0.25；R∞ 越小 K/S 越大。流程：测目标色光谱（400–700 nm）→ 各色料按浓度梯度（1%、2%、5%、10%、15%、25%、50%、75%、100%）与白/透明底混合制板、测反射率算 K/S 建<strong>基础数据库</strong>（建库最耗时最关键，须与生产同一基础漆、同一色浆、同一工艺，换原料重建或校正）→ 软件预报 2–4 组候选配方（按 ΔE、MI、成本、颜料种数、遮盖力排序）→ 打样实测 → 把试样光谱输回软件按 K/S 偏差重算补加量、配方修正，一般 1–2 轮（第一版口径 1–3 轮）达标 → 入库传调色机。局限：荧光、金属/珠光随角异色、透明色、极深色（非线性区）精度差；库外新颜料无法预测；最终仍需人眼鉴定。</div>
+</div></details>
+
+<details><summary>第八章 · 调色操作（5 个实验） <span class="pill t">见下方实训区</span></summary><div class="body">
+<p>实验一 仪器使用 p141（色差计、Datacolor 400、手动调色机）· 实验二 基础漆数据库建立 p154 · 实验三 色卡样品色调配 p158 · 实验四 调色配方修正 p159 · 实验五 调色综合训练 p161（含涂料企业调色工作）。详细流程、验收与注意事项见下方“实训流程”一节。实验指导书原文未在网上公开，具体称量值与仪器菜单以老师发放的指导书为准。</p>
+<p><strong>附录一至七用途（p165）：</strong>附录一 CIE 1931-RGB、附录二 CIE 1931 XYZ、附录三 CIE 1964-RGB 补充、附录四 CIE 1964 补充标准观察者光谱三刺激值——都是查表计算三刺激值的原始数据；附录五 XYZ 权重分布系数——加权坐标法快速计算；附录六 X、Y、Z 与 VX、VY、VZ 关系——RGB 与 XYZ 换算；附录七 CIE 1931 色度图 A/B/C/E 恒定主波长线斜率——图解法求主波长。考试不背表，但要知道“算三刺激值去附录查什么表”。</p>
+</div></details>
+</section>
+
+<!-- COURSE NEW -->
+<section id="course-new">
+<h2><span class="no">COURSE NEW · 深职爱学习《配色技术》</span>配色技术课程新增（深职爱学习）</h2>
+<p class="lead">来源：深职爱学习《配色技术》（刘红波，2 学分 32 课时，6 章 10 节 434 页，课程编号 18600000019721）通读后真正新增的 13 类内容，与前面教材知识点互补。对应题库第 75–110 题（题头标【课程新增】）。课件个别笔误已按正确口径写：b* 正值表示黄色、负值表示蓝色；白 L*=100、黑 L*=0。</p>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">1 · 同色异谱 / 同色同谱</h3><ul class="tight"><li><strong>同色异谱（条件等色）：</strong>两色反射率曲线不同，在一种光源下同色、换一种光源后不同色。必须多光源核查。</li><li><strong>同色同谱：</strong>两色反射率曲线相同，在任何光源下都同色，是最可靠的等色。</li><li><strong>例（目标色 3234 试配）：</strong>D65/10° ΔE* <span class="key">0.84</span>、A/10° <span class="key">0.95</span> 均 &lt;1.0 合格，F11/10° <span class="key">2.49</span> 超标——同一试配在不同光源下结论不同，正是同色异谱，签样不能只看 D65。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">2 · ΔE* 合格线与分档（单位 NBS）</h3><ul class="tight"><li><strong><span class="key">涂料调色合格线：<span class="key">ΔE* &lt; 1.0</span></span>。</strong></li><li><span class="key">0–0.5</span>：微量色差，几乎感觉不到；<span class="key">0.5–1.5</span>：轻量色差，略可察觉；<span class="key">1.5–3.0</span>：能感觉到；数值越大越明显。</li><li>报告 ΔE* 必须同时注明公式、光源/观察者与测量几何，只写一个数无法复现。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">3 · 常用评色灯源补充</h3><table><tr><th>灯源</th><th>色温 / 特征</th><th>模拟场景</th></tr><tr><td><strong>TL84</strong></td><td><span class="key">4000 K</span></td><td>欧洲、日本商店灯光</td></tr><tr><td><strong>CWF</strong></td><td><span class="key">4150 K</span></td><td>美国商店灯光</td></tr><tr><td><strong>F 灯</strong></td><td><span class="key">2700 K</span> 暖色</td><td>家庭、酒店</td></tr><tr><td><strong>UV</strong></td><td>峰值 <span class="key">365 nm</span> 紫外</td><td>查荧光增白剂 / 荧光颜料</td></tr></table><p style="font-size:14px;color:var(--muted);margin:8px 0 0">与前面 D65（约 <span class="key">6504 K</span> 平均日光）、A（约 <span class="key">2856 K</span> 钨丝灯）一起记：观察评定色彩要用 D65 等标准光源或标准光源箱、保证光源一致、注意色温、显色性与光谱分布，并防同色异谱（色变异）。</p></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">4 · 分光光度测色仪结构与几何</h3><ul class="tight"><li><strong>五大部分：</strong>光源、积分球、光栅（单色器）、检测器、信号处理系统。</li><li><strong>积分球：</strong>内壁涂硫酸钡 / 氧化镁（高反射漫反射涂层），开孔面积 &lt;10%，直径 152 mm 一类规格；光源常用氙灯 + D65 滤镜 + UV 滤镜。</li><li><strong>几何：</strong>漫射照明/垂直接收 d°/0°、垂直照明/漫射接收 0°/d°，Datacolor 等实际仪器常用 <strong>d°/8°</strong>。</li><li><strong>标准白板：</strong>MgO、BaSO₄ 或白陶瓷板，反射率按 100% 标定。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">5 · 反射率公式与测色流程</h3><ul class="tight"><li><strong>反射率 = 反射光 / 入射光 ×100% = 待测样品反射量 / 标准白板反射量 ×100%。</strong></li><li><strong>流程：</strong>测反射率曲线 → 计算三刺激值 X、Y、Z → 换算 L*、a*、b* → 计算 ΔE* 并判方向。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">6 · 用反射率曲线看三属性</h3><ul class="tight"><li><strong>色相</strong>看峰值（主）波长；<strong>明度</strong>看曲线整体高低（越高越亮）；<strong>饱和度</strong>看波峰波谷差 / 曲线宽窄（差越大、越窄越鲜艳）。</li><li><strong>理想曲线记形：</strong>黄、品红、青与红、绿、蓝各有典型峰谷位置；白色全程约 100%，灰色约 50% 平直，黑色约 0%。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">7 · 基础漆 A / B / C 与色浆全套</h3><table><tr><th>基础漆</th><th>钛白含量</th><th>调色范围</th><th>对比率</th><th>色浆量（相对）</th></tr><tr><td><strong>A 漆</strong></td><td><span class="key">18–23</span></td><td>浅色</td><td>0.90–0.93</td><td>&lt;3</td></tr><tr><td><strong>B 漆</strong></td><td><span class="key">7–13</span></td><td>中色</td><td>0.80–0.85</td><td>1–5</td></tr><tr><td><strong>C 漆</strong></td><td><span class="key">0</span></td><td>深色</td><td>0.04–0.1</td><td>&gt;5</td></tr></table><ul class="tight"><li>一般工厂只生产 A 和 C，B 由 A、C 按比例配得；随目标加深 / 色浆加量增大，按 A → B → C 换漆。</li><li><strong>色浆：</strong>颜料分散于载体中的着色剂；分水性 / 溶剂型、无机 / 有机；细度 &lt;15 μm、不挥发分 30–60%。</li><li><strong>色浆性能要求 4 条：</strong>相容性好、不浮色发花；着色力强；耐候、耐光、耐酸碱符合应用要求；贮存及批次稳定性好。</li><li><strong>BASF 色浆编号（常考）：</strong>CM1 钛白 PW6、CM2 碳黑 PBK7、CM3 铁红 PR101、CM4 铁黄 PY42、CM5 酞菁蓝 PB15:3、CM6 酞菁绿 PG7、CM7 单偶氮红 PR112、CM8 单偶氮黄 PY74、CM9 恶嗪紫 PV23、CM10 中黄 PY153、CM11 柠檬黄 PY138、CM12 DPP 红 PR254、CM15 萘酚橙 PO5。</li><li><strong>指研实验查相容性：</strong>揉搓区与未揉搓区比色，ΔE 越小相容性越好（课件例约 0.06–0.21）。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">8 · 人工配色步骤与量化要点</h3><ul class="tight"><li><strong>三步：</strong>设计配方 → 调色操作 → 目视比色。</li><li><strong>量化要点：</strong><span class="key">色浆总量 ≤10%</span>；主色浆先加约 <span class="key">70%</span>，其余每次少加、多次加；用 <span class="key">250 μm</span> 湿膜制备器刮涂制板；目视比色色样面积 <span class="key">&gt;<span class="key">13 cm²</span></span>、观察<span class="key">视角 &lt;2°</span>；记住干膜深、湿膜浅，必须干后比色。</li><li><strong>色相环：</strong>相邻色夹角 &lt;72°、对比色约 120°（按课件 6.3 节口径）；随色浆加量增大，基础漆 A 换 B 再换 C。</li><li><strong>配方 6 条注意：</strong>① 先做指研实验查相容性；② <span class="key">色浆总量 ≤10%</span>；③ 选用耐候等级接近的色浆；④ 不用补色同用（不用红+绿、黄+紫、橙+蓝同用）；⑤ 最好一个主色；⑥ 色浆品种尽可能少。</li><li><strong>互补色两套表述（按各节原文答）：</strong>3.1 节为 CMY 体系——红-青、绿-品红、蓝-黄；6.3 节为传统红黄蓝体系——红-绿、蓝-橙、紫-黄。两套不一致，答题注明出处节次。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">9 · 电脑配色（Datacolor Match Pigment）</h3><ul class="tight"><li>在 Match Pigment 配色中心操作：输入 / 调用目标色（课件例目标色 3234），候选配方选<strong>目标功能最小且色浆最少</strong>的一组。</li><li>课件例 Job 568 / 574 为 100 kg 批量配方输出；打样测色后软件修正、人工修色至 <span class="key">ΔE* &lt;1.0</span>。</li><li><strong>基础数据库建库</strong>是前提：各色浆按浓度梯度制板测 K/S，K/S 与浓度近似线性，换原料须重建或校正。</li></ul></div>
+
+<div class="card" style="margin-bottom:14px"><h3 style="margin:0 0 8px">10 · 涂膜颜色缺陷</h3><ul class="tight"><li><strong>其他缺陷名词：</strong>泛碱、雨痕、褪色、泛白、颜色痕迹——先认现象再查基材、施工与颜料耐候。</li><li><strong>浮色 = 垂直方向</strong>深浅不均；<strong>发花 = 水平方向</strong>深浅不均。发花形态：六角花纹、竖条纹、色斑、色圈、云雾状。</li><li><strong>浮色 4 条处理：</strong>① 不用超细及密度差过大的颜料；② 加高岭土等触变添加剂建网络；③ 选合适增稠剂、调好高低剪切黏度；④ 后添加时用润湿分散剂调 HLB 值。</li></ul></div>
+
+<div class="grid2">
+<div class="card"><h3 style="margin:0 0 8px">11 · 传统表色法</h3><ul class="tight"><li>习惯命名法、系统命名法：用文字描述颜色，直观但不精确。</li><li><strong>中国建筑色卡</strong>：GB/T 18922-2008《建筑颜色的表示方法》。</li><li><strong>Pantone 色卡</strong>：国际专色系统，设计、印刷与涂料沟通常用。</li></ul></div>
+<div class="card"><h3 style="margin:0 0 8px">12 · 色觉与视觉生理</h3><ul class="tight"><li>色盲比例约男 5%、女 0.8%，调色岗位须查色觉。</li><li>明视觉靠锥体细胞（辨色）、暗视觉靠杆体细胞（只辨明暗）；明适应、同时对比、颜色错觉，以及距离、记忆都会影响颜色判断——所以比色要统一条件、仪器复核。</li></ul></div>
+</div>
+<div class="card" style="margin-top:14px"><h3 style="margin:0 0 8px">13 · 品牌仪器与软件</h3><ul class="tight"><li>仪器 / 软件品牌：Datacolor、X-Rite 爱色丽、美能达（Konica Minolta）。</li><li>软件：DataColor Tools（测色质控）、Match Pigment（电脑配色）。</li><li>立邦“5 分钟个性配色”为门店快速配色服务流程示例：选色 → 电脑配方 → 调色机加浆 → 摇匀出漆。</li></ul></div>
+</section>
+
+<!-- TOC -->
+<section id="toc">
+<h2><span class="no">SYLLABUS · 知道每章考什么</span>全书目录与复习权重</h2>
+<p class="lead">第二版共 8 章 + 附录，193 页（化学工业出版社新书目录；另有书商记 195 页 / 2018-01-01 出版，页数以实体书版权页为准）。权重为按结构与职业考试分布的复习建议，非官方分值。</p>
+<div class="card" style="padding:6px 18px"><table>
+<tr><th>章</th><th>标题（起始页）</th><th>权重</th></tr>
+<tr><td>第一章</td><td>色彩的物理基础和属性（p.1）— 光与颜色、三属性、粗略表示法 · 习题 p.22</td><td><span class="pill a">概念</span></td></tr>
+<tr><td>第二章</td><td>色视觉的生理基础（p.23）— 人眼、三原色学说、加/减色混合、对立学说 · 习题 p.32</td><td><span class="pill a">概念</span></td></tr>
+<tr><td>第三章</td><td>CIE-XYZ 标准色度系统（p.33）— RGB→XYZ、标准观察者、标准光源、色度计算 · 习题 p.58</td><td><span class="pill r">重点</span></td></tr>
+<tr><td>第四章</td><td>均匀颜色空间及色差计算（p.59）— L*a*b*、色差公式、白度 · 习题 p.73</td><td><span class="pill r">核心</span></td></tr>
+<tr><td>第五章</td><td>孟塞尔表色系统（p.74）— HV/C、图册、与 XYZ 转换 · 习题 p.91</td><td><span class="pill b">标号</span></td></tr>
+<tr><td>第六章</td><td>颜色的测定及常用测色仪器（p.92）— 几何条件、荧光测色、分光/光电积分仪器 · 习题 p.112</td><td><span class="pill r">重点</span></td></tr>
+<tr><td>第七章</td><td>调色基础知识（p.114）— 基础漆与色浆、配方设计、人工/计算机配色 · 习题 p.140</td><td><span class="pill r">重点</span></td></tr>
+<tr><td>第八章</td><td>调色操作（p.141）— 5 个实验</td><td><span class="pill t">实操</span></td></tr>
+<tr><td>附录</td><td>附录一—七 光谱三刺激值表、权重系数等（p.165）— 参考文献 p.193</td><td>查表</td></tr>
+</table></div>
+<div class="card" style="margin-top:14px"><strong>🏠 建筑乳胶漆调色 8 步（第七—八章综合，高频应用题）</strong>
+<div class="steps" style="margin-top:12px">
+<div class="step"><n>1</n><div><strong>定目标</strong> — 以标准色卡/客户样板为准，确认内外墙、光泽、干膜厚度（配方一般按干膜 30–60 μm 设计）</div></div>
+<div class="step"><n>2</n><div><strong>选基础漆</strong> — A 白漆（高钛白）调浅色、B 半白调中间色、C 清漆（低/无钛白）调深色。用白漆调深色是典型错误：遮盖过剩、色浆超量、成本翻倍、耐水耐擦洗下降</div></div>
+<div class="step"><n>3</n><div><strong>选色浆</strong> — ≤4 种、不用互补色；外墙按耐候表选型，浅/中/深不用同一耐候等级一刀切</div></div>
+<div class="step"><n>4</n><div><strong>出方</strong> — 电脑按数据库出多组配方排序选用，或人工凭经验拟方、小样先行</div></div>
+<div class="step"><n>5</n><div><strong>称量分散</strong> — 准确称量；色浆加入后只搅拌/混匀，<strong>不再砂磨或高速分散</strong>（高剪切引起絮凝）</div></div>
+<div class="step"><n>6</n><div><strong>制板测色</strong> — 干后测 L*a*b*/ΔE（注明 D65/10° 等条件）；光源箱 D65 目视复核 + A 光源查同色异谱</div></div>
+<div class="step"><n>7</n><div><strong>修正</strong> — 按 ΔL*/Δa*/Δb* 微调，1–3 轮至达标</div></div>
+<div class="step"><n>8</n><div><strong>放大质控</strong> — 同色号 3–5 桶混桶防批差；留样；记录配方与 ΔE；色浆添加量有上限</div></div>
+</div></div>
+</section>
+
+<!-- STANDARDS -->
+<section id="std">
+<h2><span class="no">BASICS · 跨章节综合</span>涂料组成、色卡系统与相关标准</h2>
+<p class="lead">第二遍新增：四大组分、常见色卡系统、按主题分组的标准号。标准引用前须核对最新有效版本，老版本已标注。</p>
+<div class="card" style="padding:6px 18px"><table>
+<tr><th>组分</th><th>作用</th><th>例子与对颜色的影响</th></tr>
+<tr><td><strong>成膜物质</strong>（主要成膜物质）</td><td>成膜、粘结颜填料，决定附着力、耐化学、耐温、柔韧性与性能上限</td><td>醇酸、丙烯酸、环氧、聚氨酯树脂；苯丙、纯丙乳液。树脂本身颜色（胺类固化剂偏深）影响浅色漆；润湿能力影响展色</td></tr>
+<tr><td><strong>颜填料</strong>（次要成膜物质）</td><td>着色、遮盖、补强、防锈、降成本、调光泽</td><td>着色颜料、体质颜料（碳酸钙、硫酸钡、滑石粉）、防锈颜料（磷酸锌）。直接决定颜色、遮盖力、着色力</td></tr>
+<tr><td><strong>溶剂 / 分散介质</strong>（挥发分）</td><td>溶解/分散成膜物与颜填料，调黏度满足施工，不留膜</td><td>有机溶剂、水（乳胶漆分散介质为去离子水）。挥发梯度影响流平、光泽与浮色；选错致絮凝、分层</td></tr>
+<tr><td><strong>助剂</strong></td><td>用量小（约 10⁻³ 量级）、作用大、不可或缺</td><td>分散剂、消泡剂、流平剂、防沉剂、增稠剂、催干剂、成膜助剂、防霉杀菌剂。分散剂影响浮色，消泡剂影响表面，增稠剂影响流变与絮凝</td></tr>
+</table></div>
+<div class="grid2" style="margin-top:14px">
+<div class="card"><strong>🎨 常见颜色 / 色卡系统</strong><table style="margin-top:8px"><tr><th>系统</th><th>来源与用途</th></tr>
+<tr><td><strong>RAL 劳尔</strong></td><td>德国，欧洲工业通用；经典系列 213 色、四位数代码，以漆膜呈现，最适合油漆调色与金属涂装比对</td></tr>
+<tr><td><strong>Pantone 彩通 PMS</strong></td><td>美国，国际专色；分 C（铜版纸）、U（胶版纸）、TPX/TCX（纺织），印刷、包装、设计交流多</td></tr>
+<tr><td><strong>NCS 自然色彩系统</strong></td><td>瑞典，以视觉黑度、彩度、白度与色相描述；瑞典、挪威、西班牙检验标准，欧洲建筑/室内常用</td></tr>
+<tr><td><strong>孟塞尔 / 中国颜色体系</strong></td><td>GB/T 15608—2006 + GSB 16-2062 标准样册</td></tr>
+<tr><td><strong>中国建筑色卡</strong></td><td>GB/T 18922 + GSB 16-1517，建筑涂料表示与选用</td></tr>
+<tr><td><strong>漆膜颜色标准样卡</strong></td><td>GB/T 3181—2008 + GSB 05-1426，83 种常用色漆漆膜颜色标准</td></tr>
+<tr><td>DIC / CNCS / Coloro</td><td>DIC 日本（亚洲印刷/涂料）；CNCS 中国纺织服装</td></tr></table></div>
+<div class="card"><strong>📐 相关中国标准（按主题，核对最新版）</strong><table style="margin-top:8px"><tr><th>主题</th><th>标准</th></tr>
+<tr><td>术语与表示</td><td>GB/T 5698 颜色术语；GB/T 3977—2008 颜色的表示方法；GB/T 15608—2006 中国颜色体系；GB/T 18922 建筑颜色的表示方法</td></tr>
+<tr><td>物体色测量</td><td>GB/T 3979—2008 物体色的测量方法；GB/T 11186.1/.2/.3—1989 涂膜颜色的测量方法（1989 年版，引用前核对，部分产品标准现引 GB/T 3979 / ISO 7724 / ASTM D2244）；GB/T 15610—2008 同色异谱目视评价；GB/T 20147.6—2026 CIEDE2000 色差公式（检索目录所列，实施日期未在本轮核实）</td></tr>
+<tr><td>目视比色与漆膜标准</td><td>GB/T 9761—2008 色漆的目视比色（等同 ISO 3668）；GB/T 3181—2008 漆膜颜色标准（83 色）</td></tr>
+<tr><td>遮盖力与光泽</td><td>GB/T 1726—1979 遮盖力测定法（老版本）；GB/T 23981.1—2019 白色和浅色漆对比率；GB/T 9754 镜面光泽 20°/60°/85°</td></tr>
+<tr><td>白度与仪器</td><td>GB/T 17749—2008 白度的表示方法；GB/T 5950 建筑材料与非金属矿产品白度；JJG 595 测色色差计检定规程；JJG 512—2021 白度计检定规程</td></tr>
+<tr><td>试板与调节</td><td>GB/T 9271 标准试板；GB/T 9278 状态调节温湿度；GB/T 13452.2 漆膜厚度测定</td></tr></table></div>
+</div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+<h2><span class="no">QUESTION BANK · 110 题 · 点选即判</span>题库自测（原 74 题 + 课程新增 36 题）</h2>
+<p class="lead">第 1–36 题为第一版，第 37–74 题为第二遍新增（对应调研 Q1–Q38），第 75–110 题为【课程新增】——来自深职爱学习《配色技术》课程（刘红波）通读新增的 13 类内容（单选 12、多选 4、填空 6、判断 6、简答 4、计算+综合 4），原 74 题一题未删改。标注说明：<strong>[S]</strong> 源自公开试卷/文章原题或直接改编；<strong>[R]</strong> 按本书目录与知识点编写的代表性题目，非原题。选择/判断点一下就出对错，填空/简答/计算点“看答案”自评。做完看总分。组卷计分参考（调研建议）：单选 2 分、多选 3 分（错选漏选不得分）、填空每空 1 分、判断 1 分、简答 6–8 分、计算 8–10 分、综合 12–15 分。</p>
+<div class="card">
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center"><strong id="scoreText">已答 0 / 110 题 · 答对 0 题</strong><button class="btn btn-ghost" onclick="resetQuiz()">↺ 重新开始</button></div>
+<div class="progress"><i id="progBar"></i></div>
+<div class="toolbar" id="filters">
+<button class="chipbtn active" data-f="all">全部 110</button>
+<button class="chipbtn" data-f="single">单选 32</button>
+<button class="chipbtn" data-f="multi">多选 10</button>
+<button class="chipbtn" data-f="fill">填空 18</button>
+<button class="chipbtn" data-f="judge">判断 22</button>
+<button class="chipbtn" data-f="short">简答 14</button>
+<button class="chipbtn" data-f="calc">计算+综合 14</button>
+</div>
+<p style="font-size:13px;color:var(--muted);margin:0">多选题需选全才得分，选完点该题的“提交”按钮。填空/简答/计算不计入自动得分，看完答案后可点“自评答对”计分。</p>
+</div>
+<div id="quizList" style="margin-top:14px"></div>
+</section>
+
+<!-- LAB -->
+<section id="lab">
+<h2><span class="no">LAB · 第八章 5 个实验</span>实训流程与验收</h2>
+<p class="lead">流程以第八章实验标题为骨架，细节综合行业通用流程补全；具体称量值与仪器菜单以实验指导书为准。</p>
+<div class="grid2">
+<div class="card"><strong>实验一 · 仪器使用（p141）</strong><p style="font-size:14px;color:var(--muted)">全自动色差计、Datacolor 400 分光光度仪、手动调色机定量加浆。目的：会校正、会测色、会加浆。开机预热 → 黑白校正（白板干净、必要时黑板）→ 选光源/观察者/几何（如 D65/10°、d/8°）→ 测量口紧贴样板防漏光 → 同一样板多点测 3 次取平均 → 记录 L*a*b* 与 ΔE。注意：勿用 0°/45° 数据直接做电脑配色，配色用 SCI。</p></div>
+<div class="card"><strong>实验二 · 基础漆数据库建立（p154）</strong><p style="font-size:14px;color:var(--muted)">建库质量决定预报精度，是最关键一步。选定基础漆（不同钛白含量 3–5 种）与色浆体系 → 每支色浆按浓度梯度（1%、2%、5%、10%、15%、25%、50%、75%、100%）与白/透明基础漆混合制板 → 干后测光谱反射率、算 K/S 录入 → 按水性/油性、基底分类。梯度须覆盖常用浓度，样板平整干燥，制板条件须与生产一致，同一原料同一工艺，原料更换即重建或校正。</p></div>
+<div class="card"><strong>实验三 · 色卡样品色调配（p158）</strong><p style="font-size:14px;color:var(--muted)">认色卡分析目标色（色相/明度/彩度、主副色）→ 按深浅选基础漆 → 拟配方 → 小样试调、先主色后副色少量间断加 → 制板干膜比色 → D65 目视复核 + A 光源查同色异谱、仪器测 Δ。由浅入深，色浆 ≤4 种、不用互补色，直至与色卡一致。</p></div>
+<div class="card"><strong>实验四 · 调色配方修正（p159）</strong><p style="font-size:14px;color:var(--muted)">按预报配方打样 → 实测 ΔL*/Δa*/Δb*/ΔE 不合格 → 把试样光谱输回软件、软件给出补加量（或人工按方向表微调）→ 再打样、再测，一般 1–2 轮达标。体会“修正轮次”与“一次准确率”：每次只纠主因、少量多次，每轮配方与 ΔE 都记录。</p></div>
+<div class="card"><strong>实验五 · 调色综合训练（p161）</strong><p style="font-size:14px;color:var(--muted)">从接任务（客户色卡/样板）→ 分析 → 预报 → 试调 → 修正 → 放大 → 记录/留样，全流程独立完成；并了解企业调色岗分工（来样分析、数据库维护、生产调色、质量判定）。考核：配方准确性、ΔE 达标、操作规范、记录完整、成本意识。安全与记录：戴手套、口罩，通风操作；色浆勿入口、勿接触眼睛；废漆废板按规定处置；每次记录基础漆型号、色浆批号、称量、ΔE、光源条件，否则数据无法复现。</p></div>
+<div class="card" style="border:2px solid var(--ink)"><strong>✅ 通用验收（报告必须写全）</strong><p style="font-size:14px;color:var(--muted)">本页采用教学线：<strong><span class="key">ΔE*ab ≤ 1.0</span>（D65/10°，d/8° 积分球，干膜规定厚度）</strong>。报告须同时记录 ΔL*、Δa*、Δb* 三个分量（只写总 ΔE 无法指导修正），并注明光源、观察者、仪器型号与测量次数。合同另有约定以合同为准。</p></div>
+</div>
+<div class="card" style="margin-top:14px"><strong>👆 指研实验（相容性快速检验，必会）</strong><p style="font-size:14px;margin:6px 0 0">最大量色浆加入乳胶漆搅匀后涂布于黑白格纸/刮涂纸，表干前用手指揉搓约 1 分钟，实干后比较揉搓与未揉搓部位：<strong>颜色一致 = 相容好；揉搓区颜色变深/有色差 = 颜料絮凝、浮色倾向大</strong>（揉搓外力使颜料解絮凝、着色力恢复，颜色因此不同）。浮色/发花诊断先做指研与小样定主因，再针对性调整，不要盲目加分散剂。</p></div>
+<div class="card" style="margin-top:14px"><strong>🖥️ 乳胶漆调色流程深化</strong><p style="font-size:14px;margin:6px 0 0">选基础漆：浅色/粉彩用高钛白 A 类，深色若用 A 漆钛白会“冲灰”、怎么加浆也调不深；深色选着色力高、耐碱好的色浆（乳胶漆为碱性体系）。调色机按配方自动计量注浆 → 振荡/搅拌 <strong>3–5 分钟</strong>至均匀 → 刮板、干燥、比色（D65+A）→ 不合格人工微调或软件修正 → 记录配方。注意：色浆加量过大（尤其通用色浆）会降低耐水性、降低深色漆黏度、升高 VOC、降低光泽与遮盖力；调好后不要再加水、加胶；施工前再次充分搅拌；大面积上墙看起来比小色卡更深，先做墙面小面积试涂。</p></div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<h2><span class="no">TROUBLESHOOTING · 答应用题用</span>常见调色问题与处理</h2>
+<div class="card" style="padding:6px 18px"><table>
+<tr><th>问题</th><th>主要原因</th><th>处理 / 预防</th></tr>
+<tr><td><strong>浮色</strong></td><td>颜料密度/粒径/润湿不同沉降速度不同；HLB 不平衡、表面张力差大；颜料絮凝</td><td>选分散稳定性好的色浆；补加/改换润湿分散剂调 HLB 与表面张力；增稠剂选假塑性弱的缔合型</td></tr>
+<tr><td><strong>发花</strong></td><td>各颜料表面张力不同；干燥涡流（贝纳德漩涡）带动颜料分离；展色性差</td><td>有机硅类表面活性剂平衡表面张力；触变助剂建网络、快速恢复黏度；改善润湿分散剂</td></tr>
+<tr><td><strong>絮凝 / 相容性差</strong></td><td>色浆稳定性差；分散剂不足被颜填料抢夺</td><td>指研实验判断；增加/改换分散剂至通过；相容好时勿再高速分散。表现：着色力下降、色相红移、光泽降低</td></tr>
+<tr><td><strong>色差超标</strong></td><td>配方/称量错、批差、基材膜厚不同、仪器条件不一致、同色异谱</td><td>核对记录；同仪器同条件多点复测；按 ΔL*/Δa*/Δb* 修正；换光源复核</td></tr>
+<tr><td><strong>颜色发灰不鲜艳</strong></td><td>色浆饱和度不足；种类过多/用了互补色；白颜料过多或 PVC &gt;45% 干遮盖冲淡</td><td>换鲜艳色浆；≤4 种、不用互补色；高饱和色用清漆；PVC ≤45%</td></tr>
+<tr><td><strong>遮盖不足 / 过剩</strong></td><td>中深色钛白少、有机多则不足；白漆调深色则过剩</td><td>按浅/中/深选高/中/低钛白基础漆；无机+有机搭配；色浆不超最大加入量（超量损害耐水、耐擦洗）</td></tr>
+<tr><td><strong>外墙褪色变色</strong></td><td>颜料结构/晶型不适宜；浅深色同耐候等级；粒径过小；乳液耐候差；PVC 过高</td><td>按耐候表选颜料；选纯丙/硅丙等耐候乳液；中低彩度优先无机颜料</td></tr>
+<tr><td><strong>湿膜浅、干膜深</strong></td><td>干燥后颜色加深是正常现象；干燥慢时黑、蓝等易上浮颜料浮色时间长、干后更深</td><td>干样板等干后再比色；湿样板滴样比较；记录干/湿对照，别误判调过头</td></tr>
+<tr><td><strong>沉淀 / 结块</strong></td><td>颜填料颗粒粗、比重大；黏度过低；贮存温度过高（&gt;28℃）或时间过长；稀释剂过多。轻者搅匀可用，重者结硬块</td><td>选合适原材料与防沉剂；保证合理黏度；贮存 15–28℃、定期摇动/变换放置方向；硬块部分废弃，勿强行使用</td></tr>
+<tr><td><strong>失光 / 倒光</strong></td><td>底材粗糙/不净（酸、碱、油、水）；稀释剂过多或不当；快干漆遇潮湿、温差结露；树脂少、颜料多；颜料絮凝致表面粗糙。失光=应有光泽却无光，倒光=干后短期光泽渐退</td><td>做好底材处理（除锈、磷化、清洁）；按说明控制稀释比例；避免阴雨、潮湿施工；实干后打磨重涂</td></tr>
+<tr><td><strong>絮凝返粗</strong></td><td>分散剂被乳液/增稠剂剥离，颜料保护层变薄；色浆变稠、细度变差</td><td>换合适分散剂（解絮凝），不要盲目加量；控制缔合增稠剂与表面活性剂配伍</td></tr>
+</table></div>
+<div class="note" style="margin-top:14px"><strong>还没核实 / 有出入的（考试别当定论背）：</strong>① 第七章“配色的三原则”（p.130）原文三条未在网上找到，本页第七章列的是教学通用归纳与行业实用原则，不能直接等同于原文，考原文以教材 p130 为准；② ANLAB 完整公式以教材为准（本页只记 ANLAB→CIELAB 脉络与 Hunter Lab 区别）；③ 第三章主波长/兴奋纯度无本书原题数值，定义与算法以教材为准；④ 第八章实验的具体称量值未公开；⑤ 页数有 193 / 195 两种记载，可见光有 380–780 nm 与 400–700 nm 两种取法（本页用 380–780 nm），A 光源色温有 <span class="key">2856 K</span> / 约 2845 K 两种口径（考试答 <span class="key">2856 K</span> 为宜），均以教材取值为准；⑥ ΔE 限值与经验目视区间均为行业惯例说法，无统一国标，以合同/客户标准为准；⑦ GB/T 11186（1989）、GB/T 1726（1979）为老版本，GB/T 20147.6—2026 实施日期未在本轮核实，引用标准号前核对全国标准信息公共服务平台最新有效版本；⑧ 第二遍调研来源为 web 索引检索与文本抓取、未做 live-browser 逐项打开核对，公式与标准号均有至少两个独立来源印证，但标准全文细节未逐条核对。</div>
+</section>
+
+<footer>
+<p><strong>资料来源（2026-11-15 两遍全网调研，主要来源）：</strong></p>
+<p class="source-list">
+【第一遍】教材书目与目录：book.tinynews.org/books/25010089787；化学工业出版社新书目录 cip.com.cn（ISBN/定价/页数）·
+颜色科学课件与色差公式：renrendoc.com/paper/416857435、fr.slideserve.com/trella/2476795 ·
+浙江省 2015 自考《印刷色彩学》试题（ΔE=3.0 原题）：zjzikao.org ·
+汽车涂装高级工模拟题：renrendoc.com/paper/526279283；涂装工题库：book118.com ·
+印刷色彩技术题库：renrendoc.com/paper/496077785；辨别颜色考试题：renrendoc.com/paper/491918560 ·
+标准光源参数：ral.qtccolor.com/Article/241.aspx ·
+测色仪选型与几何：borcl.com/Article-3747237；3nh 涂料色彩管理指南 ·
+乳胶漆调色问题与耐候选型（NBCHAO 全文）：en.nbchao.com/k/2380 ·
+计算机配色（Kubelka-Munk）：colorspec.cn、ceseyi.com、专利 CN110222376A ·
+孟塞尔系统：xiexiebang.com、清华大学出版社《色彩构成》 ·
+QC 考核文（ΔE 0.17 为错算，已纠正为 ≈0.24）：m.renrendoc.com/paper/520983281<br>
+【第二遍扩充 S01–S22】S01 教材目录：tushu.tinynews.org/books/25010100533、cip.com.cn/Service/PreviewNewBook?oid=36 ·
+S02 色觉与理论：renrendoc.com/paper/213673333、zirconeey.github.io/life/color-blindness-mechanism、zikao985.com/mnst/wxl/st-ysscx/8497.html ·
+S03 视觉适应：sj33.cn/article/sjll/200604/8222.html、m-news.artron.net/20150416/n730379.html ·
+S04 CIE 观察者：fztr.file.gkfz.net/pdf/74eb6e113d08b8527b2f36294232308c.pdf、datacolorchina.cn 颜色管理电子书 ·
+S05 色度图/主波长/色温：bohrium.com、antpedia.com/standard/5701785、renrendoc.com/paper/420478775 ·
+S06 色差公式：snki.nl、techkon.datacolor.com、jiachen-mro.com、karcem.com.tr ·
+S07 ANLAB/Hunter：colortell.com/3233、en.wikipedia.org/wiki/Hunter_Lab、support.hunterlab.com ·
+S08 白度：textiletuts.com、5598sh.com、app17.com ·
+S09 加色/减色：renrendoc.com/paper/172728005、renrendoc.com/paper/494835415 ·
+S10 孟塞尔：wikiwand.com/zh-mo、en.wikipedia.org/wiki/Munsell_color_system ·
+S11 几何与仪器：cn-africa.cn、color-spectrophotometer.com、ceseyi.com/h-nd-3521、shop.hbzhan.com ·
+S12 Δ 方向：aksy27.com、m.fx361.com/news/2025/0828/29519715.html ·
+S13 K/S 与配色：coatingol.com/News/Info_438466、专利 CN110222376A ·
+S14 色浆体系：360doc.cn/article/1302411_327649522、360doc.cn/article/1302411_201184067 ·
+S15 浮色/发花：m.shzgf.com/ylzs/1453、jjmei.com/news/18、fssdss8.com ·
+S16 调色技巧与干湿差：tu63.com/news/show-577、chinadrum.net/jiaocheng/20210302 ·
+S17 沉淀/失光：chinadrum.net/jishu/19980401、goldenant-paint.com、vichem.vn ·
+S18 颜料性能：uskeji.com/12884、info.cnchuanglian.cn/item-173291440 ·
+S19 涂料组成：zjweibao.com、slideserve.com/heremon-ivers/6162044 ·
+S20 色卡系统：uptogo.com.tw、360doc.cn/article/235269_205099852、faqiren.com/article-475 ·
+S21 标准与漆膜颜色：renrendoc.com/paper/525674295（GB/T 3181—2008）、gbstandards.org、ibuychem.ylcool.com/expert/article/2466893（动车组 ΔE CMC(1.4:1)） ·
+S22 公开习题：renrendoc.com/paper/491918560（同色异谱题）、renrendoc.com/paper/395536659（涂装后处理工题库）、max.book118.com 涂料涂覆工（中级）题、renrendoc.com/paper/494835415（色彩考试题）
+</p>
+<p>说明：本页只作概念归纳与代表性习题，不复制教材长段落。[S] 题注明公开出处，[R] 题为按目录与知识点编写的练习题，不是本书原题。新增计算题（第 70–74 题）数字已全部重新验算：ΔE*ab 分别为 2.61、2.63（ΔC* −0.75、ΔH* 2.38）、K/S 0.82→1.38 与用量 1.20%→约 2.03%、综合题 ΔE*ab 3.20。第 75–110 题【课程新增】据深职爱学习《配色技术》（刘红波，课程编号 18600000019721）课件内容与数据编写，例 3 与色卡 0592 两题数字已按原始值重算（ΔE* 分别为 1.74 与 0.57）。教材照片为你拍的封面实拍。</p>
+</footer>
+</div>
+
+<script>
+function fmt(n){return Math.round(n*100)/100}
+function calcDE(){
+  var L1=+document.getElementById('L1').value||0,A1=+document.getElementById('A1').value||0,B1=+document.getElementById('B1').value||0;
+  var L2=+document.getElementById('L2').value||0,A2=+document.getElementById('A2').value||0,B2=+document.getElementById('B2').value||0;
+  var lim=+document.getElementById('limit').value;
+  var dL=L2-L1,dA=A2-A1,dB=B2-B1;
+  var dE=Math.sqrt(dL*dL+dA*dA+dB*dB);
+  var dir=[];
+  dir.push(dL>0.05?'偏亮/浅（加黑或减白）':dL<-0.05?'偏暗/深（加白或减黑）':'明度基本一致');
+  dir.push(dA>0.05?'偏红（微加绿或减红浆）':dA<-0.05?'偏绿（微加红浆或减绿浆）':'红绿基本一致');
+  dir.push(dB>0.05?'偏黄（微加蓝或减黄浆）':dB<-0.05?'偏蓝（微加黄浆或减蓝浆）':'黄蓝基本一致');
+  var pass=dE<=lim;
+  document.getElementById('calcOut').innerHTML='<strong style="font-size:18px">ΔL* = '+(dL>=0?'+':'')+fmt(dL)+' &nbsp; Δa* = '+(dA>=0?'+':'')+fmt(dA)+' &nbsp; Δb* = '+(dB>=0?'+':'')+fmt(dB)+'<br>ΔE*ab = √('+fmt(dL*dL)+' + '+fmt(dA*dA)+' + '+fmt(dB*dB)+') = '+fmt(dE)+'</strong><br><span class="pill '+(pass?'g':'r')+'" style="margin:8px 0">'+(pass?'✓ 合格':'✗ 不合格')+'（限值 ≤ '+lim+'）</span><br>试样相对标准：'+dir.join('；')+'。<br><span style="font-size:13px">修正原则：先纠贡献最大的分量，少量多次，每轮重新制板、干后测色。</span>';
+}
+function loadEx(){document.getElementById('L1').value=85;document.getElementById('A1').value=28;document.getElementById('B1').value=25;document.getElementById('L2').value=84;document.getElementById('A2').value=26;document.getElementById('B2').value=23;calcDE();}
+calcDE();
+
+var QUESTIONS=[
+{id:1,type:'single',tag:'S/R · 第一章',q:'颜色的三属性是（ ）',opts:['色相、明度、色温','色相、明度、饱和度','红、绿、蓝','青、品红、黄'],ans:[1],exp:'第一章 §2：色调（色相）、明度、饱和度构成颜色立体。'},
+{id:2,type:'single',tag:'S · 涂装工题库',q:'色差表示中，L 表示（ ）',opts:['红绿度','黄蓝度','红黑度','黑白度'],ans:[3],exp:'L* 为心理计量明度，0 黑—100 白；a* 红绿度，b* 黄蓝度。'},
+{id:3,type:'single',tag:'S · 汽车涂装高级工',q:'汽车涂装中，调色的依据是（ ）',opts:['客户要求','标准色卡','经验判断','涂料说明书'],ans:[1],exp:'调色以标准色卡为依据，客户要求也须通过标准色卡实现。'},
+{id:4,type:'single',tag:'S · 汽车涂装高级工',q:'以下哪种颜料具有良好的遮盖力（ ）',opts:['钛白粉','铁红','酞菁蓝','炭黑'],ans:[0],exp:'金红石型钛白粉折射率高、白度好、遮盖力最强。'},
+{id:5,type:'single',tag:'R · 第三章',q:'标准光源 D65 的相关色温最接近（ ）',opts:['2856 K','4800 K','6500 K','5500 K'],ans:[2],exp:'D65 ≈ 6500 K 平均日光；A ≈ 2856 K，B ≈ 4800 K，E 为 5500 K 等能白光。'},
+{id:6,type:'single',tag:'S · 印刷色彩技术题库',q:'同色异谱现象产生的根本原因是（ ）',opts:['油墨色相偏差','光源光谱差异（光谱反射曲线不同）','承印物反射率不同','网点角度设置错误'],ans:[1],exp:'两色在某一光源下相同、另一光源下不同，本质是光谱反射曲线不同。'},
+{id:7,type:'single',tag:'R · 第四章',q:'下列颜色空间中，属于均匀颜色空间的是（ ）',opts:['CIE 1931 RGB','CIE 1931 XYZ','CIE 1976 L*a*b*','RGB'],ans:[2],exp:'XYZ/RGB 色度图上等距不对应等视觉色差；L*a*b* 经非线性变换，均匀性最好。'},
+{id:8,type:'single',tag:'R · 第五章',q:'孟塞尔颜色 5R 4/14 中，“4”表示（ ）',opts:['色相','明度','彩度','色温'],ans:[1],exp:'HV/C 记法：H=5R 色相，V=4 明度，C=14 彩度。'},
+{id:9,type:'single',tag:'S · 喷漆试题改编',q:'分光测色仪主要用于精确测量（ ）',opts:['漆面光泽度','漆面颜色坐标（如 CIELab 值）','漆面厚度','漆面流挂倾向'],ans:[1],exp:'分光测色仪测反射率曲线并给出颜色坐标。'},
+{id:10,type:'single',tag:'R · 第七章',q:'计算机配色的核心理论是（ ）',opts:['牛顿三棱镜分光','Kubelka-Munk（K/S）理论','三原色学说','对立颜色学说'],ans:[1],exp:'由光谱反射率换算 K/S，再反求颜料浓度并修正配方。'},
+{id:11,type:'multi',tag:'S · 汽车涂装高级工',q:'调色时需要注意的事项有（ ）（多选）',opts:['准确称量颜料','充分搅拌均匀','注意环境光线','多次小量调整'],ans:[0,1,2,3],exp:'四项全选：准确称量、充分搅拌、注意环境光线、多次小量调整。'},
+{id:12,type:'multi',tag:'R · 涂装工题库改编',q:'色差控制需要控制的指标有（ ）（多选）',opts:['L 值','a 值','b 值','H 值单独作为必控项'],ans:[0,1,2],exp:'L*、a*、b* 三值共同决定 ΔE；色相角 H 由 a*、b* 导出，不是独立的第四个必控量。'},
+{id:13,type:'fill',tag:'R · 第一章',q:'填空：颜色的三属性是色相、____、____（彩度）。',ansText:'明度、饱和度',exp:'三属性：色相、明度、饱和度。'},
+{id:14,type:'fill',tag:'R · 第一章',q:'填空：可见光的波长范围约为 ____ nm。',ansText:'380–780',exp:'可见光介于紫外与红外之间，约 380–780 nm。'},
+{id:15,type:'fill',tag:'R · 第二章',q:'填空：色光三原色是红、____、____；颜料三原色是青、____、____（习惯称蓝、红、黄）。',ansText:'绿、蓝；品红、黄',exp:'加色三原色 RGB，减色三原色 CMY。'},
+{id:16,type:'fill',tag:'R · 第四章',q:'填空：+a* 表示____，−a* 表示绿；+b* 表示____，−b* 表示蓝；L*=100 为____，L*=0 为黑。',ansText:'红；黄；白',exp:'a* 轴红绿、b* 轴黄蓝、L* 0黑100白。'},
+{id:17,type:'fill',tag:'S · 2025 油漆工艺术涂装试题',q:'填空：艺术涂装中，测定颜色差异的常用仪器是____（分光测色仪亦可，须注明类型）。',ansText:'色差仪',exp:'常用色差仪/分光测色仪测颜色差异。'},
+{id:18,type:'fill',tag:'R · 第五章',q:'填空：孟塞尔记法为 ____，H 为色相、V 为明度、C 为彩度；中性灰记为 ____，如 N5。',ansText:'HV/C；N V',exp:'记法 HV/C，中性色 N V。'},
+{id:19,type:'judge',tag:'S · 汽车涂装高级工',q:'判断：调色时可以随意添加颜料。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。须准确称量、按比例与方法调配，随意添加会导致颜色偏差。'},
+{id:20,type:'judge',tag:'R · 第三章',q:'判断：同色异谱色在所有光源下都会呈现相同颜色。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。仅在特定光源下相同，换光源即出现色差。'},
+{id:21,type:'judge',tag:'R · 第三章',q:'判断：在 D65 下与标准无差别、在 A 光源下不能接受，该样仍可判定合格。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。须用两种以上光源测同色异谱，A 光源不合格即不合格。'},
+{id:22,type:'judge',tag:'R · 第六章',q:'判断：分光光度仪能测每 10 nm 或 20 nm 间隔的反射率曲线，而普通色差计不能。',opts:['√ 正确','× 错误'],ans:[0],exp:'√。这是分光光度仪与普通色差计的核心区别。'},
+{id:23,type:'judge',tag:'R · 第六章',q:'判断：0°/45° 几何的分光测色仪可用于电脑配色。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。0°/45° 只能测平滑表面、不能电脑配色；配色首选 d/8° 积分球。'},
+{id:24,type:'judge',tag:'R · 第七章',q:'判断：人工调色时应先加入着色力强的深色，再加入主色。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。先加主色（量大、着色力小），深色慢慢间断加入、由浅入深。'},
+{id:25,type:'judge',tag:'R · 第七章',q:'判断：涂料湿膜时颜色一般较浅，干燥后加深，因此干样板须等干后再比色。',opts:['√ 正确','× 错误'],ans:[0],exp:'√。湿浅干深是正常现象。'},
+{id:26,type:'judge',tag:'R · 第七章',q:'判断：同一配方中色浆种类越多，颜色越鲜艳。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。种类过多、尤其用了互补色会发灰变暗，一般不超过 4 种。'},
+{id:27,type:'short',tag:'R · 简答 8分',q:'简答：简述颜色三要素的含义，并说明加白、加黑各主要改变什么。',ansText:'色相是颜色彼此区别的特征；明度是明暗程度；饱和度是浓淡/鲜艳程度，三者缺一不可。加白主要提高明度、冲淡饱和度；加黑主要降低明度，同时降低饱和度；调一个要素时其余通常也跟着变。',exp:'按要点自评：三定义 + 加白/加黑各一句。'},
+{id:28,type:'short',tag:'R · 简答 8分',q:'简答：什么是同色异谱？调色签样时应如何防范？',ansText:'两色在某一光源下相同、换另一光源后不同，根本原因是光谱反射曲线不同。防范：D65 与 A 两种以上光源复核；标准光源箱目视比色；仪器测色注明光源/观察者（如 D65/10°）与几何；签样以标准样板与约定光源为准。',exp:'定义 + 根本原因 + 双光源复核，三点齐全算对。'},
+{id:29,type:'short',tag:'R · 简答 8分',q:'简答：简述计算机配色的工作流程。',ansText:'测目标色光谱反射率 → 各色料按浓度梯度制板测色、建立基础数据库（K/S 数据）→ 软件按 Kubelka-Munk 出多组候选配方（按 ΔE、成本、遮盖力排序）→ 称量打样、实测 ΔE → 偏差大则配方修正，1–3 轮收敛 → 存档生产。数据库质量是前提，原料更换须更新。',exp:'流程五步 + 数据库前提。'},
+{id:30,type:'short',tag:'R · 简答 8分',q:'简答：解释 ΔL*、Δa*、Δb* 的正负含义，并各举一例说明修正方向。',ansText:'+ΔL* 偏亮、−ΔL* 偏暗；+Δa* 偏红、−Δa* 偏绿；+Δb* 偏黄、−Δb* 偏蓝。例：ΔL*=+1.5 加黑/减白；Δa*=−2.0（偏绿）微加红浆或减绿浆；Δb*=+1.2（偏黄）微加蓝浆或减黄浆。少量多次。',exp:'六个方向 + 例子 + 少量多次。'},
+{id:31,type:'short',tag:'R · 简答 10分',q:'简答：乳胶漆调色出现浮色、发花时，从哪几方面分析原因并处理？',ansText:'原因：① 颜料密度/粒径/润湿不同致沉降速度不同；② 基础漆与色浆 HLB 不平衡、表面张力差大；③ 颜料絮凝。处理：指研实验判断相容性；选分散稳定性好的色浆；补加/改换润湿分散剂调 HLB 与表面张力；触变助剂建网络减少贝纳德涡流；选假塑性弱的缔合增稠剂；相容好时勿再高速分散。',exp:'三方面原因 + 对应处理。'},
+{id:32,type:'calc',tag:'S · 浙江自考原题 · 计算 10分',q:'计算：试样1 L*=85, a*=28, b*=25；试样2 L*=84, a*=26, b*=23。求两颜色的色差。',ansText:'ΔL*=−1，Δa*=−2，Δb*=−2；ΔE*ab=√(1+4+4)=√9=3.0。试样2 偏暗、偏绿、偏蓝，总色差 3.0，远大于 1.0 紧公差，不合格。',exp:'来源：浙江省 2015 年 4 月自考《印刷色彩学》02493 原题数据，答案经自算核对。可用上方计算器验算。'},
+{id:33,type:'calc',tag:'R · 计算 10分',q:'计算：标准样 L*=70.0, a*=10.0, b*=20.0；试样 L*=71.2, a*=9.2, b*=21.0。算 ΔE*ab，按 ≤1.0 判断是否合格并说明偏向。',ansText:'ΔL*=+1.2，Δa*=−0.8，Δb*=+1.0；ΔE=√(1.44+0.64+1.00)=√3.08≈1.75。不合格。偏亮、偏绿、偏黄；修正：加黑/减白降明度，微加红浆纠绿，微加蓝浆纠黄，少量多次。',exp:'这正是计算器预置的例子，可直接验算。'},
+{id:34,type:'calc',tag:'R · 计算 10分',q:'计算：某样 ΔL*=+0.6，Δa*=−0.8，Δb*=0，求 ΔE*ab，并讨论“ΔE=1.0 恰在限值上”如何判定。',ansText:'ΔE=√(0.36+0.64)=√1.00=1.0。若合同写 ≤1.0 则恰好合格，写 <1.0 则不合格。只写“ΔE<1”而不写公式、光源/观察者与 ≤/< 是不完整的容限。',exp:'考点不在算，而在容限必须写全条件。'},
+{id:35,type:'calc',tag:'S · 颜色科学课件 · 计算 10分',q:'计算：以 No.1 样为标准，No.2 样 ΔL*=−0.6638，Δa*=1.3287，Δb*=7.6053。求 ΔE*ab 并指出主要色差来源。',ansText:'ΔE=√(0.4406+1.7654+57.8406)=√60.0466≈7.75（课件值 7.7490）。主要来源是 Δb*（黄蓝方向占绝对主导），其次 Δa*，ΔL* 贡献最小；修正先纠黄/蓝，不要先动明度。',exp:'学会看分量贡献：哪个分量平方最大，先纠哪个。'},
+{id:36,type:'calc',tag:'R · 实训分析 10分',q:'实训分析：某组调色卡样色，实测 ΔL*=−2.1，Δa*=+0.4，Δb*=−0.3，ΔE≈2.16。按 ≤1.0 是否合格？主要问题是什么？下一步如何修正？',ansText:'不合格（2.16>1.0）。主要问题是明度偏暗（|ΔL*| 占主导），色相偏差很小（Δa*、Δb* 均 <0.5）。下一步：加白漆/浅色基础漆提高明度（或减黑浆），少量多次，每次重制板干后测色；不要先动红/黄浆，否则会把小色相差调大；1–2 轮复测达标后记录配方并留样。',exp:'实训题套路：先判合格 → 找主因分量 → 只纠主因。'},
+{id:37,type:'single',tag:'S · 新增Q1 · 色彩考试题改编',q:'【新增】下列关于色彩三原色的表述，正确的是（ ）',opts:['色光三原色为品红、黄、青','印刷三原色为红、绿、蓝','色光混合遵循减色法原理','品红、黄、青三色等量混合，理论上可得到黑色'],ans:[3],exp:'色光三原色是红、绿、蓝（加色，越混越亮）；色料/印刷三原色是品红、黄、青（减色，越混越暗），三者等量混合理论得黑（实际常偏深灰）。A、B、C 均说反。来源改编：人人文库《常见色彩考试题及答案2025年》。'},
+{id:38,type:'single',tag:'R · 新增Q2 · 第一章',q:'【新增】可见光的波长范围约为（ ）',opts:['100–380 nm','380–780 nm','780–1100 nm','400–4000 nm'],ans:[1],exp:'低于 380 nm 为紫外、高于 780 nm 为红外，人眼均不可见；红光波长最长、紫光最短。'},
+{id:39,type:'single',tag:'R · 新增Q3 · 第二章',q:'【新增】人眼视网膜上只分布视锥细胞、没有视杆细胞的部位是（ ）',opts:['盲点','中央凹','视网膜周边部','视神经'],ans:[1],exp:'中央凹（黄斑中心）只有视锥细胞，是视觉最敏锐处；盲点无感光细胞；周边部以视杆为主。'},
+{id:40,type:'single',tag:'R · 新增Q4 · 第三章',q:'【新增】下列关于 CIE 标准观察者的说法，正确的是（ ）',opts:['2° 观察者适用于张角大于 4° 的大面积样品','10° 观察者适用于张角小于 4° 的小样品','在 2° 下匹配的两个颜色，在 10° 下可能不再匹配','10° 观察者只刺激中央凹，2° 观察者还包括中央凹周围'],ans:[2],exp:'2°（1931）用于 1°–4° 小视场，10°（1964 补充）用于 >4° 大视场；10° 时中央凹周围视杆也参与，二者色度坐标可以不同，报告必须注明观察者。'},
+{id:41,type:'single',tag:'S · 新增Q5 · 辨别颜色考试题',q:'【新增】色觉正常者在 D65 下判断某织物为“正红色”，在 A 光源（白炽灯）下呈现“橙红色”。这种现象称为（ ）',opts:['色适应','同色异谱','颜色恒常性','光源显色性差异'],ans:[1],exp:'同色异谱指两色在某一光源下相同、另一光源下不同，本质是光谱反射曲线不同；检验预防用多光源对照（D65+A）并尽量用与标准样相同的颜料体系。来源改编：人人文库《（2025年）辨别颜色考试题及答案解析》第4题。'},
+{id:42,type:'single',tag:'R · 新增Q6 · 第三章',q:'【新增】在 CIE 1931 色度图上，某颜色的主波长是指（ ）',opts:['该颜色反射率最高的波长','从白点通过该颜色色度点延长至光谱轨迹的交点波长','该颜色三刺激值中 Y 值最大的波长','该颜色补色光的波长'],ans:[1],exp:'主波长是客观描述色相的方法；兴奋纯度=白点到样品点距离/白点到主波长点距离（0–1）。紫线区颜色无主波长，改用补色波长。'},
+{id:43,type:'single',tag:'R · 新增Q7 · 第四章',q:'【新增】CMC(2:1) 中“2:1”的含义是（ ）',opts:['明度差与彩度差之比为 2:1','明度容差是彩度容差的 2 倍','色调角容差是明度容差的 2 倍','ΔE 值是 ΔE*ab 的 2 倍'],ans:[1],exp:'CMC(l:c) 中 l 为明度权重、c 为彩度权重；纺织常用 2:1，即人眼对明度偏差宽容度约为彩度 2 倍。涂料验收常用 CMC(1.4:1)，l:c 不同结果不可直接比较。'},
+{id:44,type:'single',tag:'R · 新增Q8 · 第六章',q:'【新增】做计算机配色时，分光测色仪应选用的测量模式是（ ）',opts:['d/8° SCE','d/8° SCI','45/0°','多角度 15°'],ans:[1],exp:'SCI 包含镜面反射，消除光泽粗糙影响，测真实物理色与光谱，是 K/S 配色所需数据；SCE/45/0° 更接近目视，适合验收；多角度用于金属/珠光漆。'},
+{id:45,type:'single',tag:'S · 新增Q9 · 涂料涂覆工题改编',q:'【新增】孟塞尔记号“5R 4/14”中，“14”表示（ ）',opts:['色相为第 14 级','明度为 14 级','彩度为 14，颜色非常鲜艳','该色在色卡上的页码'],ans:[2],exp:'格式“色相 明度/彩度”：5R 正红，4 明度（中偏暗），14 彩度（很高很鲜艳）。明度范围 0–10，不可能为 14。改编思路源自公开涂料涂覆工（中级）题中孟塞尔 R 表示红色一题。'},
+{id:46,type:'single',tag:'R · 新增Q10 · 第七章 K/S',q:'【新增】某不透明涂层在某波长的反射率 R∞＝0.50，其 K/S 值是（ ）',opts:['0.125','0.25','0.50','1.00'],ans:[1],exp:'K/S=(1−R∞)²/(2R∞)=(0.50)²/(2×0.50)=0.25/1.00=0.25。R∞ 越小（吸收越多），K/S 越大。'},
+{id:47,type:'multi',tag:'R · 新增Q11 · 第二/六章',q:'【新增】下列因素中，会影响目视比色结果的有（ ）（多选）',opts:['光源种类与照度','样板与标准板的背景颜色','漆膜的膜厚与光泽','样板的面积大小','比色者的色觉与眼睛疲劳程度'],ans:[0,1,2,3,4],exp:'五项全选：分别对应光源、背景、物体（膜厚/光泽/面积）、观察者。标准做法：标准光源箱、中性灰背景、并排对称、干膜比色。'},
+{id:48,type:'multi',tag:'R · 新增Q12 · 第四章',q:'【新增】关于 ΔE*ab、CMC(l:c) 与 ΔE00，下列说法正确的有（ ）（多选）',opts:['三者是同一对颜色在不同公式下的数值，不能直接比大小','ΔE*ab 计算最简单，是 L*a*b* 空间的欧氏距离','CMC(l:c) 的容差为椭球形，l:c 不同则判定结果可能不同','ΔE00 引入了权重函数 SL、SC、SH 与旋转项 RT，与目视符合最好','写色差公差时只写“ΔE≤1.0”就足够了'],ans:[0,1,2,3],exp:'ABCD 正确。E 错误：公差必须写明公式、光源与观察者，如“ΔE00≤1.0（D65/10°）”。'},
+{id:49,type:'multi',tag:'R · 新增Q13 · 第七/八章',q:'【新增】乳胶漆出现浮色、发花的原因可能有（ ）（多选）',opts:['颜填料粒径差太大、分布过宽','白浆与色浆表面张力差大','乳液与色浆相容性差，颜料絮凝','各组分亲水亲油平衡值（HLB）不匹配','缔合增稠剂使颜料表面分散剂脱附'],ans:[0,1,2,3,4],exp:'五项全选：浮色是垂直分离、发花是水平分离，共同机理是多颜料干燥中不均匀分布；先用指研与小样定主因再针对性调整，不要盲目加分散剂。'},
+{id:50,type:'multi',tag:'R · 新增Q14 · 涂料组成',q:'【新增】下列属于涂料四大组分的有（ ）（多选）',opts:['成膜物质','颜填料','溶剂／分散介质','助剂','颜料色浆'],ans:[0,1,2,3],exp:'四大组分：成膜物质、颜填料、溶剂（分散介质）、助剂；色浆是“颜料+分散剂+载体”中间产品，不与四大组分并列。'},
+{id:51,type:'fill',tag:'R · 新增Q15 · 第一章',q:'【新增】填空：色光三原色是红、绿、蓝，加色混合越混越亮，三者等量混合得____；颜料三原色（理想减色）是青、品红、黄，减色混合越混越暗，三者等量混合，理论上得____。',ansText:'白光；黑色（黑）',exp:'R+G=黄、R+B=品红、G+B=青；M+Y=红、C+Y=绿、C+M=蓝。'},
+{id:52,type:'fill',tag:'R · 新增Q16 · 第二章',q:'【新增】填空：视杆细胞的感光物质是____，只分辨明暗、不分辨颜色；视锥细胞分 L、M、S 三种，峰值敏感波长分别约为 564 nm、533 nm 和____ nm。',ansText:'视紫红质；437',exp:'视紫红质由视蛋白与视黄醛结合，维生素 A 是其原料。'},
+{id:53,type:'fill',tag:'R · 新增Q17 · 第三章',q:'【新增】填空：CIE 1931-RGB 系统三原色单色光波长是红光 700 nm、绿光____ nm、蓝光 435.8 nm；因匹配某些光谱色时出现负值，CIE 改用假想三原色 X、Y、Z，其中____代表亮度。',ansText:'546.1；Y',exp:'三刺激值 X、Y、Z 恒为正，便于计算与传递。'},
+{id:54,type:'fill',tag:'R · 新增Q18 · 第四章',q:'【新增】填空：CIEDE2000（ΔE00）在 ΔL′、ΔC′、ΔH′ 基础上引入权重函数 SL、SC、SH 和修正蓝色区色调—彩度交互作用的____项，还对中性色附近的 a* 作了修正；其参量因子 KL、KC、KH 在参考条件下均为____。',ansText:'旋转（RT）；1',exp:'参考条件为 D65、1000 lx、L*=50 灰背景；ΔE00 是目前与目视符合最好的公式。'},
+{id:55,type:'fill',tag:'R · 新增Q19 · 第五章',q:'【新增】填空：孟塞尔记号“5Y 8/12”中，色相是____，明度是____，彩度是____；该色是很亮（明度 8）、很鲜艳的黄色。',ansText:'5Y；8；12',exp:'格式“色相 明度/彩度”，斜线前明度、后彩度。'},
+{id:56,type:'fill',tag:'R · 新增Q20 · 第七章',q:'【新增】填空：Kubelka-Munk 公式为 K/S＝(1－R∞)²／(2R∞)，其中 K 为____系数，S 为____系数，R∞ 为不透明膜的反射率；混合色的 K/S 具有加和性，前提是各色料混合时不发生____。',ansText:'吸收；散射；化学反应',exp:'(K/S)混合=(ΣCiKi)/(ΣCiSi)，Ci 为各颜料浓度，是计算机配色的理论基础。'},
+{id:57,type:'judge',tag:'R · 新增Q21 · 第一章',q:'【新增】判断：加色混合是色光的混合，越混合明度越高；减色混合是颜料的混合，越混合明度越低。',opts:['√ 正确','× 错误'],ans:[0],exp:'√。R+G+B=白光；C+M+Y≈黑。涂料调色属减色混合，浆种越少越好。'},
+{id:58,type:'judge',tag:'R · 新增Q22 · 第一章',q:'【新增】判断：物体的颜色只由物体本身决定，与光源和观察者无关。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。物体色由光源光谱、物体选择性吸收/反射、观察者视觉响应三者共同决定。'},
+{id:59,type:'judge',tag:'R · 新增Q23 · 第三章',q:'【新增】判断：CIE 1931 的 2° 标准观察者适用于大面积、近距离观察的色板。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。2° 适用于张角 1°–4° 小视场（小样、远看）；大面积近看用 1964 的 10° 补充观察者。'},
+{id:60,type:'judge',tag:'R · 新增Q24 · 第三/四章',q:'【新增】判断：两块漆膜的 ΔE*ab＝0，就说明它们的光谱反射曲线完全相同。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。ΔE*ab=0 只说明该光源/观察者下 Lab 相同；光谱不同的同色异谱对在某一光源下 ΔE 也可以为 0，换光源即显色差。'},
+{id:61,type:'judge',tag:'R · 新增Q25 · 第六章',q:'【新增】判断：用 d/8° SCI 模式测得的颜色数据最适合用于计算机配色。',opts:['√ 正确','× 错误'],ans:[0],exp:'√。SCI 包含镜面反射，消除光泽影响，得到真实色与光谱；SCE 更接近目视，适合验收。'},
+{id:62,type:'judge',tag:'R · 新增Q26 · 第五章',q:'【新增】判断：孟塞尔明度 10 的纯白和明度 0 的纯黑，在孟塞尔图册中都有对应的实物色样。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。0 与 10 是理论极限，实际色样一般 1–9；中性色用 N+明度表示，如 N5。'},
+{id:63,type:'judge',tag:'R · 新增Q27 · 第四章',q:'【新增】判断：含荧光增白剂的白色样品，其 CIE 白度值不可能超过 100。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。增白剂吸收紫外、发出蓝光，可使白度 >100；报告须注明公式、光源/观察者与 UV 条件。'},
+{id:64,type:'judge',tag:'S · 新增Q28 · 涂装后处理工题库',q:'【新增】判断：判断涂料调配的颜色是否准确，应当待涂膜样板干燥后与标准色卡进行对比。',opts:['√ 正确','× 错误'],ans:[0],exp:'√。湿膜偏浅、干后变深，水性漆干湿差最大；湿膜比色会误判。来源改编：公开涂装后处理工中级习题库第2题（正确答案“干燥后”）。'},
+{id:65,type:'short',tag:'S · 新增Q29 · 简答 6–8分',q:'【新增】简答：简述三原色学说与对立颜色学说的主要内容，并说明二者是否矛盾。',ansText:'① 三原色学说（Young—Helmholtz）：视网膜有三种视锥/感光色素，分别对红、绿、蓝最敏感，不同色光引起不同程度兴奋、经大脑综合产生色觉；能解释颜色混合与色盲。② 对立颜色学说（Hering）：视网膜与视路上有红—绿、黄—蓝、黑—白三对拮抗机制，成对编码传递；能解释成对色盲、对比与后像。③ 不矛盾：阶段学说认为第一阶段（视网膜）按三色说产生锥体反应，第二阶段（传导）重组成对立反应，分属不同加工阶段。',exp:'来源改编：2018 年自考《印刷色彩学》练习试题简答题。按三点自评。'},
+{id:66,type:'short',tag:'R · 新增Q30 · 简答 6–8分',q:'【新增】简答：什么是同色异谱？它对涂料生产有什么危害？应如何检验与预防？',ansText:'① 定义：两样品光谱反射曲线不同，但在某一照明体+观察者下三刺激值相等、看起来相同，换光源或观察者后不同。② 危害：D65 合格、客户 A/F 光源下不合格；换供应商/批次后“仪器合格、目视不合格”，造成返工退货索赔。③ 检验：光源箱至少 D65+A 对照（可加 F11/TL84、UV），仪器算 MI，对比光谱曲线。④ 预防：尽量用与标准样相同的颜料体系/色浆组合；电脑配色选多光源 ΔE 与 MI 都合格的配方；深色、鲜艳色、荧光白重点查；换原料重做多光源验证。',exp:'定义+危害+检验+预防，四点齐全算对。'},
+{id:67,type:'short',tag:'R · 新增Q31 · 简答 6–8分',q:'【新增】简答：比较 ΔE*ab、CMC(l:c) 与 ΔE00 的计算思想、优缺点与适用场合。',ansText:'ΔE*ab 为 Lab 欧氏距离，简单通用但与视觉符合最差，用于日常快检；CMC(l:c) 对 ΔL*、ΔC*、ΔH* 加权、容差椭球，l:c 可调（纺织 2:1、涂料常用 1.4:1），用于验收判定；ΔE00 加 SL、SC、SH、旋转项 RT 与 a′ 修正，与目视符合最好、尤擅低彩度/深色/蓝色，用于汽车、高端喷涂、出口与第三方检测。三者数值不可直接比较，公差必须注明公式。',exp:'三公式各一句思想+场景 + 不可比提醒。'},
+{id:68,type:'short',tag:'R · 新增Q32 · 简答 6–8分',q:'【新增】简答：测得试样相对标准样的 ΔL*、Δa*、Δb*，应如何判断偏差方向并决定调整方向？',ansText:'ΔL*>0 偏浅/亮、<0 偏深/暗；Δa*>0 偏红、<0 偏绿；Δb*>0 偏黄、<0 偏蓝；ΔC*>0 更鲜艳、<0 更灰。调整：偏深加白基础漆或减黑/彩浆，偏浅加黑或彩浆；偏红减红浆或加少量绿/青浆，偏绿反之；偏黄减黄浆或加少量蓝/紫浆，偏蓝反之。铁律：一次只调一个方向、少量多次；能减浆就不加补色（补色降明度与彩度）；每次调整后制干膜样板再测再看。',exp:'六方向 + 调整 + 三铁律。'},
+{id:69,type:'short',tag:'R · 新增Q33 · 简答 6–8分',q:'【新增】简答：样品制备不当会怎样影响测色结果？至少列出 5 个方面并说明正确做法。',ansText:'任答 5 条：① 膜厚不一（薄膜透底材、透明颜料敏感→同一涂布器、同一湿膜厚度）；② 底材不同（→同一标准试板 GB/T 9271）；③ 光泽不同（→标准与试样光泽一致并注明）；④ 未干透（湿浅干深→一律测干膜并按规定养护）；⑤ 表面不净/有缺陷（→样板平整清洁、测区避边缘缺陷）；⑥ 孔径/面积不当（→孔径小于均匀色区、多点平均）；⑦ 温湿度未调节（→按 GB/T 9278 调节后再测）。',exp:'每条 = 因素 + 影响/做法，答满 5 条算对。'},
+{id:70,type:'calc',tag:'R · 新增Q34 · 计算 8–10分',q:'【新增】计算：标准样 L*＝62.4、a*＝12.8、b*＝－18.6；试样 L*＝60.9、a*＝14.1、b*＝－16.9。计算 ΔL*、Δa*、Δb* 与 ΔE*ab，判断偏差方向；公差 ΔE*ab≤1.0 是否合格？',ansText:'ΔL*=60.9−62.4=−1.5；Δa*=14.1−12.8=+1.3；Δb*=−16.9−(−18.6)=+1.7。ΔE*ab=√(2.25+1.69+2.89)=√6.83≈2.61。方向：偏深、偏红、偏黄（蓝色减弱）。判定：2.61>1.0 不合格。调整：提亮（加白基础漆或减黑/彩浆总量）、减红、减黄（或加少量青/蓝补色），小样重调后干膜复测。数字已重新验算。',exp:'步骤分：三分量 + 开方 + 方向 + 判定，缺一扣分。可用上方计算器验算（标准 62.4/12.8/−18.6，试样 60.9/14.1/−16.9）。'},
+{id:71,type:'calc',tag:'R · 新增Q35 · 计算 8–10分',q:'【新增】计算：标准样 L*＝55.0、a*＝20.0、b*＝30.0；试样 L*＝54.2、a*＝21.5、b*＝28.0。仪器另报 ΔE CMC(2:1)＝1.32、ΔE00＝1.24。计算 ΔE*ab、ΔC*ab、ΔH*ab，指出主要来源，并按公差 1.0 判定。',ansText:'ΔL*=−0.8，Δa*=+1.5，Δb*=−2.0。ΔE*ab=√(0.64+2.25+4.00)=√6.89≈2.63。C*标准=√1300≈36.06；C*试样=√1246.25≈35.30；ΔC*≈−0.75（彩度略降）。ΔH*=√(6.89−0.64−0.57)=√5.68≈2.38。主要来源：色调差 ΔH*（2.38）远大于明度差（0.8）与彩度差（0.75），即色相偏了（偏红且偏蓝→向紫红偏），不是深浅问题。判定：2.63、1.32、1.24 三公式均 >1.0，不合格。不要只加白/黑调明度；应减红浆、加少量黄浆纠偏蓝，重做小样复测。结论不一致时以合同约定公式为准。数字已重新验算。',exp:'考点：ΔH* 分解找主因 + 三公式数值不同（2.63/1.32/1.24）不可混比。'},
+{id:72,type:'calc',tag:'R · 新增Q36 · 计算 8–10分',q:'【新增】计算：某波长下试调漆膜反射率 R∞＝0.30，目标色反射率 R∞＝0.22。该色主要由一支红色浆提供，原用量 1.20%（占基础漆质量）。（1）分别计算试样与目标的 K/S；（2）在 K/S 与浓度近似成正比假设下估算修正后用量，并说明局限。',ansText:'（1）K/S=(1−R∞)²/(2R∞)。试样：(0.70)²/0.60=0.49/0.60≈0.82。目标：(0.78)²/0.44=0.6084/0.44≈1.38。（2）修正用量=1.20%×(1.38/0.82)≈1.20%×1.69≈2.03%，增加约 0.83 个百分点（相对 +69%）。局限：① 正比只是低浓度、单颜料主导近似，高浓度/深色/多颜料非线性明显；② 实际应由软件多波长联立求解并考虑基础漆本身 K/S；③ 估算只是第一轮修正量，必须按 2.03% 打样、干燥、实测 ΔE，仍不合格再修正，一般 1–2 轮达标。数字已重新验算。',exp:'K/S 由 0.82→1.38，色浆 1.20%→约 2.03%，记住“估算≠定案，必须打样复测”。'},
+{id:73,type:'calc',tag:'R · 新增Q37 · 综合 12–15分',q:'【新增】综合：某批乳胶漆测得 ΔL*＝－1.8、Δa*＝＋2.4、Δb*＝－1.1。计算 ΔE*ab，描述偏差，制订调整方案，并说明验收时还应检查什么。',ansText:'计算：ΔE*ab=√(3.24+5.76+1.21)=√10.21≈3.20。偏差：偏深、偏红、偏蓝（黄色不足），色相向紫红偏；ΔE=3.20 肉眼明显，公差 1.0 则不合格。方案：① 减红浆（Δa* 最大，先纠偏红），加少量黄浆纠偏蓝；② 提亮：减黑/彩浆总量或补白基础漆；③ 一次只动一个方向、少量多次，先做 100 g 小样，刮板干燥后复测；④ 能减红浆就不要多加绿浆（补色降彩度）。验收补充：① 换 A 光源复核同色异谱；② 光源箱中性灰背景干膜目视比色；③ 查浮色/发花与沉淀；④ 核对膜厚、光泽、底材与标准板一致；⑤ 留样并记录修正后配方。数字已重新验算。',exp:'综合题模板：算 ΔE → 读方向 → 先纠最大分量 → 多光源+目视+缺陷+记录收尾。'},
+{id:74,type:'calc',tag:'R · 新增Q38 · 综合 12–15分',q:'【新增】综合：请分别诊断并处理。（a）新配方 D65 下 ΔE*ab＝0.8（合格），A 光源下 ΔE*ab＝3.5，客户投诉现场颜色不对。（b）同一配方第二批漆膜表面深浅不一斑点与色纹，局部偏蓝偏深，搅拌后指研揉搓区颜色明显变深。',ansText:'（a）诊断：同色异谱。新配方用了与标准样不同的颜料/色浆组合，光谱曲线不同，D65 下三刺激值凑巧相等、A 光源下显色差；错在只用一个光源验收。处理：① D65+A（可加 F11）多光源复核并算 MI；② 改用与标准样相同颜料体系重配，电脑配色选多光源 ΔE 与 MI 都合格的配方；③ 把多光源检查写入检验规程，换供应商/批次重做验证。（b）诊断：浮色/发花+颜料絮凝。斑点色纹是发花（水平分离）；局部偏蓝偏深是黑/蓝上浮、浮色（垂直分离）；指研变深是絮凝典型证据（揉搓分散后着色力恢复）。处理：① 查色浆与乳液/基础漆相容性，换相容好的；② 调润湿分散剂种类与用量，缩小表面张力差、匹配 HLB；③ 查粒径匹配、剔除过多超细粉；④ 加触变结构助剂（高岭土、二氧化硅）建网络阻止分离；⑤ 控制膜厚与干燥条件，不要盲目加大分散剂（过量降耐水与附着）。处理后重做指研与刮板干膜比色，合格方可放行。',exp:'（a）考同色异谱全链条，（b）考浮色/发花/絮凝三联诊断，指研变深是关键证据。'},
+{id:75,type:'single',tag:'课程新增 · 配色技术 6.1',q:'【课程新增】同色异谱是指（ ）',opts:['两个颜色反射率曲线完全相同，任何光源下都同色','两个颜色在一种光源下同色，换另一种光源后呈现不同颜色','同一个颜色在强光下看起来更亮','两个颜色明度相同、色相不同'],ans:[1],exp:'同色异谱是条件等色：反射率曲线不同，只在特定光源下三刺激值相等、看起来相同，换光源即显色差。课件目标色 3234 试配即为实例。'},
+{id:76,type:'single',tag:'课程新增 · 配色技术 6.1',q:'【课程新增】同色同谱是指（ ）',opts:['两个颜色在一种光源下同色，换光源后不同色','两个颜色反射率曲线相同，在任何光源下都同色','两个颜色色差 ΔE* 恰好等于 1.0','两个颜色用同一种色浆调出'],ans:[1],exp:'同色同谱的两色光谱反射率曲线相同，因此任何光源、观察者下都同色，是最可靠的等色；与同色异谱相对。'},
+{id:77,type:'single',tag:'课程新增 · 配色技术 4.1',q:'【课程新增】课件给出的涂料调色合格线是（ ）',opts:['ΔE* < 0.5','ΔE* < 1.0','ΔE* < 2.0','ΔE* < 3.0'],ans:[1],exp:'涂料调色要求 ΔE* < 1.0（单位 NBS）；人工配色调到 ΔE ≤ 1、电脑配色修色到 ΔE* < 1.0 才算达标。'},
+{id:78,type:'single',tag:'课程新增 · 配色技术 4.1',q:'【课程新增】按课件色差分档，0–0.5 属于（ ）',opts:['微量色差','轻量色差','能感觉到的色差','严重色差'],ans:[0],exp:'分档：0–0.5 微量、0.5–1.5 轻量、1.5–3.0 能感觉到。单位 NBS。'},
+{id:79,type:'single',tag:'课程新增 · 配色技术 1.2',q:'【课程新增】TL84 灯的色温与模拟场景是（ ）',opts:['2700 K，家庭、酒店','4000 K，欧洲、日本商店灯光','4150 K，美国商店灯光','6500 K，平均日光'],ans:[1],exp:'TL84 为 4000 K，模拟欧日商店灯光；CWF 4150 K 模拟美国商店；F 灯 2700 K 为家庭酒店暖色。'},
+{id:80,type:'single',tag:'课程新增 · 配色技术 1.2',q:'【课程新增】CWF 灯的色温与模拟场景是（ ）',opts:['2700 K，家庭、酒店','4000 K，欧洲、日本商店灯光','4150 K，美国商店灯光','2856 K，钨丝灯'],ans:[2],exp:'CWF 为 4150 K 冷白荧光，模拟美国商店灯光。'},
+{id:81,type:'single',tag:'课程新增 · 配色技术 1.2',q:'【课程新增】下列关于 F 灯与 UV 灯的说法，正确的是（ ）',opts:['F 灯 2700 K，为家庭、酒店暖色光；UV 灯峰值波长 365 nm','F 灯 4150 K，为美国商店灯光；UV 灯峰值 254 nm','F 灯 4000 K，为欧日商店灯光；UV 灯峰值 365 nm','F 灯 6500 K，为平均日光；UV 灯峰值 365 nm'],ans:[0],exp:'F 灯 2700 K 暖色，用于家庭、酒店场景模拟；UV 灯峰值 365 nm，用于检验荧光增白剂等含荧光成分的样品。'},
+{id:82,type:'single',tag:'课程新增 · 配色技术 5.1',q:'【课程新增】分光光度测色仪积分球的内壁涂层是（ ）',opts:['碳酸钙 / 滑石粉','硫酸钡 / 氧化镁','钛白粉 / 氧化锌','炭黑 / 石墨'],ans:[1],exp:'积分球内壁涂硫酸钡或氧化镁等高反射漫反射材料，开孔面积 <10%，使光在球内充分漫射均匀。'},
+{id:83,type:'single',tag:'课程新增 · 配色技术 5.1',q:'【课程新增】Datacolor 分光光度测色仪实际采用的测量几何是（ ）',opts:['d°/0°','0°/d°','d°/8°','45°/0°'],ans:[2],exp:'理论几何有 d°/0° 与 0°/d°，Datacolor 等实际仪器采用 d°/8°（漫射照明、8° 接收）。'},
+{id:84,type:'single',tag:'课程新增 · 配色技术 6.1',q:'【课程新增】调色基础漆 A 漆的钛白含量是（ ）',opts:['0','7–13','18–23','30–40'],ans:[2],exp:'A 漆钛白 18–23，用于浅色，对比率 0.90–0.93，色浆量 <3；B 漆钛白 7–13，C 漆钛白 0。'},
+{id:85,type:'single',tag:'课程新增 · 配色技术 6.1',q:'【课程新增】调色基础漆 C 漆的特点是（ ）',opts:['钛白 18–23，对比率 0.90–0.93，调浅色','钛白 7–13，对比率 0.80–0.85，调中色','钛白 0，对比率 0.04–0.1，调深色','钛白 0，对比率 0.90–0.93，调浅色'],ans:[2],exp:'C 漆不含钛白、遮盖低（对比率 0.04–0.1），专调深色，色浆量 >5；用 A 漆调深色会冲灰、调不深。'},
+{id:86,type:'single',tag:'课程新增 · 配色技术 6.2',q:'【课程新增】人工配色时，主色浆应先加入预计总量的约（ ）',opts:['30%','50%','70%','100%'],ans:[2],exp:'主色浆先加约 70%，其余每次少加、多次加，边加边看，避免一次过量调过头。'},
+{id:87,type:'multi',tag:'课程新增 · 配色技术 1.3',q:'【课程新增】观察评定色彩时应注意的要点有（ ）（多选）',opts:['使用 D65 等标准光源或标准光源箱','保证评定前后光源一致','注意光源的色温、显色性与光谱分布','多光源复核，防止同色异谱（色变异）','只需在任意自然光下目测即可，无需统一光源'],ans:[0,1,2,3],exp:'前四项全选：标准光源/光源箱、光源一致、关注色温与显色性和光谱分布、防同色异谱。E 是错误做法。'},
+{id:88,type:'multi',tag:'课程新增 · 配色技术 5.1',q:'【课程新增】分光光度测色仪由哪五部分组成（ ）（多选）',opts:['光源','积分球','光栅（单色器）','检测器','信号处理系统','自动调色机'],ans:[0,1,2,3,4],exp:'五部分：光源、积分球、光栅单色器、检测器、信号处理。调色机是加浆设备，不属于测色仪。'},
+{id:89,type:'multi',tag:'课程新增 · 配色技术 6.1',q:'【课程新增】色浆的性能要求包括（ ）（多选）',opts:['相容性好，不浮色、不发花','着色力强','耐候、耐光、耐酸碱符合应用要求','贮存稳定性与批次稳定性好','颜色越鲜艳越好，不必考虑耐候'],ans:[0,1,2,3],exp:'色浆性能要求 4 条：相容性好、着色力强、耐候耐光耐酸碱达标、贮存与批次稳定。E 忽略耐候，外墙使用会褪色。'},
+{id:90,type:'multi',tag:'课程新增 · 配色技术 6.2',q:'【课程新增】人工配色拟订配方时的注意事项有（ ）（多选）',opts:['先做指研实验，检查色浆相容性','色浆总量不超过 10%','选用耐候等级尽量接近的色浆','不用补色同用，如红+绿、黄+紫、橙+蓝不同时用','最好只有一个主色','色浆品种尽可能少','色浆种类越多，颜色越鲜艳，应尽量多用'],ans:[0,1,2,3,4,5],exp:'配方 6 条：先指研、总量 ≤10%、耐候等级接近、不用补色同用、最好一个主色、品种尽可能少。G 与第 6 条相反，错误。注：补色对按 6.3 节传统体系原文（红-绿、蓝-橙、紫-黄）。'},
+{id:91,type:'fill',tag:'课程新增 · 配色技术 1.2',q:'【课程新增】填空：产生色觉的三要素是____、____、眼睛/大脑。',ansText:'光源、物体',exp:'三要素：光源—物体—眼睛/大脑，缺一不可，没有光就没有色。'},
+{id:92,type:'fill',tag:'课程新增 · 配色技术 1.2',q:'【课程新增】填空：可见光的波长范围是 ____ nm。',ansText:'380–780',exp:'380–780 nm；低于 380 nm 为紫外、高于 780 nm 为红外。'},
+{id:93,type:'fill',tag:'课程新增 · 配色技术 3.1',q:'【课程新增】填空：色光三原色的 CIE 代表波长为红 ____ nm、绿 ____ nm、蓝 ____ nm。',ansText:'700；546.1；435.8',exp:'R 700 nm、G 546.1 nm、B 435.8 nm，与 CIE 1931-RGB 系统一致。'},
+{id:94,type:'fill',tag:'课程新增 · 配色技术 3.1',q:'【课程新增】填空：色料三原色是____、____、____。',ansText:'品红、黄、青',exp:'色料（减色）三原色为品红、黄、青：品红+黄=红、黄+青=绿、青+品红=蓝，等量混成黑。'},
+{id:95,type:'fill',tag:'课程新增 · 配色技术 6.1',q:'【课程新增】填空：色浆细度应小于 ____ μm，不挥发分含量为 ____%。',ansText:'15；30–60',exp:'色浆细度 <15 μm、不挥发分 30–60%，是课件给出的色浆质量指标。'},
+{id:96,type:'fill',tag:'课程新增 · 配色技术 6.2',q:'【课程新增】填空：目视比色时，色样面积应大于 ____ cm²，观察视角应小于 ____°。',ansText:'13；2',exp:'色样 >13 cm²、视角 <2°，并在漫射自然光或标准光源箱中与标准样反复对比。'},
+{id:97,type:'judge',tag:'课程新增 · 配色技术 3.1',q:'【课程新增】判断：色料混合时能量增大、明度升高。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。色料是减色混合：每加一种色料就多吸收一部分光，能量减弱、明度降低，越混越暗。'},
+{id:98,type:'judge',tag:'课程新增 · 配色技术 3.1',q:'【课程新增】判断：色光相加时能量减小、明度降低。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。色光是加色混合：能量相加、越加越亮，三原色光等量相加得白光。'},
+{id:99,type:'judge',tag:'课程新增 · 配色技术 3.1',q:'【课程新增】判断：降低明度时应使用补色料，而不用黑色料。',opts:['√ 正确','× 错误'],ans:[0],exp:'√。这是课件配色应用原则之一：用补色料降明度可避免加黑带来的发灰、变脏。'},
+{id:100,type:'judge',tag:'课程新增 · 配色技术 3.1',q:'【课程新增】判断：复色比间色和原色更鲜艳。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。复色由三种色料混合，吸收更多、明度更低、更暗更灰，鲜艳度低于间色与原色。'},
+{id:101,type:'judge',tag:'课程新增 · 配色技术 6.3',q:'【课程新增】判断：浮色是涂膜水平方向深浅不均。',opts:['√ 正确','× 错误'],ans:[1],exp:'×。浮色是垂直方向深浅不均（颜料上下分离）；水平方向深浅不均是发花。'},
+{id:102,type:'judge',tag:'课程新增 · 配色技术 6.1',q:'【课程新增】判断：目标色 3234 的试配在 D65/10° 下 ΔE* 为 0.84、A/10° 下为 0.95，均合格；但在 F11/10° 下为 2.49 超标，因此该试配属于同色异谱。',opts:['√ 正确','× 错误'],ans:[0],exp:'√。同一试配换光源后由合格变超标，正是同色异谱，必须多光源核查，不能只凭 D65 放行。'},
+{id:103,type:'short',tag:'课程新增 · 简答',q:'【课程新增】简答：分别说明同色异谱与同色同谱的定义，并用目标色 3234 的试配数据举例。',ansText:'同色同谱：两色反射率曲线相同，在任何光源下都同色。同色异谱：两色反射率曲线不同，只在一种光源下同色，换光源后不同色。举例：目标色 3234 的试配在 D65/10° 下 ΔE* 0.84、A/10° 下 0.95，均 <1.0 合格，但在 F11/10° 下 2.49 超标——在 D65/A 下“同色”、换到 F11 就不同色，属同色异谱，签样须多光源核查。',exp:'两定义 + 3234 三个数据 + 多光源结论，齐全算对。'},
+{id:104,type:'short',tag:'课程新增 · 简答',q:'【课程新增】简答：拿到一条分光光度反射率曲线，如何分析颜色的色相、明度和饱和度？',ansText:'色相看峰值（主）波长：峰在哪个波段，色相就偏哪个颜色；明度看曲线整体高低：曲线整体越高反射越强、明度越高，白约 100%、灰约 50%、黑约 0%；饱和度看波峰波谷差与曲线宽窄：峰谷差越大、曲线越窄，饱和度越高、颜色越鲜艳，曲线越平坦越接近灰。',exp:'三属性各对应一个看图方法 + 白/灰/黑锚点。'},
+{id:105,type:'short',tag:'课程新增 · 简答',q:'【课程新增】简答：写出人工配色的完整步骤与关键要点。',ansText:'步骤：① 设计配方——定基础漆（浅色 A、中色 B、深色 C）、定主/副色与色浆比例；② 调色操作——预留基漆，先调深浅后调色相，主色浆先加约 70%，每次少加、多次加，搅拌下缓慢加入，色浆总量 ≤10%；③ 制板——250 μm 湿膜制备器刮涂；④ 目视比色——干膜后在漫射自然光或比色箱中比色，色样 >13 cm²、视角 <2°，记住干膜深、湿膜浅，反复对比并测 ΔE，调到 ΔE ≤1。要点：先指研查相容性、耐候等级接近、不用补色同用、最好一个主色、品种尽可能少；随色浆加量增大，基础漆由 A 换 B 再换 C。',exp:'设计配方—调色操作—制板—目视比色四步 + 70%/≤10%/250 μm/>13 cm²/<2° 五个数 + 配方注意事项。'},
+{id:106,type:'short',tag:'课程新增 · 简答',q:'【课程新增】简答：如何区分浮色与发花？浮色有哪 4 条处理方法？',ansText:'区分：浮色是涂膜垂直方向深浅不均（颜料在膜厚方向分离、上下分层）；发花是水平方向深浅不均，形态有六角花纹、竖条纹、色斑、色圈、云雾状。浮色 4 条处理：① 不用超细及密度差过大的颜料；② 加高岭土等触变添加剂建立触变网络；③ 选合适增稠剂，调好高、低剪切黏度；④ 后添加时用润湿分散剂调整体系 HLB 值。',exp:'垂直/水平区分 + 发花形态 + 4 条处理，缺一扣分。'},
+{id:107,type:'calc',tag:'课程新增 · 计算',q:'【课程新增】计算（课件例 3）：目标色 A：L*=50.1446、a*=15.76、b*=-58.54；试配 B：L*=49.6212、a*=16.43、b*=-60.06。求 ΔE*，判断 B 相对 A 的明度、红绿、黄蓝方向与饱和度变化。',ansText:'ΔL*=49.6212−50.1446≈-0.52（按原始值重算约 -0.5234）；Δa*=+0.67；Δb*=-1.52。ΔE*=√(0.52²+0.67²+1.52²)≈1.74。方向：B 比 A 暗（ΔL*<0）、偏红（Δa*>0）、偏蓝（Δb*<0，b* 负值表示蓝色）。饱和度：C*A=√(15.76²+58.54²)≈60.63，C*B=√(16.43²+60.06²)≈62.27，ΔC*≈+1.64，B 的饱和度更高。注：ΔL* 与 C* 按原始值重算与课件印刷小数略有出入，ΔE*=1.74 与“B 更饱和”的结论不变；本题为按课件例 3 数据整理的计算题。',exp:'ΔE*≈1.74 + 暗/红/蓝三方向 + C* 60.63→62.27、B 更饱和。'},
+{id:108,type:'calc',tag:'课程新增 · 计算',q:'【课程新增】计算（色卡 0592）：标准 L*=85.92、a*=3.87、b*=-7.40；样品 L*=86.40、a*=3.69、b*=-7.14。求 DL*、Da*、Db* 与 DE*，判断样品相对标准的方向，并按 ΔE*<1.0 判断是否可接受。',ansText:'DL*=86.40−85.92=+0.48；Da*=3.69−3.87=-0.18；Db*=-7.14−(-7.40)=+0.26。DE*=√(0.48²+0.18²+0.26²)=√0.3304≈0.57。方向：样品比标准明亮（DL*>0）、偏绿（Da*<0）、偏黄（Db*>0）。判定：0.57 < 1.0，可接受。',exp:'三分量 + DE*≈0.57 + 明亮/偏绿/偏黄 + 可接受，四步齐全。可用上方计算器验算。'},
+{id:109,type:'calc',tag:'课程新增 · 计算+判断',q:'【课程新增】计算+判断：目标色 3234 的某试配测得 D65/10° ΔE* 0.84、A/10° 0.95、F11/10° 2.49。按 ΔE*<1.0 分别判断三种光源下是否合格，并说明这属于什么现象、签样时应如何处理。',ansText:'D65/10°：0.84 <1.0 合格；A/10°：0.95 <1.0 合格；F11/10°：2.49 >1.0 超标。现象：同色异谱——试配与目标反射率曲线不同，只在部分光源下等色。处理：不能只凭 D65（和 A）放行，须多光源核查；优先改用与目标相同的颜料/色浆体系重配，或选多光源 ΔE 都合格的电脑配色配方，复测至各光源均 <1.0 再签样。',exp:'三光源逐项判定 + 同色异谱定性 + 多光源处理。'},
+{id:110,type:'calc',tag:'课程新增 · 综合',q:'【课程新增】综合诊断：某浅色目标色的拟订配方为——选用 A 漆作基础漆，色浆总量控制在 10% 以内，主色浆先加 70% 再逐步补加，配前已做指研实验且揉搓区与未揉搓区 ΔE 很小，并注明“随色浆加量增大，基础漆由 A 换 B 再换 C”。判断该配方思路是否合理，并逐条说明理由。',ansText:'合理，逐条对应课件要点：① 浅色目标选 A 漆正确——A 漆钛白 18–23、对比率 0.90–0.93，正是浅色用漆；② 色浆总量 ≤10% 符合配方注意事项，超量会降耐水、耐擦洗并增成本；③ 主色浆先加 70%、其余少加多次加，可避免一次过量调过头；④ 指研 ΔE 小说明色浆与基础漆相容性好，不易浮色发花；⑤ 随加量增大 A→B→C 换漆正确——目标变深时继续用 A 漆会被钛白冲灰、调不深。结论：配方思路合理，可按此小样试调，干膜后测 ΔE*<1.0 并多光源复核再放大。',exp:'五条逐项给理由 + 干膜复测收尾。答成“合理”但不给理由不得分。'}
+];
+var state={}; // id -> {done, correct, selected:[]}
+var TOTAL_SCORABLE=QUESTIONS.length; // all count via self-mark for text types; auto for choice
+function typeName(t){return {single:'单选',multi:'多选',fill:'填空',judge:'判断',short:'简答',calc:'计算/实训'}[t]}
+function render(filter){
+  var list=document.getElementById('quizList'); list.innerHTML='';
+  QUESTIONS.filter(function(q){return filter==='all'||q.type===filter||(filter==='calc'&&q.type==='calc')}).forEach(function(q){
+    var card=document.createElement('div'); card.className='qcard'; card.id='q'+q.id;
+    var h='<div class="qmeta"><span class="pill b">'+typeName(q.type)+'</span> &nbsp;第 '+q.id+' 题 · '+q.tag+'</div><h3>'+q.q+'</h3>';
+    if(q.opts){
+      h+='<div class="opts">';
+      q.opts.forEach(function(o,i){ h+='<button class="opt" data-q="'+q.id+'" data-i="'+i+'">'+String.fromCharCode(65+i)+'. '+o+'</button>'; });
+      h+='</div>';
+      if(q.type==='multi') h+='<button class="btn btn-amber" style="margin-top:10px" onclick="submitMulti('+q.id+')">提交多选</button>';
+    } else {
+      h+='<button class="btn btn-ghost" style="margin-top:6px" onclick="toggleAns('+q.id+')">看答案与解析</button>';
+      h+='<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-primary" onclick="selfMark('+q.id+',true)">✓ 自评答对</button><button class="btn btn-ghost" onclick="selfMark('+q.id+',false)">✗ 自评答错 / 没答出</button></div>';
+    }
+    h+='<div class="ans" id="ans'+q.id+'"><strong>答案：</strong>'+(q.ansText?q.ansText:q.ans.map(function(i){return String.fromCharCode(65+i)}).join('、'))+'<br><strong>解析：</strong>'+q.exp+'</div>';
+    h+='<div id="fb'+q.id+'" style="margin-top:8px;font-weight:700"></div>';
+    card.innerHTML=h; list.appendChild(card);
+    // restore state visuals
+    var st=state[q.id];
+    if(st&&q.opts&&q.type!=='multi'){ markOpts(q,st.selected[0],true); }
+    if(st&&st.done){ showAns(q.id,true); setFb(q.id,st.correct); }
+  });
+  bindOpts(); updateScore();
+}
+function bindOpts(){
+  document.querySelectorAll('.opt').forEach(function(b){
+    b.onclick=function(){
+      var qid=+b.dataset.q, idx=+b.dataset.i;
+      var q=QUESTIONS.find(function(x){return x.id===qid});
+      if(q.type==='multi'){
+        b.classList.toggle('correct'); // use as selected style temporarily
+        b.style.outline=b.classList.contains('correct')?'2px solid var(--ink)':'';
+        if(!b.classList.contains('correct')) b.style.outline='';
+        return;
+      }
+      var correct=q.ans.indexOf(idx)>=0;
+      state[qid]={done:true,correct:correct,selected:[idx]};
+      markOpts(q,idx,false); showAns(qid,true); setFb(qid,correct); updateScore();
+    };
+  });
+}
+function markOpts(q,selIdx,restore){
+  document.querySelectorAll('#q'+q.id+' .opt').forEach(function(b){
+    var i=+b.dataset.i;
+    b.classList.remove('correct','wrong');
+    if(q.ans.indexOf(i)>=0 && (restore? state[q.id]&&state[q.id].done : true) && selIdx!==undefined && state[q.id]&&state[q.id].done) b.classList.add('correct');
+    if(i===selIdx && state[q.id] && !state[q.id].correct) b.classList.add('wrong');
+    if(restore && state[q.id] && state[q.id].done && q.ans.indexOf(i)>=0) b.classList.add('correct');
+  });
+}
+function submitMulti(qid){
+  var q=QUESTIONS.find(function(x){return x.id===qid});
+  var sel=[];
+  document.querySelectorAll('#q'+qid+' .opt').forEach(function(b){ if(b.style.outline){ sel.push(+b.dataset.i); b.style.outline=''; }});
+  if(!sel.length){ var fb=document.getElementById('fb'+qid); if(fb) fb.innerHTML='<span style="color:var(--muted)">先点选选项，再提交</span>'; return; }
+  var correct=sel.length===q.ans.length && q.ans.every(function(a){return sel.indexOf(a)>=0});
+  state[qid]={done:true,correct:correct,selected:sel};
+  document.querySelectorAll('#q'+qid+' .opt').forEach(function(b){ var i=+b.dataset.i; b.classList.remove('correct','wrong'); if(q.ans.indexOf(i)>=0) b.classList.add('correct'); else if(sel.indexOf(i)>=0) b.classList.add('wrong'); });
+  showAns(qid,true); setFb(qid,correct); updateScore();
+}
+function toggleAns(qid){ showAns(qid); }
+function showAns(qid,force){ var el=document.getElementById('ans'+qid); if(el){ if(force) el.classList.add('show'); else el.classList.toggle('show'); } }
+function setFb(qid,correct){ var el=document.getElementById('fb'+qid); if(el) el.innerHTML=correct?'<span style="color:var(--ink)">✓ 答对了</span>':'<span style="color:var(--muted)">✗ 答错了，看上方解析再记一遍</span>'; }
+function selfMark(qid,correct){ state[qid]={done:true,correct:correct,selected:[]}; showAns(qid,true); setFb(qid,correct); updateScore(); }
+function updateScore(){
+  var done=Object.keys(state).filter(function(k){return state[k].done}).length;
+  var score=Object.keys(state).filter(function(k){return state[k].done&&state[k].correct}).length;
+  document.getElementById('scoreText').textContent='已答 '+done+' / '+QUESTIONS.length+' 题 · 答对 '+score+' 题';
+  document.getElementById('progBar').style.width=(done/QUESTIONS.length*100)+'%';
+}
+function resetQuiz(){ state={}; render(currentFilter); window.scrollTo({top:document.getElementById('quiz').offsetTop-70,behavior:'smooth'}); }
+var currentFilter='all';
+document.querySelectorAll('#filters .chipbtn').forEach(function(b){ b.onclick=function(){ document.querySelectorAll('#filters .chipbtn').forEach(function(x){x.classList.remove('active')}); b.classList.add('active'); currentFilter=b.dataset.f; render(currentFilter); }; });
+render('all');
+</script>
+<script>
+function setTheme(name,btn){
+  document.documentElement.setAttribute('data-theme',name);
+  document.querySelectorAll('.tbtn').forEach(function(b){ b.classList.toggle('active', b===btn); });
+}
+</script>
+</body>
+</html>
