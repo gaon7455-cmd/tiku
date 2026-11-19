@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>化妆品安全使用与功效评价 · 考前复习与题库</title>
+<style>
+:root, :root[data-theme="paper"]{
+  --bg:#ffffff; --surface:#ffffff; --surface2:#f6f6f6; --chip:#efefef;
+  --ink:#141414; --muted:#5c5c5c; --line:#d8d8d8;
+  --hero-bg:#111111; --hero-ink:#ffffff;
+  --solid:#141414; --solid-ink:#ffffff;
+  --key:#c62828; --key-solid:#ff6f60;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#0e0e0e; --surface:#171717; --surface2:#1f1f1f; --chip:#262626;
+  --ink:#f2f2f2; --muted:#a8a8a8; --line:#363636;
+  --hero-bg:#000000; --hero-ink:#ffffff;
+  --solid:#f2f2f2; --solid-ink:#111111;
+  --key:#ff5252; --key-solid:#c62828;
+  color-scheme:dark;
+}
+:root[data-theme="gray"]{
+  --bg:#ececec; --surface:#ffffff; --surface2:#f4f4f4; --chip:#e3e3e3;
+  --ink:#141414; --muted:#5c5c5c; --line:#d0d0d0;
+  --hero-bg:#141414; --hero-ink:#ffffff;
+  --solid:#141414; --solid-ink:#ffffff;
+  --key:#c62828; --key-solid:#ff6f60;
+  color-scheme:light;
+}
+.key{color:var(--key);font-weight:800}
+.hero .key{color:#ff6f60}
+.cheat ol li>strong{color:var(--key)}
+.formula .big{color:var(--key-solid)}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;font-size:16px}
+a{color:var(--ink);text-underline-offset:3px} button{min-height:44px;font-family:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 56px}
+.themebar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:16px 0 14px}
+.themebar .tlabel{font-weight:800;font-size:14px;margin-right:2px}
+.tbtn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer;min-height:44px;font-size:14px}
+.tbtn.active{background:var(--solid);color:var(--solid-ink)}
+.hero{background:var(--hero-bg);color:var(--hero-ink);margin:0 -18px;padding:0;border-bottom:1px solid var(--line)}
+.hero-in{max-width:1080px;margin:0 auto;padding:28px 18px 26px;display:grid;grid-template-columns:1fr;gap:22px}
+.hero h1{font-family:"Noto Serif SC",serif;font-size:32px;line-height:1.25;margin:6px 0 8px;font-weight:900}
+.hero .sub{opacity:.92;font-size:15px}
+.badge{display:inline-block;background:#ffffff;color:#111111;font-weight:800;font-size:12px;padding:4px 10px;border-radius:999px;letter-spacing:.04em}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.meta span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);padding:6px 10px;border-radius:999px;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:22px;line-height:1.2} .stat small{opacity:.85}
+.nav{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line);margin:0 -18px;padding:0 18px}
+.nav-in{max-width:1080px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-weight:700;font-size:14px;padding:10px 14px;border-radius:999px;background:var(--chip);min-height:40px;display:flex;align-items:center}
+.nav a:hover{outline:1.5px solid var(--ink)}
+section{margin-top:30px}
+h2{font-family:"Noto Serif SC",serif;font-size:24px;margin:0 0 6px;line-height:1.3;font-weight:900}
+h2 .no{color:var(--muted);font-family:"Noto Sans SC",sans-serif;font-size:13px;display:block;letter-spacing:.12em;font-weight:700}
+.lead{color:var(--muted);margin:0 0 16px;font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.formula{background:var(--solid);color:var(--solid-ink);border-radius:12px;padding:18px;text-align:center}
+.formula .big{font-size:22px;font-weight:900;letter-spacing:.02em;margin:8px 0}
+.formula p{opacity:.85;font-size:14px;margin:4px 0}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.kv div{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.kv b{font-size:18px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--muted);background:var(--surface2)}
+tr:last-child td{border-bottom:none}
+.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid var(--line);background:var(--surface2);color:var(--muted)}
+.pill.g{background:var(--solid);color:var(--solid-ink);border-color:var(--solid)}
+.pill.r{background:transparent;color:var(--muted);border:1px dashed var(--muted)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+details summary{cursor:pointer;padding:16px 18px;font-weight:800;font-size:16px;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details .body{padding:0 18px 18px;border-top:1px solid var(--line)}
+details .body p,details .body li{font-size:15px}
+ul.tight{margin:8px 0;padding-left:20px} ul.tight li{margin:4px 0}
+.axis{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.axis div{border-radius:10px;padding:14px;text-align:center;font-weight:700}
+.axis .l{background:var(--solid);color:var(--solid-ink)}
+.axis .a{background:var(--surface2);border:1px solid var(--line)}
+.axis .b{background:var(--chip)}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc label{font-size:13px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+.calc input,.calc select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);color:var(--ink);font-size:16px;min-height:48px}
+.calc-out{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:14px}
+.btn{border:1.5px solid var(--ink);border-radius:999px;padding:12px 18px;font-weight:800;cursor:pointer;font-size:15px;min-height:48px;background:transparent;color:var(--ink)}
+.btn-primary{background:var(--solid);color:var(--solid-ink)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-amber{background:var(--solid);color:var(--solid-ink)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chipbtn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:10px 14px;font-weight:700;cursor:pointer;min-height:44px}
+.chipbtn.active{background:var(--solid);color:var(--solid-ink);border-color:var(--solid)}
+.progress{height:10px;background:var(--chip);border-radius:999px;overflow:hidden;margin:10px 0}
+.progress i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}
+.qcard h3{margin:0 0 4px;font-size:16px;line-height:1.55}
+.qmeta{font-size:12px;color:var(--muted);margin-bottom:10px}
+.opts{display:grid;gap:8px}
+.opt{width:100%;text-align:left;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:15px;line-height:1.5;min-height:48px}
+.opt.correct{border-color:var(--solid);background:var(--solid);color:var(--solid-ink);font-weight:700}
+.opt.wrong{border-style:dashed;border-color:var(--muted);background:var(--surface2);color:var(--muted)}
+.ans{display:none;margin-top:12px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+.ans.show{display:block}
+.note{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:14px}
+.steps{display:grid;gap:10px}
+.step{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.step n{flex:0 0 36px;width:36px;height:36px;border-radius:50%;background:var(--solid);color:var(--solid-ink);display:flex;align-items:center;justify-content:center;font-weight:900}
+.cheat{background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:18px}
+.cheat li{margin:6px 0;font-size:15px}
+footer{margin-top:36px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+footer a{word-break:break-all}
+.source-list{columns:1; font-size:13px}
+@media(max-width:720px){
+ .hero-in{grid-template-columns:1fr}
+ .grid2,.grid3,.calc{grid-template-columns:1fr} .stats{grid-template-columns:1fr 1fr} .kv{grid-template-columns:1fr}
+ .axis{grid-template-columns:1fr} h2{font-size:21px} .hero h1{font-size:27px}
+ table{font-size:13px} th,td{padding:8px 5px;word-break:break-word;overflow-wrap:anywhere}
+ .nav-in{flex-wrap:wrap;overflow-x:visible}
+}
+.showbox{margin-top:12px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+.showbox .rec{font-weight:800}
+.myans{margin:8px 0 0;padding-left:0;list-style:none}
+.myans li{margin:5px 0;line-height:1.6}
+.myans .ok{color:var(--key);font-weight:800}
+.myans .no{color:var(--muted);font-weight:800}
+.warn{color:var(--key);font-weight:800}
+.note{font-size:13px;color:var(--muted)}
+.ing{font-size:13px;color:var(--muted);background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-top:8px;line-height:1.7;word-break:break-word}
+.qsub{font-size:14px;color:var(--muted);margin:0 0 10px}
+details .qcard{margin-bottom:12px}
+.secnote{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--key);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.7}
+
+:root[data-theme="green"]{
+  --bg:#dcead7; --surface:#f2f8ef; --surface2:#e6f0e0; --chip:#d4e4cd;
+  --ink:#1c2b18; --muted:#4c6247; --line:#b3c9ab;
+  --hero-bg:#1c2b18; --hero-ink:#f2f8ef;
+  --solid:#1c2b18; --solid-ink:#f2f8ef;
+  --key:#8a1c1c; --key-solid:#c62828;
+  color-scheme:light;
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="themebar"><span class="tlabel">配色</span>
+<button class="tbtn active" data-theme="dark" onclick="setTheme('dark',this)">黑底白字</button>
+<button class="tbtn" data-theme="paper" onclick="setTheme('paper',this)">白底黑字</button>
+<button class="tbtn" data-theme="gray" onclick="setTheme('gray',this)">浅灰底</button>
+<button class="tbtn" data-theme="green" onclick="setTheme('green',this)">护眼绿</button>
+<span class="note">配色会记住你的选择，下次打开还是它。</span>
+</div>
+<div class="hero"><div class="hero-in">
+<span class="badge">深职大 · 24精化 · 2025-2026 第二学期</span>
+<h1>化妆品安全使用与功效评价<span style="display:block;font-size:20px;margin-top:6px">考前复习与题库</span></h1>
+<p class="sub">教师隗晶晶 · 课程 18600000000176 · 2026-11-19 通读全部 5 章 19 节整理。章节原题在前、原样呈现；外部补充题在后、逐题标注来源。</p>
+<div class="meta"><span>5 章 19 节</span><span>章节原题 62 道</span><span>外部补充 24 道</span><span>可自测 43 题</span></div>
+<div class="stats">
+<div class="stat"><b>5</b><small>章 · 19 节</small></div>
+<div class="stat"><b>62</b><small>章节原题（原样）</small></div>
+<div class="stat"><b>24</b><small>外部补充题</small></div>
+<div class="stat"><b>43</b><small>可点选计分</small></div>
+</div>
+</div></div>
+<div class="nav"><div class="nav-in">
+<a href="#know">📚 知识点总结</a><a href="#orig">✍️ 章节原题（62道）</a><a href="#ext">➕ 外部补充题（24道）</a><a href="#about">ℹ️ 说明</a>
+</div></div>
+
+<section id="know">
+<h2><span class="no">KNOWLEDGE · 按课件整理</span>知识点总结</h2>
+<p class="lead">按 5 章 19 节课件整理。2.1、2.8 两节当前页面显示“暂无内容”，如实注明，未编内容。点开每章查看。</p>
+<details><summary>第 1 章 · 绪论（1.1）</summary><div class="body"><p class="qsub">课件 71 页 · 隗晶晶 · 精细化工技术专业必修课 · 本节无独立测验、无课件内嵌原题</p>
+<ul class="tight">
+<li><strong>化妆品定义：</strong>以涂擦、喷洒或者其他类似方法，施用于皮肤、毛发、指甲、口唇等人体表面，以清洁、保护、美化、修饰为目的的日用化学工业产品。</li>
+<li><strong>化妆品历史：</strong>夏商周胭脂、古代妆容到现代发展。</li>
+<li><strong>行业发展（当前页面数据）：</strong>过去十年全球美妆市场估算增长率：2014 年 4%、2015 年 4%、2016 年 4%、2017 年 5%、2018 年 6%、2019 年 5%、2020 年 -8%、2021 年 8%、2022 年 6%、2023 年 8%、2024 年 4.5%。到 2030 年潜在消费者数量预计增加 7.5 亿（北美 +4500 万、欧洲 +3000 万、拉丁美洲 +9000 万、非洲和中东 +1.7 亿、北亚 +1.4 亿）。2025 年上半年全球美妆十强：1 欧莱雅（法国）1877.44 亿元，2 联合利华（荷兰）1086.05 亿元，3 宝洁（美国）518.08 亿元，4 雅诗兰黛（美国）499.29 亿元，5 拜尔斯道夫（德国）361.74 亿元，6 LVMH（法国）341.02 亿元，7 科赴（美国）312.59 亿元，8 资生堂（日本）228.72 亿元，9 Puig（西班牙）192.08 亿元，10 科蒂（法国）182.99 亿元；另有 2025 年上半年国内美妆上市企业 TOP10 与市值 TOP 榜。</li>
+<li><strong>行业特点与趋势：</strong>科技密集、竞争激烈、需求多样化；绿色环保、功效化、个性化定制、智能化；同质化竞争、监管趋严、假冒伪劣。</li>
+<li>学习目标与方法、安全使用与不良反应、课程考核方式。扩展视频 3 个（40:18、01:03:15、01:03:14）及 AI 视频摘要（补充，未逐字转录）。</li>
+</ul></div></details>
+<details><summary>第 2 章 · 化妆品基础（2.1–2.9）</summary><div class="body"><p class="qsub">2.1、2.8 当前页面显示“暂无内容”；2.2、3.4 为参考教材；2.9 为知识图谱图片</p>
+<ul class="tight">
+<li><strong>2.1：</strong>当前页面显示“暂无内容”（课件已撤下，学时安排无法从当前页面确认）。</li>
+<li><strong>2.2《化妆品安全技术规范（2015年版）》54 页：</strong>总则、通用要求、原料要求、产品要求、检验方法、附录；限用组分、准用防晒剂/着色剂/防腐剂等附录。</li>
+<li><strong>2.3 定义与分类：</strong>三个目的——清洁、保护、美化、修饰；作用部位皮肤、毛发、指甲、口唇等人体表面；不以改变人体生理功能为目的。与药品、消毒产品、医疗器械的区别；牙膏、香皂、漱口水等边界产品（牙膏参照普通化妆品管理，《化妆品监督管理条例》2020年6月29日公布）。分类维度：使用目的、使用部位、剂型、功能、使用对象、产品形态等。普通化妆品与特殊化妆品——特殊：染发、烫发、祛斑美白、防晒、防脱发、祛痘、除臭、宣称新功效。法规：《化妆品监督管理条例》《化妆品分类规则和分类目录》《化妆品功效宣称评价规范》。</li>
+<li><strong>2.4 注册与备案：</strong>特殊化妆品注册、普通化妆品备案；注册人、备案人、境内责任人、生产企业、经营者责任；特殊化妆品范围、普通化妆品范围、化妆品新原料注册与备案；注册流程、备案流程与资料要求；注册证有效期 5 年；变更、延续、注销。技能实操：收集 5 款化妆品注册/备案信息。</li>
+<li><strong>2.5 标签：</strong>标签内容（产品名称、注册人/备案人名称地址、生产企业名称地址、产品执行的标准编号、全成分、净含量、使用期限、使用方法、保存条件、安全警示用语、注册证/备案编号等）。全成分标注规则：按含量降序；含量≤1% 的成分可不按降序；香精可标注为香精；着色剂按 CI 号等。使用期限、生产日期、限期使用日期、开封后使用期限。标签禁止内容：医疗术语、明示或暗示医疗作用、虚假夸大、绝对化用语、贬低其他产品、违反公序良俗等。净含量标注在主要展示版面。</li>
+<li><strong>2.6 功效宣称：</strong>宣称依据（文献资料、研究数据、功效宣称评价试验）；评价试验方法（人体功效评价试验、消费者使用测试、实验室试验）；宣称功效分类与评价要求（祛斑美白、防晒、抗皱、紧致、舒缓、控油、祛痘等；防晒 SPF、PA）；禁止宣称（医疗作用、虚假夸大、绝对化用语、医疗术语）；宣称应有充分科学依据、真实合法、不得误导消费者。</li>
+<li><strong>2.7 原料与成分：</strong>原料是生产起始物料，不等同于成分；单一成分原料与复配原料。玻色因示例：赫莲娜黑绷带面霜玻色因原料溶液添加量 30%，不是成分含量 30%。成分标准中文名称须用《国际化妆品原料标准中文名称目录》（2010年版）。简称/化学名/商品名对照：EtOH 乙醇、HA 透明质酸、VB3 烟酰胺、VB5 泛醇、EDTA 乙二胺四乙酸、TEA 三乙醇胺、PCA 吡咯烷酮羧酸、D5 环五聚二甲基硅氧烷、PDMS 聚二甲基硅氧烷、PEG-60 聚乙二醇-60、IPBC 碘丙炔醇丁基氨甲酸酯等。国际分类（美国个人护理产品协会《国际化妆品原料字典和手册》：按化学组成 72 类，按功能 76 类）。我国分类：基质原料（溶剂、油质原料、粉体原料、表面活性剂、增稠剂）、辅助原料（防腐剂、抗氧化剂、着色剂、香精、酸度调节剂、螯合剂等）、功效原料（保湿剂、防晒剂、美白剂、角质剥脱剂等）。表面活性剂作用（清洁、增溶、乳化等）；增稠剂（流变调节剂）；防腐剂。功效成分表——防晒：二氧化钛、氧化锌、甲氧基肉桂酸乙基己酯、阿伏苯宗；保湿：甘油、透明质酸、泛醇、PCA钠；修复：神经酰胺、植物甾醇类、角鲨烷、胆固醇；美白：抗坏血酸、烟酰胺、熊果苷、间苯二酚类；抗衰老：视黄醇、胜肽、泛醇、SOD；祛痘：水杨酸、壬二酸、吡啶硫酮锌、季铵盐-73。安全：《已使用化妆品原料名称目录（2021年版）》8972 种；《化妆品安全技术规范（2015年版）》限用组分 47 种，准用组分（防腐剂、防晒剂、着色剂、染发剂）；《化妆品新原料注册备案资料管理规定》第十六条（新原料安全性评价资料：毒理学安全评价资料和安全评估资料，12 项毒理学试验项目）；《化妆品注册备案资料管理规定》第二十九条（配方表：原料序号、原料名称、百分含量、使用目的；祛斑美白、防晒、染发、烫发、脱毛、除臭、祛痘、防脱发产品应在配方表使用目的栏标注主要功效成分）。环保：欧盟禁用吡硫翁锌（ZPT）。</li>
+<li><strong>2.8：</strong>当前显示“暂无内容”（空占位小节）。</li>
+<li><strong>2.9：</strong>一张知识图谱图片（“化妆品功效评价-知识图谱.jpeg”，补充性总结图）。</li>
+</ul></div></details>
+<details><summary>第 3 章 · 皮肤基础（3.1–3.4）</summary><div class="body"><p class="qsub">3.3 无小测；3.4 为参考教材《第二章 皮肤生理基础及评价指标》50 页</p>
+<ul class="tight">
+<li><strong>3.1 皮肤的结构：</strong>皮肤是人体最大器官，面积约 2 平方米，约占体重 15%；厚度约 0.5~4.0mm，平均 2.0~2.2mm，眼睑最薄，足跖最厚，男性皮肤比女性厚。分型：无毛的厚皮肤、有毛的薄皮肤。三大基本结构：表皮、真皮、皮下组织；表皮起屏障作用，真皮富含血管、神经和附属器官、为表皮提供水分营养及支撑，皮下组织最深层由脂肪组织构成、储存能量、保温、缓冲；表皮与真皮之间通过基底膜隔开，真皮与皮下组织之间没有明显界限。表皮细胞：角质形成细胞占 90%~95%，另有黑素细胞、朗格汉斯细胞（免疫）、梅克尔细胞（触觉）和未定型细胞；角蛋白和丝聚蛋白占表皮细胞蛋白含量 80%~90%；黑素细胞位于基底层和毛囊，约占基底层细胞总数 10%，数量与部位、年龄有关，与肤色、人种、性别等无关。表皮由深至浅：基底层、棘层、颗粒层、（透明层）、角质层；表皮更替约 28 天（基底层到颗粒层上层约 14 天，角质层到脱落约 14 天）。角质层、透明层（仅掌跖等表皮较厚部位，2~3 层扁平透明无核死细胞）、颗粒层（透明角质颗粒，角蛋白、前丝聚蛋白、内披蛋白；板层小体脂质）、棘层（板层小体，含多糖、糖蛋白、脂质、酶类）。真皮由浅至深：乳头层（约占真皮厚度 10%）和网状层（约占 90%），两层互相移行无截然界限；真皮细胞仅占 10%，大部分是成纤维细胞，细胞外基质基本由成纤维细胞分泌；胶原纤维是真皮主要纤维成分，占真皮干重 70% 左右，韧性大、抗拉力强、缺乏弹性；网状纤维是纤细的未成熟胶原纤维，主要成分为Ⅲ型胶原；弹性纤维、糖胺聚糖（重复二糖单元，吸水增加真皮体积使皮肤饱满光滑）、透明质酸 HA（唯一未被硫酸化的糖胺聚糖，不与蛋白质结合形成蛋白聚糖）、蛋白聚糖。皮下组织位于真皮下方，与真皮没有明显界限，由疏松结缔组织构成。皮肤附属器主要存在于真皮层中，包括毛囊和毛发、皮脂腺、汗腺、指（趾）甲等；毛囊生长周期：生长期、退行期、休止期；毛发由深度角质化细胞构成，从内到外：毛髓质、皮质、毛小皮；毛发按长度和质地：胎毛、毳毛、终毛；毛发颜色与黑色素（真黑素/褐黑素组合，1-10 级发色）。皮脂腺除掌跖、足背外全身皮肤表面都存在；皮脂组成：甘油三酯类 20–60%、蜡酯 23–60%、脂肪酸 10–30%、胆固醇和胆固醇酯 1–6%、角鲨烯 10–20%。汗腺分大汗腺（顶泌汗腺，腺体比外泌汗腺大 10 倍左右）和小汗腺（外泌汗腺，分泌汗液主要成分为水分、无机盐、尿素等）。指（趾）甲由坚硬角蛋白组成，指甲生长速度约每天 0.1 mm，趾甲约每天 0.05 mm。</li>
+<li><strong>3.2 皮肤的功能：</strong>七大核心功能：屏障保护、渗透吸收、合成代谢、分泌排泄、感觉应答、体温调节、免疫；屏障功能双向性；吸收功能（选择性透过角质层进入表皮、真皮）；合成与代谢（合成维生素 D；黑色素代谢：黑素细胞胞质内黑素小体含酪氨酸酶，是合成黑色素的场所，1 个黑素细胞可向周围 10~36 个角质形成细胞提供黑色素，形成 1 个表皮黑素单元）；分泌排泄（皮脂腺、汗腺；皮脂膜：汗液+皮脂在角质层表面均匀乳化融合形成的水油混合乳化薄膜，也叫水脂膜；痤疮成因：皮脂过度分泌、毛囊导管角化过度、痤疮丙酸杆菌大量繁殖、炎症反应持续爆发）；感觉应答（单一感觉：痛觉、痒觉、触觉、冷觉、温觉、压觉六种；复合感觉：潮湿、干燥、平滑、粗糙、坚硬、柔软等）；体温调节（皮肤散失体内约 80% 的热量，机制：红外辐射、蒸发、对流、传导，大部分通过红外辐射散失）；免疫（皮肤是人体最大免疫器官，固有免疫+获得性免疫）。狭义皮肤屏障：皮脂膜 + “砖墙结构”角质层；天然保湿因子 NMF（氨基酸类 38%~42%、吡咯烷酮羧酸 11%~13%、乳酸盐 11%~13%、无机盐类 17%~19%、尿素类 6%~8%、其他 10%~12%）；细胞间脂质板层双分子层（神经酰胺 45、胆固醇 30 等）；角质层“砖墙结构”（角质细胞为“砖块”，细胞间脂质为“灰浆”）；化学屏障（皮肤表面弱酸性，pH 约 5.5）；微生物屏障；屏障受损与修复。透皮吸收：浓度差引起的被动扩散，菲克第一定律 J = −DK(c/L)；透皮吸收途径：细胞间途径、跨细胞途径、经皮肤附属器；影响因素：皮肤生理因素（部位、年龄、性别、病理状态、水合作用、封闭作用、温度）、成分物化性质（分子量 &lt;500 Da 透皮吸收强；脂水分配系数 1 &lt; logP &lt; 3 透皮吸收强；熔点低、溶解度高透皮吸收强；电离度低透皮吸收强；氢键多透皮吸收弱）、配方与制剂；500 道尔顿定律；偏亲脂成分更容易透过亲脂角质层和亲水活表皮层及真皮层；脂质体技术、纳米乳液、液晶乳液；玻尿酸通过主动运输而非被动扩散被皮肤吸收。</li>
+<li><strong>3.3 皮肤色素：</strong>黑色素（黑素细胞位于基底层和毛囊，约占基底层细胞总数 10%；黑素小体含酪氨酸酶；1 个黑素细胞可向周围 10~36 个角质形成细胞提供黑色素；黑色素颗粒分布与降解速度因人种而异）；毛发颜色和黑色素（发色 1-10 级）；Chardon 法肤色分级（ITA°：55-90 很浅，41-54 浅，28-40 中等，10-27 棕褐色，-30–-9 褐色，-90–-29 深色）；紫外线晒黑（自由基攻击胶原蛋白、弹力蛋白和细胞核 DNA）；Fitzpatrick 皮肤分型（Type 1-6）；胡萝卜素；血红蛋白；油性和干性皮肤；外油内干（皮脂分泌过度+皮肤屏障受损）；水油平衡；皮脂含量/脂质含量随年龄变化；青春痘四大致病因素；化妆品用祛痘成分（抑制皮脂分泌：维生素 A 类、维生素 C 类、维生素 B3、维生素 B6；抑制毛囊角化：果酸、水杨酸、维生素 A 类；抑制细菌：硫磺、季铵盐-73、伞花烃、桃拓酚、茶树精油；抑制炎症：甘草提取物、洋甘菊提取物、维生素 E 类、维生素 C 类）；敏感性皮肤（灼热、潮红、刺痛、瘙痒、紧绷感；成因：屏障受损、神经高反应性、免疫炎症反应、微生态紊乱；评估方法：主观评估、半主观评估（乳酸刺痛试验、辣椒素试验）、客观评估（TEWL、红斑指数 EI 等）；辣椒素试验：直径 0.8cm 两层滤纸、50μL 辣椒素、1-5 分评分，灼痛持续 &gt;30s 且 ≥3 分为阳性）；宝曼 16 型皮肤分型（干性/油性、敏感/耐受、色素/非色素、紧致/皱纹；代码如 DSPT、OSPT 等）。</li>
+<li><strong>3.4 教材《第二章 皮肤生理基础及评价指标》50 页：</strong>皮肤的组织与构成、皮肤的生理功能、皮肤颜色决定因素、皮肤评价指标（皮肤颜色、皮肤弹性；仪器 Cutometer MPA 580、Dermal Torque Meter DTM310、Ballistometer BLS780、Venustron 等）、化妆品功效宣称相关法规（日本《药事法》/《化妆品功效评价规范》；我国《化妆品监督管理条例》第三十七条、第四十三条）。</li>
+</ul></div></details>
+<details><summary>第 4 章 · 化妆品功效性评价（4.1–4.4）</summary><div class="body"><p class="qsub">本章四节均有章节测验；只有 4.1、4.2 的测验页面显示了标准答案</p>
+<ul class="tight">
+<li><strong>4.1 保湿功效评价：</strong>皮肤保湿功能（皮脂膜、细胞间脂质防止水分蒸发）。皮肤主要保湿成分——细胞间脂质（甘油三酯和游离脂肪酸 65、胆固醇酯 15、胆固醇 2、鞘脂（神经酰胺）18，单位 %；皮脂组成：甘油三酯和游离脂肪酸 50~60、蜡酯 26、胆固醇酯 13、胆固醇 1.5）。天然保湿因子（氨基酸类 40.0、吡咯烷酮羧酸 12.0、乳酸盐 12.0、尿素 7.0、氨、尿酸、葡萄糖、肌酸 1.5、钾 4.0、镁 1.5、磷酸盐 0.5、氯化物 6.0、柠檬酸 0.5，单位 %）。丝聚蛋白、水通道蛋白 AQP（AQP3 是人皮肤中表达量最丰富的水通道蛋白亚型）。表皮含水量由内而外递减（角质层 20~35%，棘层 50~60%，基底层 65%，真皮层 70%）。保湿成分作用机理：吸湿剂（从环境和皮肤内吸水）、柔润剂（补水软化平滑皮肤）、封闭剂（形成屏障减少水分流失）；甘油不是油。模拟天然保湿因子的产品（雅漾舒护活泉水喷雾）；模拟细胞间脂质的产品（珂润神经酰胺护理）；封闭剂（油脂）模拟皮脂（矿油、矿脂、羊毛脂、牛油果树果脂、蜂蜡）；模拟皮脂的产品（HABA 角鲨烷、荷荷巴油）。神经酰胺三种获得方式（植物提取、化学合成、微生物发酵）。柔润剂 VS 封闭剂（两者都属于油脂，有时统称为柔润剂）。不同季节保湿（夏季：吸湿剂；春秋：吸湿剂+柔润剂；冬季：吸湿剂+柔润剂+封闭剂）。保湿功效评价方法：体外法（吸湿性、保湿性、吸湿稳定性、皮脂成分分析、天然保湿因子分析、皮肤屏障相关蛋白及其基因表达、水通道蛋白及其基因表达）、动物实验法（小鼠皮肤模型、斑马鱼模型）、人体功效评价试验（角质层含水量、TEWL 等）。角质层含水量测试（Corneometer 电容法）；TEWL（Transepidermal Water Loss；Tewameter；TEWL 值 g/h/m²：&lt;10 非常健康，10-15 健康，15-25 正常，25-30 亚健康，大于 30 临界状态）。人体功效评价试验流程（D0 入组、D28 使用产品四周受试者回访、清洁脸部和等待、测试皮肤数值）。化妆品功效宣称评价项目要求表（祛斑美白*、防晒、防脱发、祛痘、滋养、修护、抗皱、紧致、舒缓、控油、去角质、防断发、保湿、护发等）。</li>
+<li><strong>4.2 防晒功效评价：</strong>紫外线（UVA 320-400 nm“黑光区”，UVB 290-320 nm“红斑区”，UVC 100-290 nm“杀菌区”；穿透力 UVA&gt;UVB&gt;UVC）。紫外线对皮肤的损伤（晒太阳后 3-4 小时出现红、肿、热、痛，12-24 小时炎症细胞作用、黑色素细胞分泌黑色素、受损表皮脱落，2-3 天皮肤变黑；日晒红斑、日晒黑化、自由基、光癌化、光老化；晒黑机理：酪氨酸→多巴→多巴醌→黑色素，黑素细胞转移至角质层色素沉积，延迟性黑化—UVB 刺激黑素合成，IPD &amp; PPD—UVA 产生 ROS、促进色素氧化加深、促进色素转移）。UVA 320~400 nm（不被云层和玻璃阻挡，占 95%，到达真皮层，晒黑、光老化）vs UVB 290~320 nm（易被云层和玻璃阻挡，占 5%，到达表皮，晒伤、皮肤癌、合成维生素 D3）。Fitzpatrick 日光反应性皮肤类型表（I-VI）。防晒剂种类与作用机理：化学防晒（有机防晒剂）、物理防晒（无机防晒剂）；有机防晒剂分子量小、脂溶性（甲氧基肉桂酸乙基己酯 290 Da、丁基甲氧基二苯甲酰基甲烷 310 Da、二苯酮-3 228 Da、水杨酸乙基己酯 250 Da、奥克立林 361 Da、双-乙基己氧苯酚甲氧苯基三嗪 628 Da），透皮吸收风险高；无机防晒剂作用机理为反射/散射；有机与无机对比（有机：透明感、部分较清爽、阿伏苯宗光稳定性问题、皮肤渗透风险高易过敏；无机：显白、较厚重油腻、纳米级无机防晒剂光活性问题、皮肤渗透风险低更安全）。防晒标识与功效评价：UVB 防护率 = 1 − 1/SPF；SPF 与 UVR 阻挡率（SPF 4→75，8→87.5，15→93.3，30→96.7，50→98）；MED（最小红斑量）；SPF（防晒指数 = 使用防晒化妆品防护皮肤的 MED / 未防护皮肤的 MED）；SPF 标识上限 50+；MPPD（最小持续性黑化量）；PFA/UVAPF（UVA 防护指数 = 使用防晒化妆品防护皮肤的 MPPD / 未防护皮肤的 MPPD）。不同国家和地区防晒指数标识（日本 SPF 30+ PA++++、美国 SPF 30 Broad Spectrum、澳洲 SPF 50+ UVA、欧盟 SPF 50+ UVA、英国 SPF 50+）。防水性能测试（抗水性 40 分钟、强抗水性 80 分钟）。体外/人体功效评价方法（重组人皮肤模型：表皮模型、含黑色素表皮模型、全皮模型）。防晒化妆品的正确使用（敏感肌、酒糟、异位性皮肤炎建议用纯物理性防晒；油性、粉刺、青春痘肌肤建议用质地较不油腻的产品；一般上班族或学生 SPF 25-35 已足够；足量涂；必要时补涂：登山与游泳 SPF 50 最少 1-2 小时一次；一般室外活动 SPF 30-50，2 小时一次；日常通勤 SPF 15-25，半天）。</li>
+<li><strong>4.3 祛斑美白功效评价：</strong>美白需求（均匀肤色、无瑕透白）；皮肤的色素沉积机制（黑色素合成途径：酪氨酸→多巴→多巴醌→黑色素；黑素细胞转移→到达角质层色素沉积；酪氨酸酶；紫外线晒黑机理）。美白成分作用机理（按作用环节：抑制酪氨酸酶活性、抗氧化、阻断黑色素运输、加速表皮更新；成分：对苯二酚（中国化妆品禁用、欧盟处方药、美国 OTC）、丁基间苯二酚、曲酸（氢醌之后的美白金标准）、凝血酸（氨甲环酸、传明酸）、视黄醇、抗坏血酸（维生素 C）及其衍生物（抗坏血酸葡糖苷、抗坏血酸磷酸酯镁、3-o-乙基抗坏血酸、抗坏血酸四异棕榈酸酯）、超氧化物歧化酶 SOD、生育酚（维生素 E）、谷胱甘肽、烟酰胺（维生素 B3 衍生物）、泛醌（辅酶 Q10）、虾青素、阿魏酸、α羟基酸和β羟基酸（AHA/BHA）等）。祛斑美白功效评价方法：体外评价方法（活性成分分析法——色谱、色谱-质谱联用；生物化学法（生化酶法）；细胞分子生物学法）、动物实验法、人体功效评价方法（紫外线诱导人体皮肤黑化模型祛斑美白功效测试法、人体开放使用祛斑美白功效测试法）。皮肤色素含量测定（Mexameter MX 18）。CIELab 色度系统（L* 亮度 0-100，主要受表皮黑色素含量影响；a* 红绿，主要受真皮血红蛋白含量影响；b* 黄蓝，受黑色素、胡萝卜素等多种因素影响）。个体类型角 ITA° = (180/π)·arctan[(L* − 50)/b*]，分级：很浅 55-90、浅 41-54、中等 28-40、棕褐色 10-27、褐色 -30–-9、深色 -90–-29。色差 ΔE_ab = √(ΔL*² + Δa*² + Δb*²)。VISIA 皮肤图像分析（斑点、紫外线色斑、棕色斑、红色区、紫质）。美白功效评价流程（D0 使用产品前、D14 使用产品二周、D28 使用产品四周）。</li>
+<li><strong>4.4 抗皱紧致功效评价：</strong>皮肤衰老的表现和机理（自然老化与光老化；皮肤衰老的特征：抬头纹、眼尾下垂、鱼尾纹、眼袋、泪沟、鼻唇沟、各类斑痣、中脸凹陷下垂、嘴角法令纹、木偶纹、下颌线模糊；皮肤衰老的表型变化；老化机理：内在因素/外在因素）。抗衰老成分作用机理（抗氧化成分：SOD、生育酚、抗坏血酸及其衍生物、谷胱甘肽、烟酰胺、泛醌、虾青素、阿魏酸；维生素 A 类 Retinoid：视黄酸、视黄醛、视黄醇、视黄醇棕榈酸酯，怕热+怕氧+怕光，功效 视黄酸 &gt; 视黄醛 &gt; 视黄醇 &gt; 视黄醇棕榈酸酯，安全性相反；多肽 Peptide：神经递质抑制剂（类肉毒素，如 Argireline 乙酰基六肽-8）、信号分子（棕榈酰五肽-4、棕榈酰三肽-1、棕榈酰四肽-7，刺激胶原蛋白生成）；α羟基酸（果酸）——促进胶原蛋白生成：第一代 羟基乙酸（MW 76）、乳酸（MW 90），第二代 葡萄糖酸内酯（MW 178），第三代 乳糖酸（MW 358），第四代 麦芽糖酸（MW 358）；β羟基酸——水杨酸）。抗皱紧致功效评价方法：体外功效评价方法（生物化学法：自由基清除、抑制基质金属蛋白酶 MMP、抑制弹性蛋白酶；细胞分子生物学法：角质形成细胞模型、人皮肤成纤维细胞模型、三维重组皮肤模型）、动物实验法（小鼠/大鼠皮肤模型、斑马鱼模型）、人体功效评价方法（皮肤弹性测试仪、VISIA、皮脂测定仪；不同部位的皮脂量；干性/中性/油性分级；抗衰老功效评价流程 D0/D14/D28）。</li>
+</ul></div></details>
+<details><summary>第 5 章 · 化妆品安全性评价（5.1）</summary><div class="body"><p class="qsub">本节无测验</p>
+<ul class="tight">
+<li><strong>化妆品不良反应 vs 化妆品不良事件：</strong>不良反应：日常生活中正常使用化妆品所引起的皮肤及其附属器的病变，以及人体局部或全身性的损害，不包括生产、职业性接触化妆品及其原料和使用假冒伪劣产品所引起的病变或者损害；不良事件：由于化妆品质量安全等问题引起的病变或者损害。不良事件监管范围：化妆品接触性皮炎、化妆品光感性皮炎、化妆品皮肤色素异常、化妆品痤疮、化妆品毛发损害、化妆品甲损害、化妆品唇炎、化妆品接触性荨麻疹、激素依赖性皮炎。</li>
+<li><strong>2020 年上海市化妆品不良反应监测情况通报：</strong>初步诊断：化妆品接触性皮炎 2401 例，96.58%；报告涉及化妆品来源：网购 55.00%、专柜购买 18.14%、不详 12.95%、其他 10.66%、美容美发机构 3.25%。</li>
+<li><strong>化妆品不良反应的主要原因；案例：</strong>氢醌与杜鹃花醇（嘉娜宝“杜鹃醇”事件）、洗发水中的二噁烷（SLES 月桂醇聚醚硫酸酯钠 / SLS 月桂醇硫酸酯钠）。</li>
+<li><strong>产品的安全性及风险管理：</strong>原料选择及评估 → 配方筛选及评估 → 生产过程及控制 → 成品安全及合规 → 上市后客户投诉及监测；《化妆品安全技术规范》禁用组分共 1388 项；生产过程检验与放行——五道检验程序：入库检验、配制过程检验、半成品检验、灌装检验、成品出厂检验。</li>
+<li><strong>化妆品理化检验：</strong>有害物质限值：汞 1、铅 10、砷 2、镉 5、甲醇 2000、二噁烷 30、石棉不得检出，单位 mg/kg；备注：含有有机汞防腐剂的眼部化妆品除外。化妆品微生物检验。</li>
+<li><strong>特殊用途化妆品毒理学试验：</strong>急性眼刺激性试验、急性皮肤刺激性试验、多次皮肤刺激性试验、皮肤变态反应试验、皮肤光毒性试验、细菌回复突变试验、体外哺乳动物细胞染色体畸变试验等。人体安全性试验。</li>
+<li><strong>上市后客户投诉及监测：</strong>消费者电话投诉、社交平台相关评论、不同渠道客户反馈 → 不良反应监测 → 调查 → 产品追溯 → 记录分析评估 → 处理。</li>
+</ul></div></details>
+</section>
+
+<section id="orig">
+<h2><span class="no">ORIGINAL · 62 题 · 原样呈现</span>章节原题</h2>
+<p class="lead">章节原题放前面，一道不漏，题干、选项、“我的答案”均按 2026-11-19 页面显示原样记录。</p>
+<div class="secnote"><strong>答案说明（请先看）：</strong>只有 <strong>4.1、4.2</strong> 两套测验在页面上同时显示了“我的答案”和“正确答案”（共 17 题），以及 <strong>2.3</strong> 课件内嵌的两道多选题以课件绿色高亮标注了答案（共 2 题），这 <strong>19 题可以点选自测、计分</strong>。其余 <strong>43 道</strong>原题页面未显示标准答案（只显示“我的答案”与 ✓/✗，或待完成未作答），本页按页面记录原样呈现，<strong>不补写答案、不计分</strong>，答错的地方请对照上方知识点自己核对。2.4、4.3、4.4 三套测验为“待完成”状态，未作答、未提交。</div>
+<div style="height:16px"></div>
+<h3 style="margin:0 0 10px">可点选自测的原题（19 道）</h3>
+<div class="card">
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center"><strong id="scoreOrig">已答 0 / 19 题 · 答对 0 题</strong><button class="btn btn-ghost" onclick="resetSection('orig')">↺ 重新开始</button></div>
+<div class="progress"><i id="progOrig"></i></div>
+<div class="toolbar" id="filtersOrig">
+<button class="chipbtn active" data-f="all">全部 19</button>
+<button class="chipbtn" data-f="multi">多选 17</button>
+<button class="chipbtn" data-f="judge">判断 2</button>
+</div>
+<p style="font-size:13px;color:var(--muted);margin:0">选择/判断点一下就出对错。多选题需选全才得分，选完点该题的“提交”按钮。2.3 两道多选题的答案为课件内绿色高亮标注，平台 widget 本身注明“此题未设置答案”。</p>
+</div>
+<div id="quizListOrig" style="margin-top:14px"></div>
+<h3 style="margin:26px 0 10px">原题原文记录（43 道 · 页面未显示标准答案）</h3>
+<p class="lead">按章节分组，题干、选项、“我的答案”与 ✓/✗ 标记均按页面原样记录；答错空的标准答案页面未显示，本页未凭课件内容或推断补写。</p>
+<details><summary>2.3 化妆品的定义与分类 · 课件内嵌题</summary><div class="body"><p class="qsub">课件内嵌题 1 道（单选 1 分）</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">单选</span> &nbsp;原题 1</div><h3>牙膏属于化妆品吗？</h3><div class="opts"><div class="opt" style="cursor:default">A. 属于</div><div class="opt" style="cursor:default">B. 不属于</div></div><div class="showbox"><span class="warn">页面未显示标准答案</span><br>页面注明“此题未设置答案，请点击右侧设置按钮”，页面未显示正确答案。（其后第 9 页课件内容：牙膏——参照化妆品管理，6月29日国务院公布《化妆品监督管理条例》，首次将“牙膏”参照有关普通化妆品的规定进行管理。）</div></div></div></details>
+<details><summary>2.3 化妆品的定义与分类 · 知识点小测</summary><div class="body"><p class="qsub">章节测验“化妆品的定义与分类”，题量 6，满分 25.0，已完成，第 1 次作答，本次成绩 15 分；页面只显示“我的答案”及 ✓/✗，无“正确答案”栏</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 2 · 11.0分</div><h3>化妆品，是指以（ ）、（ ）或者其他类似方法，施用于人体的（ ）、（ ）、（ ）、（ ）等人体表面，以（ ）、（ ）、（ ）、（ ）为目的的（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：根据《化妆品监督管理条例》第三条，化妆品是指以涂擦、喷洒或者其他类似方法，施用于人体的皮肤、毛发、指甲、口唇等人体表面，以清洁、保护、美化、修饰为目的的日用化学工业产品。 答案：涂擦 <span class="no">✗</span></li><li>第2空：喷洒 <span class="ok">✓</span></li><li>第3空：皮肤 <span class="ok">✓</span></li><li>第4空：毛发 <span class="ok">✓</span></li><li>第5空：指甲 <span class="ok">✓</span></li><li>第6空：口唇 <span class="ok">✓</span></li><li>第7空：清洁 <span class="ok">✓</span></li><li>第8空：保护 <span class="ok">✓</span></li><li>第9空：美化 <span class="ok">✓</span></li><li>第10空：修饰 <span class="ok">✓</span></li><li>第11空：日用化学工业产品 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 10.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 3 · 4.0分</div><h3>化妆品的质量特性包括（ ）、（ ）、（ ）和（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：化妆品的质量特性包括（安全性）、（稳定性）、（使用性）和（功效性）。 <span class="no">✗</span></li><li>第2空：（空） <span class="no">✗</span></li><li>第3空：（空） <span class="no">✗</span></li><li>第4空：（空） <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 4 · 3.0分</div><h3>按照使用人群，化妆品可分为（ ）、（ ）、（ ）用化妆品。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：按照使用人群，化妆品可分为（普通人群）、（儿童）、（特殊人群）用化妆品。 <span class="no">✗</span></li><li>第2空：（空） <span class="no">✗</span></li><li>第3空：（空） <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 5 · 1.0分</div><h3>儿童化妆品是指适用于年龄在（ ）周岁以下的儿童，具有清洁、保湿、防晒、爽身等功效的化妆品。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：12 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 1.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 6 · 2.0分</div><h3>按照使用方法，化妆品可以分为（ ）类化妆品和（ ）类化妆品。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：按照使用方法，化妆品可以分为（ ）类化妆品和（ ）类化妆品。 答案：**肤用 <span class="no">✗</span></li><li>第2空：发用** <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 7 · 4.0分</div><h3>根据《化妆品监督管理条例》，化妆品按照风险程度可分为较低风险的（ ）化妆品和较高风险的（ ）化妆品两大类，对两类化妆品分别实行（ ）和（ ）管理。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：普通 <span class="ok">✓</span></li><li>第2空：特殊 <span class="ok">✓</span></li><li>第3空：备案 <span class="ok">✓</span></li><li>第4空：注册 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 4.0分</div><span class="warn">页面未显示标准答案</span></div></div></div></details>
+<details><summary>2.4 化妆品注册与备案 · 知识点小测</summary><div class="body"><p class="qsub">章节测验“化妆品注册与备案”，题量 3，满分 15.0，待完成，未提交；页面未显示正确答案</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 8 · 5.0分</div><h3>国家对具有（ ）、（ ）、（ ）、（ ）、（ ）功能的化妆品新原料作为高风险新原料实行注册管理。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：草稿：国家对具有防腐、防晒、着色、染发、祛斑美白功能的化妆品新原料作为高风险新原料实行注册管理。 <span class="no">未提交</span></li><li>第2空：（空） <span class="no">未提交</span></li><li>第3空：（空） <span class="no">未提交</span></li><li>第4空：（空） <span class="no">未提交</span></li><li>第5空：（空） <span class="no">未提交</span></li></ul><div style="margin-top:8px">未提交，未显示正确答案</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 9 · 2.0分</div><h3>化妆品注册人、备案人对化妆品的（ ）和（ ）负责。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：草稿：质量安全 <span class="no">未提交</span></li><li>第2空：草稿：功效宣称 <span class="no">未提交</span></li></ul><div style="margin-top:8px">未提交，未显示正确答案</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">连线</span> &nbsp;原题 10 · 8.0分</div><h3>请把以下备案/注册编号和化妆品类型一一对应</h3><div class="showbox"><span class="rec">第一组：</span><br>1、粤G妆网备字2025000001<br>2、国妆网备进字2025000001<br>3、国妆特字20250001<br>4、国妆特进字20250001<br><span class="rec">第二组：</span><br>A、进口特殊化妆品<br>B、国产特殊化妆品<br>C、国产普通化妆品<br>D、进口普通化妆品<br><br>连线答案：4 个下拉框均为空（未作答）。提示：请在下拉框中选择第一组数据对应的正确答案。未提交，未显示正确答案。</div></div></div></details>
+<details><summary>2.4 化妆品注册与备案 · 课件案例（讨论题，不计入 62 道原题）</summary><div class="body"><p class="qsub">课件第 89 页“一款‘熊果苷美白精华’要上市”，课件未给出标准答案</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">讨论题</span> &nbsp;不计入 62 道原题</div><h3>一款“熊果苷美白精华”要上市：1. 它属于特殊化妆品还是普通化妆品？该走注册还是备案？2. 由谁提交？交哪些资料？提交给哪一级监管部门？3. 资料还没备齐，能不能“先上市、后补资料”？</h3><div class="showbox">讨论题，课件未给出标准答案。</div></div></div></details>
+<details><summary>2.5 化妆品标签 · 知识点小测</summary><div class="body"><p class="qsub">章节测验“化妆品标签”，题量 6，满分 32.0，已完成，第 1 次作答，本次成绩 21 分；页面只显示“我的答案”及 ✓/✗，无“正确答案”栏</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 11 · 4.0分</div><h3>化妆品（ ）、（ ）对化妆品标签的合法性、真实性、完整性、准确性和一致性负责。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：注册人 <span class="ok">✓</span></li><li>第2空：备案人 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 4.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 12 · 6.0分</div><h3>化妆品产品中文名称一般由（ ）、（ ）和（ ）三部分组成</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：商标名 <span class="ok">✓</span></li><li>第2空：通用名 <span class="ok">✓</span></li><li>第3空：属性名 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 6.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 13 · 4.0分</div><h3>化妆品标签应当在销售包装可视面标注化妆品全部成分的原料标准中文名称，以“（ ）”作为引导语引出，并按照各成分在产品配方中含量的降序列出。化妆品配方中存在含量不超过0.1%（w/w）的成分的，所有不超过0.1%（w/w）的成分应当以“（ ）”作为引导语引出另行标注，可以不按照成分含量的降序列出。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：成分 <span class="ok">✓</span></li><li>第2空：其他微量成分 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 4.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 14 · 8.0分</div><h3>产品使用期限的标注形式包括①（ ）和保质期，②（ ）和限期使用日期。具有包装盒的产品，在直接接触内容物的包装容器上标注使用期限时，除可以选择上述方式标注外，还可以采用标注（ ）和（ ）的方式。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：① 生产日期 <span class="no">✗</span></li><li>第2空：② 保质期 <span class="no">✗</span></li><li>第3空：生产批号 <span class="ok">✓</span></li><li>第4空：限期使用日期 <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 2.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 15 · 5.0分</div><h3>产品执行的标准编号对特殊化妆品而言是注册证书编号，对普通化妆品而言是备案编号。</h3><div class="showbox"><span class="rec">我的答案：</span>对 <span class="ok">✓</span><br>我的答案：对 ✓ 5.0分<br><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 16 · 5.0分</div><h3>化妆品的净含量应当使用国家法定计量单位表示，并在销售包装可视面标注。</h3><div class="showbox"><span class="rec">我的答案：</span>对 <span class="no">✗</span><br>我的答案：对 ✗ 0.0分<br><span class="warn">页面未显示标准答案</span></div></div></div></details>
+<details><summary>2.6 化妆品功效宣称 · 知识点小测</summary><div class="body"><p class="qsub">章节测验“化妆品功效宣称”，题量 10，满分 60.0，已完成，第 1 次作答，本次成绩 39 分；页面只显示“我的答案”及 ✓/✗，无“正确答案”栏</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 17 · 4.0分</div><h3>化妆品（ ）、（ ）对提交的功效宣称依据的摘要的科学性、真实性、可靠性和可追溯性负责。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：注册人 <span class="ok">✓</span></li><li>第2空：备案人 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 4.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 18 · 10.0分</div><h3>化妆品的功效宣称应当有充分的科学依据，功效宣称依据包括（ ）、（ ）或者化妆品功效宣称评价试验结果等。化妆品功效宣称评价试验包括（ ）、（ ）和（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：文献资料 <span class="ok">✓</span></li><li>第2空：研究数据 <span class="ok">✓</span></li><li>第3空：人体功效评价试验 <span class="ok">✓</span></li><li>第4空：消费者使用测试 <span class="ok">✓</span></li><li>第5空：实验室试验 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 10.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 19 · 4.0分</div><h3>仅具有（ ）和（ ）功效的化妆品，可以通过文献资料调研、研究数据分析或者化妆品功效宣称评价试验等方式进行功效宣称评价。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：仅具有（保湿）和（物理遮盖）功效的化妆品，可以通过文献资料调研、研究数据分析或者化妆品功效宣称评价试验等方式进行功效宣称评价。 <span class="no">✗</span></li><li>第2空：（空） <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 20 · 12.0分</div><h3>具有（ ）、（ ）、（ ）、（ ）、（ ）和（ ）功效的化妆品，应当通过人体功效评价试验方式进行功效宣称评价。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：根据《化妆品功效宣称评价规范》的规定，具有祛斑美白、防晒、防脱发、祛痘、滋养和修护功效的化妆品，应当通过人体功效评价试验方式进行功效宣称评价。 答案：祛斑美白 <span class="no">✗</span></li><li>第2空：防晒 <span class="ok">✓</span></li><li>第3空：防脱发 <span class="ok">✓</span></li><li>第4空：祛痘 <span class="ok">✓</span></li><li>第5空：滋养 <span class="ok">✓</span></li><li>第6空：修护 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 10.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 21 · 5.0分</div><h3>化妆品注册人、备案人可以自行或者委托具备相应能力的评价机构，按照化妆品功效宣称评价项目要求，开展化妆品功效宣称评价。</h3><div class="showbox"><span class="rec">我的答案：</span>对 <span class="ok">✓</span><br>我的答案：对 ✓ 5.0分<br><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 22 · 5.0分</div><h3>能够通过视觉、嗅觉等感官直接识别的，或者通过简单物理遮盖、附着、摩擦等方式发生效果的功效宣称，可免予公布产品功效宣称依据的摘要。</h3><div class="showbox"><span class="rec">我的答案：</span>对 <span class="no">✗</span><br>我的答案：对 ✗ 0.0分<br><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 23 · 5.0分</div><h3>具有抗皱、紧致、舒缓、控油、去角质、防断发和去屑功效，以及宣称温和（如无刺激）或量化指标（如功效宣称保持时间、功效宣称相关统计数据等）的化妆品，应当通过化妆品功效宣称评价试验方式或者文献资料或研究数据，进行功效宣称评价。</h3><div class="showbox"><span class="rec">我的答案：</span>对 <span class="no">✗</span><br>我的答案：对 ✗ 0.0分<br><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 24 · 5.0分</div><h3>进行特定宣称的化妆品（如宣称适用敏感皮肤、宣称无泪配方），应当通过人体功效评价试验或消费者使用测试或实验室试验的方式进行功效宣称评价。</h3><div class="showbox"><span class="rec">我的答案：</span>错 <span class="ok">✓</span><br>我的答案：错 ✓ 5.0分<br><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 25 · 5.0分</div><h3>通过宣称原料的功效进行产品功效宣称的，应当开展文献资料调研、研究数据分析或者功效宣称评价试验证实原料具有宣称的功效。</h3><div class="showbox"><span class="rec">我的答案：</span>对 <span class="no">✗</span><br>我的答案：对 ✗ 0.0分<br><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">判断</span> &nbsp;原题 26 · 5.0分</div><h3>同一化妆品注册人、备案人申请注册或进行备案的同系列彩妆产品，在满足等效评价的条件和要求时，可以按照等效评价指导原则开展功效宣称评价。</h3><div class="showbox"><span class="rec">我的答案：</span>对 <span class="ok">✓</span><br>我的答案：对 ✓ 5.0分<br><span class="warn">页面未显示标准答案</span></div></div></div></details>
+<details><summary>3.1 皮肤的结构 · 课件内嵌题</summary><div class="body"><p class="qsub">课件内嵌题 1 道（单选 1 分）</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">单选</span> &nbsp;原题 27</div><h3>纹身应该在皮肤的哪一层</h3><div class="opts"><div class="opt" style="cursor:default">A. 表皮</div><div class="opt" style="cursor:default">B. 真皮</div><div class="opt" style="cursor:default">C. 皮下组织</div></div><div class="showbox"><span class="warn">页面未显示标准答案</span><br>页面注明“此题未设置答案，请点击右侧设置按钮”，页面未显示正确答案。</div></div></div></details>
+<details><summary>3.1 皮肤的结构 · 知识点小测</summary><div class="body"><p class="qsub">章节测验“皮肤的结构”，题量 3，满分 36.0，已完成，第 1 次作答，本次成绩 24 分；页面只显示“我的答案”及 ✓/✗，无“正确答案”栏；“AI讲解”面板为空白，AI 生成内容不作为标准答案</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 28 · 14.0分</div><h3>表皮的主要构成细胞是（ ），表皮由内向外包括（ ）、（ ）、（ ）、（ ）和角质层。角质层的主要构成细胞称为（ ）。黑素细胞位于表皮的（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：角质形成细胞 <span class="ok">✓</span></li><li>第2空：基底层 <span class="ok">✓</span></li><li>第3空：棘层 <span class="ok">✓</span></li><li>第4空：颗粒层 <span class="ok">✓</span></li><li>第5空：透明层 <span class="ok">✓</span></li><li>第6空：角化细胞 <span class="no">✗</span></li><li>第7空：基底层 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 12.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 29 · 14.0分</div><h3>真皮由浅至深可分为（ ）和（ ），主要构成细胞是（ ），细胞外是（ ）。皮肤的韧性主要和真皮中的（ ）有关，皮肤的弹性主要和真皮中的（ ）有关，皮肤的膨润度主要和真皮的（ ）有关。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：乳头层 <span class="ok">✓</span></li><li>第2空：网织层 <span class="no">✗</span></li><li>第3空：成纤维细胞 <span class="ok">✓</span></li><li>第4空：纤维和基质 <span class="no">✗</span></li><li>第5空：胶原纤维 <span class="ok">✓</span></li><li>第6空：弹性纤维 <span class="ok">✓</span></li><li>第7空：基质 <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 8.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 30 · 8.0分</div><h3>皮肤附属器包括（ ）、（ ）、（ ）、（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：毛 <span class="no">✗</span></li><li>第2空：皮脂腺 <span class="ok">✓</span></li><li>第3空：汗腺 <span class="ok">✓</span></li><li>第4空：指（趾）甲 <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 4.0分</div><span class="warn">页面未显示标准答案</span></div></div></div></details>
+<details><summary>3.2 皮肤的功能 · 知识点小测</summary><div class="body"><p class="qsub">章节测验“皮肤的功能”，题量 8，满分 44.0，已完成，第 1 次作答，本次成绩 18 分；页面只显示“我的答案”及 ✓/✗，无“正确答案”栏</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 31 · 4.0分</div><h3>皮肤的分泌和排泄功能主要通过（ ）和（ ）实现，是影响皮肤屏障维持、体温调节等的关键功能。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：汗腺 <span class="ok">✓</span></li><li>第2空：皮脂腺 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 4.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 32 · 6.0分</div><h3>皮脂中含量最高的是（ ）；特征性成分是（ ）和（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：甘油三酯 <span class="ok">✓</span></li><li>第2空：角鲨烯 <span class="ok">✓</span></li><li>第3空：蜡酯 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 6.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 33 · 6.0分</div><h3>皮脂和（ ），在角质层表面均匀乳化融合，形成的一层极薄的水油混合的乳化薄膜，称为（ ），酸碱性为（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：汗液 <span class="ok">✓</span></li><li>第2空：皮脂膜 <span class="ok">✓</span></li><li>第3空：弱酸性 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 6.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 34 · 12.0分</div><h3>狭义的皮肤屏障是皮肤的一层天然保护膜，由皮脂膜和类似“砖墙结构”的（ ）构成。角质细胞内充满（ ），是一种非水溶性但强吸水性的硬蛋白纤维，此外，角质细胞内含有大量（ ），是角质细胞内最重要的保湿成分，其最主要的组分是（ ）。角质细胞外，（ ）排列构成复层板层，作为结构脂质，控制水分在细胞间的渗透和运动，其特征组分为（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：狭义的皮肤屏障是皮肤的一层天然保护膜，由皮脂膜和类似“砖墙结构”的（角质层）构成。角质细胞内充满（角蛋白），是一种非水溶性但强吸水性的硬蛋白纤维，此外，角质细胞内含有大量（天然保湿因子），是角质细胞内最重要的保湿成分，其最主要的组分是（氨基酸）。角质细胞外，（脂质）排列构成复层板层，作为结构脂质，控制水分在细胞间的渗透和运动，其特征组分为（神经酰胺）。 <span class="no">✗</span></li><li>第2空：（空） <span class="no">✗</span></li><li>第3空：（空） <span class="no">✗</span></li><li>第4空：（空） <span class="no">✗</span></li><li>第5空：（空） <span class="no">✗</span></li><li>第6空：（空） <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 35 · 8.0分</div><h3>成分的透皮吸收途径包括（ ），（ ）和（ ）。其中，（ ）是透皮吸收的主要途径。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：角质层 <span class="no">✗</span></li><li>第2空：毛囊 <span class="no">✗</span></li><li>第3空：皮脂腺 <span class="no">✗</span></li><li>第4空：角质层 <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 36 · 6.0分</div><h3>止汗剂的主要透皮吸收途径是（ ）；祛痘成分的主要透皮吸收途径是（ ）。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：汗腺 <span class="no">✗</span></li><li>第2空：毛囊皮脂腺 <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 37 · 2.0分</div><h3>物质分子量小于（ ）Da 时，更容易穿透皮肤角质层。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：500 <span class="ok">✓</span></li></ul><div style="margin-top:8px">我的答案 2.0分</div><span class="warn">页面未显示标准答案</span></div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">填空</span> &nbsp;原题 38 · 2.0分</div><h3>（ ）成分更容易透过亲脂的角质层和亲水的活表皮层及真皮层。</h3><div class="showbox"><span class="rec">我的答案（页面记录）：</span><ul class="myans"><li>第1空：脂溶性（或非极性） <span class="no">✗</span></li></ul><div style="margin-top:8px">我的答案 0.0分</div><span class="warn">页面未显示标准答案</span></div></div></div></details>
+<details><summary>4.3 祛斑美白功效评价 · 章节测验</summary><div class="body"><p class="qsub">章节测验“成分党炼成之美白成分分析”，题量 2，满分 28.0，待完成，未作答，未提交；页面未显示正确答案</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">连线</span> &nbsp;原题 39 · 12.0分</div><h3>下图是Purid沁透光感精华露的成分表，请把活性成分和主要的作用机理对应起来。</h3><div class="ing">图片：Purid沁透光感精华露成分表截图，成分包括水、1,2-戊二醇、抗坏血酸四异棕榈酸酯、姜黄（CURCUMA LONGA）根提取物、C9-12 烷、丁二醇、双-二乙氧基二甘醇环己烷1,4-二羧酸酯、聚二甲基硅氧烷、环五聚二甲基硅氧烷、聚硅氧烷-11、聚丙烯酰基二甲基牛磺酸钠、异十六烷、生育酚乙酸酯、聚山梨醇酯-80、聚山梨醇酯-20、乳酸杆菌发酵产物、丙烯酸羟乙酯/丙烯酰二甲基牛磺酸钠共聚物、聚山梨醇酯-60、椰油醇-辛酸酯/癸酸酯、己基间苯二酚、苯乙基间苯二酚、4-丁基间苯二酚、欧百里香（THYMUS SERPYLLUM）提取物、4-叔丁基环己醇、乙酰半胱氨酸、丙氨酸、乙酰酪氨酸、肌肽、聚甲基硅倍半氧、辛酸/癸酸甘油三酯、甘油、丙烯酰二甲基牛磺酸铵/VP共聚物、对羟基苯乙酮、1,2-己二醇、二（月桂酰胺谷氨酰胺）赖氨酸钠、乳酸、氨苯甘醚、亚丁香基丙二酸二乙基己酯、大红柑（CITRUS TANGERINA）果皮油等。</div><div class="showbox"><span class="rec">第一组：</span><br>1、抗坏血酸四异棕榈酸酯<br>2、生育酚乙酸酯<br>3、己基间苯二酚<br>4、苯乙基间苯二酚<br>5、4-丁基间苯二酚<br>6、乳酸<br><span class="rec">第二组：</span><br>A、抑制酪氨酸酶活性<br>B、抗氧化<br>C、阻断黑色素运输<br>D、加速表皮更新<br><br>连线答案：6 个下拉框均为空（未作答）。提示：请在下拉框中选择第一组数据对应的正确答案。未提交，未显示正确答案。</div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">连线</span> &nbsp;原题 40 · 16.0分</div><h3>下图是卡尼尔专业全效瞬白美白精华的成分表，请将活性成分和主要的作用机理对应起来。</h3><div class="ing">图片：卡尼尔专业全效瞬白美白精华成分表截图，成分包括水、甘油、乙醇、双丙甘醇、丁二醇、PEG/PPG/聚丁二醇-8/5/3 甘油、烟酰胺、羟乙基哌嗪乙烷磺酸、双-PEG-18 甲基醚二甲基硅烷、3-o-乙基抗坏血酸、异壬酸异壬酯、生育酚乙酸酯、氢化卵磷脂、柠檬酸钠、透明质酸钠、苯氧乙醇、苯乙基间苯二酚、腺苷、乙酰基三氟甲基苯基缬氨酰甘氨酸、水杨酸、聚丙烯酰基二甲基牛磺酸钠、辛烯、黄原胶、芳樟醇、水杨酸苄酯、苯甲醇、氧化噻唑烷羧酸、（日用）香精、香叶醇、EDTA 二钠、柠檬酸、柠檬（CITRUS LIMON）果提取物。</div><div class="showbox"><span class="rec">第一组：</span><br>1、烟酰胺<br>2、羟乙基哌嗪乙烷磺酸<br>3、3-o-乙基抗坏血酸<br>4、生育酚乙酸酯<br>5、苯乙基间苯二酚<br>6、水杨酸<br>7、氧代噻唑烷羧酸<br>8、柠檬酸<br><span class="rec">第二组：</span><br>A、抑制酪氨酸酶活性<br>B、抗氧化<br>C、阻断黑色素运输<br>D、加速表皮更新<br><br>连线答案：8 个下拉框均为空（未作答）。提示：请在下拉框中选择第一组数据对应的正确答案。未提交，未显示正确答案。</div></div></div></details>
+<details><summary>4.4 抗皱紧致功效评价 · 章节测验</summary><div class="body"><p class="qsub">章节测验“成分党炼成之抗老成分分析”，题量 3，满分 100.0，待完成，未作答，未提交；页面未显示正确答案</p>
+<div class="qcard"><div class="qmeta"><span class="pill b">简答</span> &nbsp;原题 41 · （分值见测验总分 100.0）</div><h3>下图是理肤泉Redermic A醇精华的产品图和成分标签。这款产品宣称有复合视黄醇（0.1%精纯视黄醇和0.2%缓释视黄醇）试判断：1）精纯视黄醇是哪种成分，缓释视黄醇是哪种成分？2）两种维A类成分，谁的效果更好？谁更温和？3）从配方设计的角度考虑说说为什么这两种维A类成分添加量都低于1%？</h3><div class="ing">图片：La Roche-Posay Redermic [R] Anti-Ageing Concentrate Intense 产品图；成分标签图，含复合视黄醇 0.1% 精纯视黄醇 + 0.2% 缓释视黄醇、腺苷、理肤泉温泉水等图文信息，成分表以“水、异硬脂醇新戊酸酯、羟乙基哌嗪乙烷……”开头。</div><div class="showbox">填写答案为空（未作答）。未提交，未显示正确答案。</div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">简答</span> &nbsp;原题 42 · （分值见测验总分 100.0）</div><h3>下图是春日来信一款眼霜的成分标签。找出成分表中所有的抗老功效成分，简要写出对应的抗衰老机理。</h3><div class="ing">图片：春日来信眼霜成分标签图，成分包括水、环五聚二甲基硅氧烷、甘油、角鲨、丙基四氢吡喃三醇、水解香桃木（MYRTUS COMMUNIS）叶提取物、羟基频哪酮视黄酸酯、聚二甲基硅氧烷/乙烯基聚二甲基硅氧烷交联聚合物、聚二甲基硅氧烷、苯基聚三甲基硅氧烷、聚硅氧烷-11、丁二醇、癸基葡糖苷、野大豆籽提取物、β-葡聚糖、生物糖 胶-2、鲸蜡硬脂基葡糖苷、山梨坦硬脂酸酯、甘油硬脂酸酯、乙酰基六肽-8、棕榈酰五肽-4、棕榈酰四肽-7、棕榈酰三肽-5、三肽-1 铜、聚山梨醇酯-20、水解透明质酸钠、透明质酸钠交联聚合物、透明质酸钠、乙酰化透明质酸钠、精氨酸、生育酚乙酸酯、黄原胶、丙烯酸（酯）类/异癸酸乙烯酯交联聚合物、对羟基苯乙酮、己二醇、1,2-戊二醇、乙二胺四乙酸、苯氧乙醇、乙基己基甘油等。</div><div class="showbox">填写答案为空（未作答）。未提交，未显示正确答案。</div></div>
+<div class="qcard"><div class="qmeta"><span class="pill b">简答</span> &nbsp;原题 43 · （分值见测验总分 100.0）</div><h3>下图是The Ordinary 30%AHA+2%BHA焕肤精华的产品图和成分标签。1）找出成分表中的AHA成分和BHA成分，并说明哪种AHA成分含量最高，以及判断的依据。2）这款产品宣称配方的pH约为3.6，为什么这款产品的pH要控制在这个范围，试说明原因。</h3><div class="ing">图片：The Ordinary AHA 30% + BHA 2% Peeling Solution 产品图，标签“10-Minute Exfoliating Facial, pH ~3.6”；成分标签图，成分包括羟基乙酸、水、库拉索芦荟（ALOE BARBADENSIS）叶水、氢氧化钠、胡萝卜（DAUCUS CAROTA SATIVA）提取物、1,3-丙二醇、椰油酰胺丙基二甲胺、水杨酸、柠檬酸钾、乳酸、酒石酸、柠檬酸、泛醇、透明质酸钠、假八角果提取物、甘油、1,2-戊二醇、黄原胶、聚山梨醇酯-20、乙二胺二琥珀酸三等。</div><div class="showbox">填写答案为空（未作答）。未提交，未显示正确答案。</div></div></div></details>
+</section>
+
+<section id="ext">
+<h2><span class="no">EXTERNAL · 24 题 · 标注来源</span>外部补充题</h2>
+<p class="lead">外部补充题在后，全部依据已核实的法规与标准原文出题（《化妆品监督管理条例》第727号、《化妆品功效宣称评价规范》2021年第50号、《化妆品安全技术规范》2015年版、QB/T 4256-2011），不冒充章节原题；与章节原题重复的已删除。单选 10、多选 4、判断 6、简答 3、计算 1。</p>
+<div class="card">
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center"><strong id="scoreExt">已答 0 / 24 题 · 答对 0 题</strong><button class="btn btn-ghost" onclick="resetSection('ext')">↺ 重新开始</button></div>
+<div class="progress"><i id="progExt"></i></div>
+<div class="toolbar" id="filtersExt">
+<button class="chipbtn active" data-f="all">全部 24</button>
+<button class="chipbtn" data-f="single">单选 10</button>
+<button class="chipbtn" data-f="multi">多选 4</button>
+<button class="chipbtn" data-f="judge">判断 6</button>
+<button class="chipbtn" data-f="short">简答 3</button>
+<button class="chipbtn" data-f="calc">计算 1</button>
+</div>
+<p style="font-size:13px;color:var(--muted);margin:0">选择/判断点一下就出对错，多选题需选全才得分。简答/计算点“看答案与解析”自评，答对了点“自评答对”计分。</p>
+</div>
+<div id="quizListExt" style="margin-top:14px"></div>
+</section>
+
+<section id="about">
+<h2><span class="no">ABOUT</span>说明</h2>
+<div class="card">
+<p style="font-size:14px">课程：《化妆品安全使用与功效评价》，教师隗晶晶，班级 24 精化，学期 2025-2026 第二学期（深职爱学习，courseId 18600000000176）。平台目录实际为 5 章 19 节：1.1 绪论；2.1–2.9 化妆品基础；3.1–3.4 皮肤基础；4.1–4.4 化妆品功效性评价；5.1 化妆品安全性评价；目录中没有第 6、7、8 章。2026-11-19 全部 19 节通读完毕，全程未提交任何作业、测验或考试。</p>
+<p style="font-size:14px">原题 62 道构成：2.3（3+6）、2.4（3）、2.5（6）、2.6（10）、3.1（1+3）、3.2（8）、4.1（9）、4.2（8）、4.3（2）、4.4（3）。2.4 课件第 89 页“熊果苷美白精华”讨论题另附在 2.4 一节，不计入 62 道。1.1、2.2、2.7、2.9、3.3、3.4、5.1 无测验原题；2.1、2.8 当前页面显示“暂无内容”。教师 2026-11-19 更新了第 1、2 章部分内容（2.3 小测由 3 题变为 6 题，2.4 由 5 题变为 3 题，2.5、2.6 由单选题版变为填空+判断版），本页以 2026-11-19 当前页面显示为准。</p>
+<p style="font-size:14px">外部补充题来源：《化妆品功效宣称评价规范》全文（国家药监局 2021 年第 50 号公告，2021-05-01 施行）、《化妆品监督管理条例》（国务院令第 727 号）、《化妆品安全技术规范》（2015 年版）、QB/T 4256-2011《化妆品保湿功效评价指南》。未找到现成的中国大陆《化妆品安全功效评价》公开题库，故外部题按权威法规原文编写并标注。</p>
+<p style="font-size:14px;color:var(--muted)">本页仅供学习复习使用；法规条文以官方发布为准，考试以各节课件原文为准。</p>
+</div>
+</section>
+</div>
+<script>
+
+var QUESTIONS = [{"id": "o1", "src": "orig", "type": "multi", "tag": "2.3 课件内嵌 · 多选 1分", "q": "以下属于特殊化妆品的是", "opts": ["去屑洗发水", "防断发洗发水", "防脱发洗发水", "生发洗发水（药品）", "脱毛膏", "染发膏", "烫发膏", "染眉膏"], "ans": [2, 5, 6, 7], "exp": "课件答案页（第 69 页）绿色高亮：C、F、G、H。注意：平台 widget 本身注明“此题未设置答案”，答案为课件内标注。"}, {"id": "o2", "src": "orig", "type": "multi", "tag": "2.3 课件内嵌 · 多选 1分", "q": "以下属于特殊化妆品的是", "opts": ["美白香皂", "除臭爽身喷雾", "花露水", "洗手液", "卸妆湿巾", "粉底液（SPF 15）"], "ans": [0, 5], "exp": "课件答案页（第 71 页）绿色高亮：A、F。注意：平台 widget 本身注明“此题未设置答案”，答案为课件内标注。"}, {"id": "o3", "src": "orig", "type": "multi", "tag": "4.1 保湿 · 多选 10.0分", "q": "以下和皮肤自身的保湿功能相关的成分是", "opts": ["皮脂", "细胞间脂质", "角蛋白", "天然保湿因子", "胶原蛋白", "弹性蛋白", "透明质酸"], "ans": [0, 1, 2, 3, 6], "exp": "正确答案 ABCDG：皮脂、细胞间脂质、角蛋白、天然保湿因子、透明质酸。我的答案 AD。"}, {"id": "o4", "src": "orig", "type": "multi", "tag": "4.1 保湿 · 多选 5.0分", "q": "以下属于细胞间脂质的主要成分的是", "opts": ["甘油三酯和游离脂肪酸", "蜡酯", "胆固醇和胆固醇酯", "鞘脂（神经酰胺）", "角鲨烷"], "ans": [0, 2, 3], "exp": "正确答案 ACD：甘油三酯和游离脂肪酸、胆固醇和胆固醇酯、鞘脂（神经酰胺）。我的答案 C。"}, {"id": "o5", "src": "orig", "type": "multi", "tag": "4.1 保湿 · 多选 5.0分", "q": "以下属于皮脂独有的成分是", "opts": ["角鲨烯", "角鲨烷", "甘油三酯和游离脂肪酸", "胆固醇", "蜡酯"], "ans": [0, 4], "exp": "正确答案 AE：角鲨烯、蜡酯。我的答案 A。"}, {"id": "o6", "src": "orig", "type": "multi", "tag": "4.1 保湿 · 多选 5.0分", "q": "以下成分属于天然保湿因子的是", "opts": ["氨基酸", "吡咯烷酮羧酸", "乳酸", "尿素", "钠", "钾", "钙", "镁", "透明质酸"], "ans": [0, 1, 2, 3, 4, 5, 6, 7], "exp": "正确答案 ABCDEFGH：氨基酸、吡咯烷酮羧酸、乳酸、尿素、钠、钾、钙、镁；透明质酸不是天然保湿因子。我的答案 AB。"}, {"id": "o7", "src": "orig", "type": "multi", "tag": "4.1 保湿 · 多选 10.0分", "q": "以下属于吸湿剂的是", "opts": ["甘油", "甘油硬脂酸酯", "丙二醇", "丁二醇", "PCA钠", "甜菜碱", "葡聚糖"], "ans": [0, 2, 3, 4, 5, 6], "exp": "正确答案 ACDEFG：甘油、丙二醇、丁二醇、PCA钠、甜菜碱、葡聚糖。我的答案 ACD。"}, {"id": "o8", "src": "orig", "type": "multi", "tag": "4.1 保湿 · 多选 5.0分", "q": "以下属于柔润剂的是", "opts": ["甘油", "甘油硬脂酸酯", "辛酸/癸酸甘油三酯", "棕榈酸异辛酯", "霍霍巴籽油", "蓖麻籽油"], "ans": [2, 3, 4, 5], "exp": "正确答案 CDEF。答案解析：植物油主要成分是甘油三酯，属于柔润剂。我的答案 BD。"}, {"id": "o9", "src": "orig", "type": "multi", "tag": "4.1 保湿 · 多选 10.0分", "q": "以下属于封闭剂的是", "opts": ["甘油", "矿油", "橄榄油", "矿脂", "石蜡", "角鲨烷", "氢化聚异丁烯", "异十六烷", "羊毛脂"], "ans": [1, 3, 4, 5, 6, 7, 8], "exp": "正确答案 BDEFGHI。答案解析：植物油主要成分是甘油三酯，属于柔润剂。我的答案 D。"}, {"id": "o10", "src": "orig", "type": "judge", "tag": "4.1 保湿 · 判断 3.0分", "q": "保湿剂又叫吸湿剂，具有水溶性，可以吸收外界和皮肤深层的水分来保湿。", "opts": ["对", "错"], "ans": [0], "exp": "正确答案：对。我的答案：错。"}, {"id": "o11", "src": "orig", "type": "judge", "tag": "4.1 保湿 · 判断 3.0分", "q": "柔润剂和封闭剂是油脂，可以阻止水分的蒸发。", "opts": ["对", "错"], "ans": [0], "exp": "正确答案：对。我的答案：错。"}, {"id": "o12", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "以下关于紫外线的说法正确是", "opts": ["UVB又叫短波紫外线", "紫外线中UVB占比更高", "UVB可以被玻璃阻挡", "UVA可以被玻璃阻挡", "UVB频率更高，可以穿透表皮，到达真皮", "UVA波长更长，可以穿透表皮，到达真皮"], "ans": [2, 5], "exp": "正确答案 CF：UVB可以被玻璃阻挡；UVA波长更长，可以穿透表皮，到达真皮。我的答案 C。"}, {"id": "o13", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "紫外线对皮肤的损伤包括（ ）", "opts": ["日晒红斑", "日晒黑", "光老化", "光致癌"], "ans": [0, 1, 2, 3], "exp": "正确答案 ABCD。我的答案 ABCD。"}, {"id": "o14", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "以下关于防晒剂的说法正确的是", "opts": ["无机防晒剂的作用机理是散射紫外线", "有机防晒剂的作用机理是吸收紫外线", "无机防晒剂如二氧化钛和氧化锌，分子量小，因此透皮性较强，容易造成皮肤刺激", "有机防晒剂的分子量小，多是脂溶性，因此透皮性较强，容易造成皮肤刺激", "无机防晒剂一般有泛白的问题"], "ans": [1, 3, 4], "exp": "正确答案 BDE。我的答案 ABD。"}, {"id": "o15", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "以下关于防晒产品标识和功效评价的说法正确的是", "opts": ["SPF是UVB的防护指数", "PA是防护UVA的有效程度指标", "中国要求防晒产品的SPF值不可以高于30", "中国要求防晒产品的SPF值不可以高于50", "中国要求防晒产品的PA值不可以高于3个+", "中国要求防晒产品的PA值不可以高于4个+"], "ans": [0, 1, 3, 5], "exp": "正确答案 ABDF。我的答案 AB。"}, {"id": "o16", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "以下关于防晒功效评价的说法正确的是", "opts": ["在中国上市销售的防晒产品可以只做防晒的体外功效评价", "在中国上市销售的防晒产品必须做防晒的人体功效评价", "SPF的人体测试方法主要评价晒伤", "PA的人体测试方法主要评价晒黑"], "ans": [1, 2, 3], "exp": "正确答案 BCD。我的答案 BCD。"}, {"id": "o17", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "防晒产品SPF值的人体测试所需的受试者皮肤类型为（ ）", "opts": ["I", "II", "III", "IV", "V", "VI"], "ans": [0, 1, 2], "exp": "正确答案 ABC。我的答案 C。"}, {"id": "o18", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "防晒产品PFA值的人体测试所需的受试者皮肤类型为（ ）", "opts": ["I", "II", "III", "IV", "V", "VI"], "ans": [2, 3], "exp": "正确答案 CD。我的答案 B。"}, {"id": "o19", "src": "orig", "type": "multi", "tag": "4.2 防晒 · 多选", "q": "以下关于防晒产品说法正确的是", "opts": ["防晒功效测试中，防晒化妆品的使用量是1mg/cm²", "防晒功效测试中，防晒化妆品的使用量是2mg/cm²", "防晒化妆品的使用量减半，SPF值也减半", "防晒化妆品的使用量减半，SPF值指数下降"], "ans": [1, 3], "exp": "正确答案 BD。我的答案 ABD。"}, {"id": "e1", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "根据《化妆品功效宣称评价规范》第十条，下列哪项功效应当通过人体功效评价试验方式进行功效宣称评价？", "opts": ["保湿", "修护", "清洁", "芳香"], "ans": [1], "exp": "依据：规范第十条（祛斑美白、防晒、防脱发、祛痘、滋养和修护须人体功效评价试验）。"}, {"id": "e2", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "仅具有保湿和护发功效的化妆品，可以通过以下哪种方式进行功效宣称评价？", "opts": ["只能人体功效评价试验", "文献资料调研、研究数据分析或者化妆品功效宣称评价试验", "只能消费者使用测试", "无需评价"], "ans": [1], "exp": "依据：规范第八条。"}, {"id": "e3", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "具有祛斑美白、防晒、防脱发功效的化妆品，应当由谁按照强制性国家标准、技术规范的要求开展人体功效评价试验并出具报告？", "opts": ["任意第三方检测机构", "化妆品注册和备案检验机构", "生产企业自行检测", "消费者组织"], "ans": [1], "exp": "依据：规范第十条第二款。"}, {"id": "e4", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "宣称适用敏感皮肤的化妆品，应当通过哪种方式进行功效宣称评价？", "opts": ["仅文献资料", "人体功效评价试验或消费者使用测试", "仅实验室试验", "无需评价"], "ans": [1], "exp": "依据：规范第十一条第一款。"}, {"id": "e5", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "《化妆品监督管理条例》规定，化妆品的功效宣称应当有什么依据？", "opts": ["充分的科学依据", "市场调研数据", "广告创意", "销售数据"], "ans": [0], "exp": "依据：条例第二十二条。"}, {"id": "e6", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "下列哪类化妆品属于特殊化妆品？", "opts": ["保湿面霜", "祛斑美白化妆品", "清洁洗面奶", "普通香水"], "ans": [1], "exp": "依据：条例第十六条（染发、烫发、祛斑美白、防晒、防脱发、宣称新功效为特殊化妆品）。"}, {"id": "e7", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "化妆品标签禁止标注下列哪项内容？", "opts": ["产品全成分", "明示或者暗示具有医疗作用的内容", "净含量", "使用期限"], "ans": [1], "exp": "依据：条例第三十七条。"}, {"id": "e8", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "《化妆品安全技术规范》（2015年版）规定，苯氧乙醇在化妆品中使用时的最大允许浓度是？", "opts": ["0.1%", "0.5%", "1%", "2%"], "ans": [2], "exp": "依据：安全技术规范表4。"}, {"id": "e9", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "保湿功效评价中，常用的角质层含水量测定方法是？", "opts": ["电容法", "称重法", "滴定法", "比色法"], "ans": [0], "exp": "依据：QB/T 4256-2011《化妆品保湿功效评价指南》及EEMCO指导原则（电容法角质层含水量测定仪）。"}, {"id": "e10", "src": "ext", "type": "single", "tag": "外部补充 · 单选", "q": "化妆品功效宣称评价试验包括以下哪几类？", "opts": ["仅人体功效评价试验", "人体功效评价试验、消费者使用测试和实验室试验", "仅消费者使用测试", "仅实验室试验"], "ans": [1], "exp": "依据：规范第十四条。"}, {"id": "e11", "src": "ext", "type": "multi", "tag": "外部补充 · 多选", "q": "根据《化妆品功效宣称评价规范》第九条，下列哪些功效应当通过化妆品功效宣称评价试验方式进行评价？", "opts": ["抗皱", "舒缓", "控油", "保湿"], "ans": [0, 1, 2], "exp": "依据：规范第九条（抗皱、紧致、舒缓、控油、去角质、防断发和去屑须评价试验；保湿按第八条可用文献等方式）。"}, {"id": "e12", "src": "ext", "type": "multi", "tag": "外部补充 · 多选", "q": "下列哪些属于《化妆品监督管理条例》规定的特殊化妆品？", "opts": ["染发", "防晒", "防脱发", "保湿"], "ans": [0, 1, 2], "exp": "依据：条例第十六条。"}, {"id": "e13", "src": "ext", "type": "multi", "tag": "外部补充 · 多选", "q": "按《化妆品监督管理条例》第二十二条，功效宣称依据的摘要可以是以下哪些资料的摘要？", "opts": ["文献资料", "研究数据", "产品功效评价资料", "广告文案"], "ans": [0, 1, 2], "exp": "依据：条例第二十二条。"}, {"id": "e14", "src": "ext", "type": "multi", "tag": "外部补充 · 多选", "q": "关于“修护”功效宣称，下列说法正确的是？", "opts": ["应当开展人体功效评价试验", "可以用文献资料代替人体试验", "不能只用实验室数据代替", "保湿测试可以覆盖修护宣称"], "ans": [0, 2], "exp": "依据：规范第十条；同时宣称“修护屏障”和“保湿”须按各自要求分别满足，不能用一次保湿测试覆盖修护。"}, {"id": "e15", "src": "ext", "type": "judge", "tag": "外部补充 · 判断", "q": "保湿功效只能通过人体功效评价试验来评价。", "opts": ["对", "错"], "ans": [1], "exp": "依据：规范第八条及附1，保湿可通过人体试验、消费者使用测试、实验室试验或文献资料评价。"}, {"id": "e16", "src": "ext", "type": "judge", "tag": "外部补充 · 判断", "q": "宣称“修护”功效的化妆品可以用几篇文献代替人体功效评价试验。", "opts": ["对", "错"], "ans": [1], "exp": "依据：规范第十条。"}, {"id": "e17", "src": "ext", "type": "judge", "tag": "外部补充 · 判断", "q": "化妆品广告可以暗示产品具有医疗作用，只要不明示。", "opts": ["对", "错"], "ans": [1], "exp": "依据：条例第四十三条（不得明示或者暗示产品具有医疗作用）。"}, {"id": "e18", "src": "ext", "type": "judge", "tag": "外部补充 · 判断", "q": "通过宣称原料的功效进行产品功效宣称的，应当证实原料具有宣称的功效，且原料的功效宣称应当与产品的功效宣称具有充分的关联性。", "opts": ["对", "错"], "ans": [0], "exp": "依据：规范第十一条第二款。"}, {"id": "e19", "src": "ext", "type": "judge", "tag": "外部补充 · 判断", "q": "化妆品标签上可以使用“根治痘痘”“速效美白”等绝对化、断言功效的用语。", "opts": ["对", "错"], "ans": [1], "exp": "依据：条例第三十七条、《化妆品标签管理办法》第十九条（禁虚假、夸大、绝对化用语及断言、保证功效）。"}, {"id": "e20", "src": "ext", "type": "judge", "tag": "外部补充 · 判断", "q": "具有防晒功效的化妆品属于特殊化妆品，须经注册。", "opts": ["对", "错"], "ans": [0], "exp": "依据：条例第十六条。"}, {"id": "e21", "src": "ext", "type": "short", "tag": "外部补充 · 简答", "q": "简述《化妆品功效宣称评价规范》规定的功效宣称评价方式，并说明“保湿”与“修护”在评价方式要求上有何不同。", "ansText": "评价方式包括人体功效评价试验、消费者使用测试、实验室试验，以及文献资料或研究数据分析（规范第十四条、第三条）。保湿可任选其一（规范第八条；附1保湿四种方式均可）；修护必须通过人体功效评价试验（规范第十条），不能用文献或实验室数据代替。", "exp": "规范第八条、第十条、第十四条。"}, {"id": "e22", "src": "ext", "type": "short", "tag": "外部补充 · 简答", "q": "简述化妆品功效宣称“有充分科学依据”的法规要求及注册人、备案人的义务。", "ansText": "条例第二十二条——化妆品的功效宣称应当有充分的科学依据；注册人、备案人应当在国务院药品监督管理部门规定的专门网站公布功效宣称所依据的文献资料、研究数据或者产品功效评价资料的摘要，接受社会监督。", "exp": "《化妆品监督管理条例》第二十二条。"}, {"id": "e23", "src": "ext", "type": "short", "tag": "外部补充 · 简答", "q": "某产品同时宣称“保湿”和“修护屏障”，按规范应如何开展功效评价？", "ansText": "按各自要求分别满足：保湿可任选人体试验、消费者测试、实验室试验或文献资料之一；修护必须开展人体功效评价试验，不能用保湿测试覆盖修护。", "exp": "规范第八条、第十条。"}, {"id": "e24", "src": "ext", "type": "calc", "tag": "外部补充 · 计算", "q": "某保湿乳使用前受试部位角质层含水量均值为35（电容法任意单位），使用后2小时均值为48，请计算使用后2小时角质层含水量的相对提升率，并写出计算式。", "ansText": "(48-35)/35×100%≈37.1%。说明：相对提升率仅为示例计算；实际评价须按QB/T 4256-2011与规范要求进行统计学检验（如配对t检验，p<0.05）并以多名受试者均值判定，不得以单人单次数值作为功效结论。", "exp": "相对提升率 =（使用后−使用前）/使用前×100%。"}];
+var state = {};
+function typeName(t){return {single:'单选',multi:'多选',fill:'填空',judge:'判断',short:'简答',calc:'计算'}[t]}
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function renderList(listId, src, filter){
+  var list=document.getElementById(listId); list.innerHTML='';
+  QUESTIONS.filter(function(q){return q.src===src && (filter==='all'||q.type===filter)}).forEach(function(q){
+    var card=document.createElement('div'); card.className='qcard'; card.id='q'+q.id;
+    var h='<div class="qmeta"><span class="pill b">'+typeName(q.type)+'</span> &nbsp;'+q.tag+'</div><h3>'+escHtml(q.q)+'</h3>';
+    if(q.opts){
+      h+='<div class="opts">';
+      q.opts.forEach(function(o,i){ h+='<button class="opt" data-q="'+q.id+'" data-i="'+i+'">'+String.fromCharCode(65+i)+'. '+escHtml(o)+'</button>'; });
+      h+='</div>';
+      if(q.type==='multi') h+='<button class="btn btn-amber" style="margin-top:10px" onclick="submitMulti(\''+q.id+'\')">提交多选</button>';
+    } else {
+      h+='<button class="btn btn-ghost" style="margin-top:6px" onclick="toggleAns(\''+q.id+'\')">看答案与解析</button>';
+      h+='<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-primary" onclick="selfMark(\''+q.id+'\',true)">✓ 自评答对</button><button class="btn btn-ghost" onclick="selfMark(\''+q.id+'\',false)">✗ 自评答错 / 没答出</button></div>';
+    }
+    h+='<div class="ans" id="ans'+q.id+'"><strong>答案：</strong>'+(q.ansText?escHtml(q.ansText):q.ans.map(function(i){return String.fromCharCode(65+i)}).join('、'))+'<br><strong>解析：</strong>'+escHtml(q.exp)+'</div>';
+    h+='<div id="fb'+q.id+'" style="margin-top:8px;font-weight:700"></div>';
+    card.innerHTML=h; list.appendChild(card);
+    var st=state[q.id];
+    if(st&&st.done){ showAns(q.id,true); setFb(q.id,st.correct); if(q.opts&&q.type!=='multi') markOpts(q,st.selected[0],true); if(q.opts&&q.type==='multi') markMulti(q,st.selected); }
+  });
+  bindOpts(listId); updateScore(src);
+}
+function bindOpts(listId){
+  document.querySelectorAll('#'+listId+' .opt').forEach(function(b){
+    b.onclick=function(){
+      var qid=b.dataset.q, idx=+b.dataset.i;
+      var q=QUESTIONS.find(function(x){return x.id===qid});
+      if(q.type==='multi'){
+        b.classList.toggle('correct');
+        b.style.outline=b.classList.contains('correct')?'2px solid var(--ink)':'';
+        return;
+      }
+      var correct=q.ans.indexOf(idx)>=0;
+      state[qid]={done:true,correct:correct,selected:[idx]};
+      markOpts(q,idx,false); showAns(qid,true); setFb(qid,correct); updateScore(q.src);
+    };
+  });
+}
+function markOpts(q,selIdx,restore){
+  document.querySelectorAll('#q'+q.id+' .opt').forEach(function(b){
+    var i=+b.dataset.i;
+    b.classList.remove('correct','wrong');
+    if(state[q.id] && state[q.id].done && q.ans.indexOf(i)>=0) b.classList.add('correct');
+    if(i===selIdx && state[q.id] && !state[q.id].correct) b.classList.add('wrong');
+  });
+}
+function markMulti(q,sel){
+  document.querySelectorAll('#q'+q.id+' .opt').forEach(function(b){
+    var i=+b.dataset.i;
+    b.classList.remove('correct','wrong');
+    if(q.ans.indexOf(i)>=0) b.classList.add('correct');
+    else if(sel.indexOf(i)>=0) b.classList.add('wrong');
+  });
+}
+function submitMulti(qid){
+  var q=QUESTIONS.find(function(x){return x.id===qid});
+  var sel=[];
+  document.querySelectorAll('#q'+qid+' .opt').forEach(function(b){ if(b.style.outline){ sel.push(+b.dataset.i); b.style.outline=''; }});
+  if(!sel.length){ var fb=document.getElementById('fb'+qid); if(fb) fb.innerHTML='<span style="color:var(--muted)">先点选选项，再提交</span>'; return; }
+  var correct=sel.length===q.ans.length && q.ans.every(function(a){return sel.indexOf(a)>=0});
+  state[qid]={done:true,correct:correct,selected:sel};
+  markMulti(q,sel);
+  showAns(qid,true); setFb(qid,correct); updateScore(q.src);
+}
+function toggleAns(qid){ showAns(qid); }
+function showAns(qid,force){ var el=document.getElementById('ans'+qid); if(el){ if(force) el.classList.add('show'); else el.classList.toggle('show'); } }
+function setFb(qid,correct){ var el=document.getElementById('fb'+qid); if(el) el.innerHTML=correct?'<span style="color:var(--ink)">✓ 答对了</span>':'<span style="color:var(--muted)">✗ 答错了，看上方解析再记一遍</span>'; }
+function selfMark(qid,correct){ var q=QUESTIONS.find(function(x){return x.id===qid}); state[qid]={done:true,correct:correct,selected:[]}; showAns(qid,true); setFb(qid,correct); updateScore(q.src); }
+function totalSrc(src){ return QUESTIONS.filter(function(q){return q.src===src}).length; }
+function updateScore(src){
+  var done=Object.keys(state).filter(function(k){ var q=QUESTIONS.find(function(x){return x.id===k}); return q&&q.src===src&&state[k].done; }).length;
+  var score=Object.keys(state).filter(function(k){ var q=QUESTIONS.find(function(x){return x.id===k}); return q&&q.src===src&&state[k].done&&state[k].correct; }).length;
+  var st=document.getElementById(src==='orig'?'scoreOrig':'scoreExt');
+  var pb=document.getElementById(src==='orig'?'progOrig':'progExt');
+  if(st) st.textContent='已答 '+done+' / '+totalSrc(src)+' 题 · 答对 '+score+' 题';
+  if(pb) pb.style.width=(totalSrc(src)?done/totalSrc(src)*100:0)+'%';
+}
+function resetSection(src){
+  Object.keys(state).forEach(function(k){ var q=QUESTIONS.find(function(x){return x.id===k}); if(q&&q.src===src) delete state[k]; });
+  renderList(src==='orig'?'quizListOrig':'quizListExt', src, src==='orig'?curFilterOrig:curFilterExt);
+  window.scrollTo({top:document.getElementById(src==='orig'?'orig':'ext').offsetTop-70,behavior:'smooth'});
+}
+var curFilterOrig='all', curFilterExt='all';
+function bindFilters(barId, listId, src){
+  document.querySelectorAll('#'+barId+' .chipbtn').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('#'+barId+' .chipbtn').forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      if(src==='orig') curFilterOrig=b.dataset.f; else curFilterExt=b.dataset.f;
+      renderList(listId, src, b.dataset.f);
+    };
+  });
+}
+bindFilters('filtersOrig','quizListOrig','orig');
+bindFilters('filtersExt','quizListExt','ext');
+renderList('quizListOrig','orig','all');
+renderList('quizListExt','ext','all');
+function setTheme(name,btn){
+  document.documentElement.setAttribute('data-theme',name);
+  try{localStorage.setItem('hzqb-theme',name);}catch(e){}
+  document.querySelectorAll('.tbtn').forEach(function(b){ b.classList.toggle('active', b===btn); });
+}
+(function(){
+  var saved='dark';
+  try{ saved=localStorage.getItem('hzqb-theme')||'dark'; }catch(e){}
+  var btn=document.querySelector('.tbtn[data-theme="'+saved+'"]')||document.querySelector('.tbtn[data-theme="dark"]');
+  setTheme(saved,btn);
+})();
+
+</script>
+</body>
+</html>
