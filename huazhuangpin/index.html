@@ -237,9 +237,6 @@ details .qcard{margin-bottom:12px}
 
 <section id="deck">
 <h2><span class="no">PRACTICE · 左右翻页 · 一次一道</span>开始刷题</h2>
-<p class="lead">考试宝式：一次只显示一道题，点选项作答，左右滑动或点按钮翻页，点“题号”可跳到任意一题。62 道章节原题 + 24 道外部补充题 + 1 道讨论题，共 87 张题卡，全部可刷。</p>
-<div class="secnote"><strong>答案说明（请先看）：</strong>4.1、4.2 的 17 道和 2.3 课件内嵌的 2 道，答案为学习通页面显示或课件绿色高亮的标准答案（共 19 道）。其余 <strong>43 道</strong>原题页面未显示标准答案，2026-11-24 已按法规原文与课件内容逐题搜索核实并补上参考答案，每题都标了依据；<strong>不是学习通平台官方标准答案</strong>，其中 9 道依据待确认（题内注明“依据待确认”）。2.4 讨论题（熊果苷美白精华）1 道也附上了参考答案。</div>
-<div style="height:16px"></div>
 <div class="card">
 <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center"><strong id="deckScore">已答 0 / 87 题 · 答对 0 题</strong><button class="btn btn-ghost" onclick="resetDeck()">↺ 重新开始</button></div>
 <div class="progress"><i id="deckProg"></i></div>
@@ -250,7 +247,6 @@ details .qcard{margin-bottom:12px}
 <button class="chipbtn" data-f="unanswered">只看未答</button>
 <button class="chipbtn" data-f="wrong">只看答错</button>
 </div>
-<p style="font-size:13px;color:var(--muted);margin:0">单选/判断点一下就出对错；多选题选完点“提交”；填空/连线/简答点“看参考答案”，对照后自评。左右滑动也可翻页。</p>
 </div>
 <div id="deckCard" style="margin-top:14px"></div>
 <div style="display:flex;gap:10px;margin-top:14px;align-items:center;justify-content:space-between;flex-wrap:wrap">
@@ -389,8 +385,8 @@ function updateDeckMeta(){
   var pb=document.getElementById('deckProg'); if(pb) pb.style.width=(total?done/total*100:0)+'%';
   var ct=document.getElementById('deckCounter'); if(ct) ct.textContent=deckList.length?('第 '+(deckIdx+1)+' / '+deckList.length+' 题'):'第 0 / 0 题';
 }
-function nextCard(){ if(deckIdx<deckList.length-1){ deckIdx++; renderDeck(); window.scrollTo({top:document.getElementById('deck').offsetTop-70,behavior:'smooth'}); } }
-function prevCard(){ if(deckIdx>0){ deckIdx--; renderDeck(); window.scrollTo({top:document.getElementById('deck').offsetTop-70,behavior:'smooth'}); } }
+function nextCard(){ if(deckIdx<deckList.length-1){ deckIdx++; renderDeck(); window.scrollTo({top:document.getElementById('deckCard').offsetTop-70,behavior:'smooth'}); } }
+function prevCard(){ if(deckIdx>0){ deckIdx--; renderDeck(); window.scrollTo({top:document.getElementById('deckCard').offsetTop-70,behavior:'smooth'}); } }
 function toggleGrid(){
   var g=document.getElementById('deckGrid');
   if(g.style.display==='none'){ renderGrid(); g.style.display='block'; } else { g.style.display='none'; }
@@ -409,14 +405,14 @@ function renderGrid(){
   h+='</div>';
   g.innerHTML=h;
 }
-function jumpCard(i){ deckIdx=i; document.getElementById('deckGrid').style.display='none'; renderDeck(); window.scrollTo({top:document.getElementById('deck').offsetTop-70,behavior:'smooth'}); }
+function jumpCard(i){ deckIdx=i; document.getElementById('deckGrid').style.display='none'; renderDeck(); window.scrollTo({top:document.getElementById('deckCard').offsetTop-70,behavior:'smooth'}); }
 function resetDeck(){
   state={};
   deckFilter='all'; deckIdx=0;
   document.querySelectorAll('#deckFilters .chipbtn').forEach(function(x){x.classList.toggle('active',x.dataset.f==='all')});
   document.getElementById('deckGrid').style.display='none';
   renderDeck();
-  window.scrollTo({top:document.getElementById('deck').offsetTop-70,behavior:'smooth'});
+  window.scrollTo({top:document.getElementById('deckCard').offsetTop-70,behavior:'smooth'});
 }
 document.querySelectorAll('#deckFilters .chipbtn').forEach(function(b){
   b.onclick=function(){
